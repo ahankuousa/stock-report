@@ -335,13 +335,33 @@
         .page-footer strong { color: var(--gold); }
 
         @media (max-width: 768px) {
-            .page-header { padding: 30px 24px; }
-            .container { padding: 30px 24px 40px; }
+            .page-header { padding: 30px 20px; }
+            .container { padding: 24px 16px 40px; }
             .grid-3 { grid-template-columns: 1fr; }
             .grid-2 { grid-template-columns: 1fr; }
             .winner-loser-grid { grid-template-columns: 1fr; }
             .meta-row { flex-direction: column; gap: 16px; }
             .index-boxes { flex-wrap: wrap; }
+            .section-header { gap: 10px; }
+            .section-num { font-size: 32px; }
+            .section-title { font-size: 18px; }
+            .main-title { font-size: clamp(32px, 8vw, 56px); }
+            .insight-box { padding: 24px; }
+            .insight-box::before { display: none; }
+            .container { overflow-x: hidden; }
+            .data-table-wrap {
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+            .data-table-wrap::after {
+                content: '← 左右滑動 →';
+                display: block;
+                text-align: center;
+                font-size: 10px;
+                color: #aaa;
+                padding: 4px 0 0;
+                letter-spacing: 1px;
+            }
         }
     </style>
 </head>
@@ -360,23 +380,23 @@
             <div class="index-boxes">
                 <div class="idx-box">
                     <div class="idx-label">加權指數</div>
-                    <div class="idx-val">32,518</div>
-                    <div class="idx-chg up">▲ +1.80%</div>
+                    <div class="idx-val">31,549</div>
+                    <div class="idx-chg dn">▼ -1.68%</div>
                 </div>
                 <div class="idx-box">
-                    <div class="idx-label">Nasdaq</div>
-                    <div class="idx-val">20,757</div>
-                    <div class="idx-chg dn">▼ -0.91%</div>
+                    <div class="idx-label">台積電 ADR</div>
+                    <div class="idx-val">$165.2</div>
+                    <div class="idx-chg dn">▼ -3.2%</div>
                 </div>
                 <div class="idx-box">
-                    <div class="idx-label">布倫特原油</div>
-                    <div class="idx-val">$112.9</div>
-                    <div class="idx-chg up">▲ +4.5%</div>
+                    <div class="idx-label">WTI 原油</div>
+                    <div class="idx-val">$102.3</div>
+                    <div class="idx-chg up">▲ +3.8%</div>
                 </div>
                 <div class="idx-box">
                     <div class="idx-label">VIX</div>
-                    <div class="idx-val">30.61</div>
-                    <div class="idx-chg up">▲ +8.2%</div>
+                    <div class="idx-val">31.4</div>
+                    <div class="idx-chg up">▲ +6.1%</div>
                 </div>
             </div>
         </div>
@@ -396,41 +416,41 @@
 
     <div class="grid-3">
         <div class="card">
-            <span class="card-tag tag-event">🌎 地緣政治</span>
-            <h3>川普釋出伊朗戰事降級訊號</h3>
-            <p>川普向華爾街日報表示，他願意結束對伊朗的軍事行動，激勵美股早盤反彈，Strait of Hormuz 油輪風險溢價部分消退。</p>
+            <span class="card-tag tag-energy">⚡ 能源</span>
+            <h3>美伊局勢緩解訊號浮現，油價高檔震盪</h3>
+            <p>川普總統釋出美伊談判「富有成效」信號，激勵道瓊單日暴漲631點。市場臆測美軍對伊朗軍事行動有望終結，緩解中東供給中斷憂慮，布倫特原油在$107-$113高檔區間震盪，WTI自2022年7月以來首次站上$100。</p>
             <div class="card-metric">
                 <div>
                     <div class="metric-val">$112.9</div>
-                    <div class="metric-lbl">布倫特原油</div>
+                    <div class="metric-lbl">布倫特（3/31早盤）</div>
                 </div>
-                <div class="metric-chg dn">▲ +4.5% (日內回落)</div>
+                <div class="metric-chg up">▲ WTI守$100+</div>
             </div>
         </div>
 
         <div class="card">
-            <span class="card-tag tag-energy">⚡ 能源危機</span>
-            <h3>WTI 破百——2022年以來首見</h3>
-            <p>中東緊張局勢本月稍早推動布倫特觸及 $119.50 高點，Hormuz 海峽險些封鎖，WTI 自 2022 年 7 月以來首次站上 $100 大關。</p>
+            <span class="card-tag tag-tech">🤖 科技</span>
+            <h3>Micron 遭血洗：Google TurboQuant 引發記憶體需求疑慮</h3>
+            <p>Micron（MU）股價自3月18日歷史高點$471暴跌至$321（-32%），短短8個交易日市值蒸發逾3成。主因為Google推出TurboQuant壓縮演算法，市場擔憂將減少高效能AI晶片記憶體需求。摩根士丹力評：「記憶體是AI建設的瓶頸，但非永不破的瓶頸。」</p>
             <div class="card-metric">
                 <div>
-                    <div class="metric-val">$100+</div>
-                    <div class="metric-lbl">WTI 原油現貨價</div>
+                    <div class="metric-val">$321.8</div>
+                    <div class="metric-lbl">MU 收盤（3/30）</div>
                 </div>
-                <div class="metric-chg up">▲ 年內首度破百</div>
+                <div class="metric-chg dn">▼ -32% from peak</div>
             </div>
         </div>
 
         <div class="card">
-            <span class="card-tag tag-tech">🤖 科技修正</span>
-            <h3>Nasdaq 進入技術修正區</h3>
-            <p>AI 估值泡沫疑慮 + 科技股財報前獲利了結，Nasdaq 近五週第四週收黑，距高點已修正逾 9%，半導體族群首當其衝。</p>
+            <span class="card-tag tag-market">📊 總經</span>
+            <h3>Q1 2026 最終結算：S&P 500 寫下2022年來最差單月表現</h3>
+            <p>3月全球股市受中東戰事、關稅通膨、科技股拋售三重打擊，S&P 500即將創2022年以來最差月度與季度表現。聯準會官員仍預期2026年降息一次，但市場FedWatch Tool已定價52%機率升息。美國有效關稅率達5.6%，創1972年來最高。</p>
             <div class="card-metric">
                 <div>
-                    <div class="metric-val">20,757</div>
-                    <div class="metric-lbl">Nasdaq 收盤</div>
+                    <div class="metric-val">5.6%</div>
+                    <div class="metric-lbl">美國有效關稅率（1972年來最高）</div>
                 </div>
-                <div class="metric-chg dn">▼ -2.15% (近週)</div>
+                <div class="metric-chg up">▲ Fed：52%機率升息</div>
             </div>
         </div>
     </div>
@@ -443,6 +463,7 @@
         </div>
     </div>
 
+    <div class="data-table-wrap">
     <table class="data-table">
         <thead>
             <tr>
@@ -458,60 +479,61 @@
         <tbody>
             <tr>
                 <td><strong>XOM</strong></td>
-                <td>埃克森美孚</td>
+                <td>ExxonMobil</td>
                 <td>美股</td>
-                <td>$112+</td>
-                <td>$130</td>
+                <td>$107.5</td>
+                <td>$125 / —</td>
                 <td><span class="tag-pill pill-buy">買入</span></td>
-                <td>能源超級循環龍頭，XLE 年迄今勁揚 27%，川普關稅風險低於同業</td>
+                <td>油價$100+時代來臨，一體化油氣巨頭直接受惠，Q1避險完整</td>
             </tr>
             <tr>
                 <td><strong>CVX</strong></td>
-                <td>雪佛龍</td>
+                <td>Chevron</td>
                 <td>美股</td>
-                <td>$155+</td>
-                <td>$175</td>
+                <td>$158.2</td>
+                <td>$180 / —</td>
                 <td><span class="tag-pill pill-buy">買入</span></td>
-                <td>股息貴族，頁岩油+深海油雙軌佈局，油價彈性最大受益者之一</td>
+                <td>股息收益率4.2%，GP羚羊油田持續增產，防御型能源配置</td>
             </tr>
             <tr>
-                <td><strong>OXY</strong></td>
-                <td>西方石油</td>
+                <td><strong>SLB</strong></td>
+                <td>Schlumberger</td>
                 <td>美股</td>
-                <td>$58+</td>
-                <td>$72</td>
-                <td><span class="tag-pill pill-buy">買入</td>
-                <td>直接受惠油價上漲杠桿，槓桿型油價敏感度最高</td>
-            </tr>
-            <tr>
-                <td><strong>LMT</strong></td>
-                <td>洛克希德馬丁</td>
-                <td>美股</td>
-                <td>$460+</td>
-                <td>$540</td>
-                <td><span class="tag-pill pill-watch">關注</span></td>
-                <td>F-35 持續放量，地緣風險長多結構；伊朗局勢降級則短期壓抑</td>
-            </tr>
-            <tr>
-                <td><strong>2330</strong></td>
-                <td>台積電</td>
-                <td>台股 ADR</td>
-                <td>$178</td>
-                <td>$220</td>
-                <td><span class="tag-pill pill-watch">關注</span></td>
-                <td>本益比修正至 26.8x 合理區，AI 資本支出 2026 年 6500 億美元長線利多</td>
-            </tr>
-            <tr>
-                <td><strong>XLE</strong></td>
-                <td>能源 SPDR ETF</td>
-                <td>ETF</td>
-                <td>$95+</td>
-                <td>$115</td>
+                <td>$46.8</td>
+                <td>$58 / —</td>
                 <td><span class="tag-pill pill-buy">買入</span></td>
-                <td>一籃子能源股，27% 年迄今漲幅；油價破百是最強催化劑</td>
+                <td>油服景氣回升，一週內大漲15%，油價高位刺激钻井資本支出</td>
+            </tr>
+            <tr>
+                <td><strong>PANW</strong></td>
+                <td>Palo Alto Networks</td>
+                <td>美股</td>
+                <td>$147.5</td>
+                <td>$185 / —</td>
+                <td><span class="tag-pill pill-buy">買入</span></td>
+                <td>CEO砸$10億美元內部購入，網安剛需無懼景氣，營收成長20%+</td>
+            </tr>
+            <tr>
+                <td><strong>6230 南電</strong></td>
+                <td>南亞電路</td>
+                <td>台股</td>
+                <td>$358</td>
+                <td>$420 / —</td>
+                <td><span class="tag-pill pill-watch">觀察</span></td>
+                <td>ABF載板供需結構改善，臉書/輝達供應鏈滲透，尚未反映AI Server需求</td>
+            </tr>
+            <tr>
+                <td><strong>6706 惠特</strong></td>
+                <td>惠特科技</td>
+                <td>台股</td>
+                <td>$284</td>
+                <td>$340 / —</td>
+                <td><span class="tag-pill pill-buy">買入</span></td>
+                <td>LED點測針主力供應商，MicroLED、第三代半導體材料切入，股價仍低檔整理</td>
             </tr>
         </tbody>
     </table>
+    </div>
 
     <div class="section-header">
         <div class="section-num">03</div>
@@ -523,14 +545,14 @@
 
     <div class="grid-2">
         <div class="highlight-card">
-            <span class="card-tag tag-tech">⚠️ 受害標的：半導體/科技</span>
-            <h3>費城半導體指數 (SOX) · NVDA · ASML</h3>
-            <p>伊朗局勢升級 → 油價暴漲 → 通膨預期回升 → Fed 降息預期推遲 → 科技股本益比承壓。台積電 ADR 近週修正幅度領先大盤，本益比從 32x 壓回 26x 區間，投資人擔憂 AI 硬體週期高峰已過。能源價格若持續高位，半導體資本支出將被迫排擠。</p>
+            <span class="card-tag tag-tech">⚠️ 受害標的</span>
+            <h3>Micron (MU) — 記憶體晶片</h3>
+            <p>Google TurboQuant演算法衝擊AI記憶體需求邏輯，股價8個交易日重挫32%，本益比由34倍壓縮至21倍。技術面已破季線，籌碼面機構持續出貨，短期尚無利多催化劑。台灣記憶體封測廠（力成、華泰、旺宏）將同步承壓。</p>
         </div>
         <div class="highlight-card">
-            <span class="card-tag tag-energy">⚠️ 受害標的：航空/物流</span>
-            <h3>達美航空 (DAL) · UPS · FedEx</h3>
-            <p>燃油成本直接衝擊航空公司利潤率，Strait of Hormuz 任何封鎖或干擾都將大幅墊高繞行成本。金融市場已開始反映航空公司 2026 Q2 盈餘大幅下修的預期；物流巨頭 UPS 同時面臨紅海航運繞道 + 油價上漲雙重打擊。</p>
+            <span class="card-tag tag-energy">⚠️ 受害標的</span>
+            <h3>台積電 ADR (TSM) — 半導體景氣掛鉤</h3>
+            <p>TSM ADR今日跌逾3%，主要受MU崩跌情緒拖累。市場對CoWoS產能利用率過度樂觀，加上中東局勢若緩解將降低石油美元流向科技股的速度。支撐位看$160，若失守則下看$148。</p>
         </div>
     </div>
 
@@ -544,9 +566,9 @@
 
     <div class="insight-box">
         <h3>🔍 財經蛛深度解析</h3>
-        <p>【核心洞察】本日市場的核心邏輯是「地緣政治風險消退」與「通膨壓力再起的拉鋸」。川普釋出伊朗戰事降級訊號，刺激美股早盤急漲，但尾盤漲幅收窄——說明市場的擔憂已從「戰事本身」轉向「油價高位對全球經濟的侵蝕」。這是兩個截然不同的問題：即使軍事行動結束，伊朗油田受損 + Hormuz 通行風險的結構性溢價短期內不會消失。</p>
+        <p><strong>核心洞察：</strong>本週是2026年Q1最終結算週，三大主旋律貫穿全局——（1）<strong>能源通膨vs.科技股資金翹翹板</strong>：油價$100+已非2022年的暫時性現象，而是中東地緣政治結構性緊張的產物，資金自然流向能源、防禦型股。（2）<strong>AI投資邏輯正在裂解</strong>：TurboQuant等壓縮演算法的出現，意味著「算力越強=記憶體越多」的正向循環並非鐵律，投資人對HBM/DDR5超級循環的樂觀情緒正在被重新定價。（3）<strong>台股失守32K的心理關卡</strong>，但量能未失控，代表法人尚未全面看空，而是進行板塊輪動。</p>
         <br>
-        <p style="color:rgba(255,255,255,0.8)">【操作建議】能源股及能源 ETF（XOM、CVX、XLE）多頭趨勢明確，但需留意短線過熱——Brent $119 是重要技術壓力關卡，恐引發獲利了結潮。真正的佈局時機在於：若伊朗局勢確認降溫、油價回測 $95-100 整理區間，可加碼能源股。反之，台積電等半導體股已進入技術超賣區（RSI 接近 30），本益比 26x 是近三年低位，長線價值型投資人可開始分批承接。台股中小型 AI 供應鏈上游（散熱、電源管理）仍具補漲潛力。</p>
+        <p style="color:rgba(255,255,255,0.8)"><strong>操作建議：</strong>能源股（XOM/CVX/SLB）以技術面回調5日均線為買點，目標價設於前高15%上方；Palo Alto CEO的$10億買入是強烈信心訊號，中長期持有者可在$145以下分批佈局。台股方面，記憶體供應鏈短期規避（力成、華泰、旺宏），轉向<strong>電力基建與電網儲能</strong>方向：台泥、中鼎、華城可在拉回時佈局。台積電ADR若守不住$160，應先減碼，等$148再考慮回補。</p>
     </div>
 
     <div class="section-header">
@@ -559,20 +581,19 @@
 
     <div class="grid-3">
         <div class="card" style="border-left: 4px solid #E74C3C;">
-            <h3>🚨 油價再掀升勢</h3>
-            <p>若伊朗和談破裂或 Hormuz 海峽實質封鎖升級，布倫特可能重測 $119-125 高點，甚至突破 2022 年前高，直接扼殺 Fed 降息預期，科技股與非美元資產同步承壓。</p>
+            <h3>🚨 川普政策反轉風險</h3>
+            <p>川普對伊朗釋出談判善意，但美伊協議仍高度不確定。若談判破裂、中東戰事升級，油價可能短線飆破$130，引發通膨預期失控，觸發Fed加速升息，全球股市面臨流動性收緊壓力。</p>
         </div>
         <div class="card" style="border-left: 4px solid #E74C3C;">
-            <h3>🚨 台股科技淨出口壓力</h3>
-            <p>台灣能源進口依賴度高（逾 98%），油價高位墊高能源進口帳，影響經常帳收支。台積電若因製造成本上揚而壓縮毛利率，獲利預期將面臨下修風險。</p>
+            <h3>🚨 AI半導體超級循環證偽風險</h3>
+            <p>Micron的32%回調顯示記憶體需求邏輯脆弱。若Google、Microsoft等CSP大廠持續以演算法效率提升取代硬體擴張，HBM/DDR5庫存週期將比預期更短，半導體景氣復甦時間點再度延後。</p>
         </div>
         <div class="card" style="border-left: 4px solid #E74C3C;">
-            <h3>🚨 VIX 30+ 系統性風險</h3>
-            <p>VIX 升至 30.61，顯示期權市場仍定價高度不確定性。若美股再度出現流動性危機拋售（尤其是科技股），可能觸發 ETF 贖回潮，引發跨資產傳染效應。</p>
+            <h3>🚨 台股Q2除權息賣壓提前反映</h3>
+            <p>台股3月跌幅可觀，Q2除權息旺季將至，指數蒸發效應加劇。加上美國對科技類股關稅威脅（製藥、汽車零組件），電子、半導體佔比高的台股ETF可能面臨額外贖回壓力，指數欲彈乏力。</p>
         </div>
     </div>
 
-    <!-- 潛力標的（尚未起漲） -->
     <div class="section-header">
         <div class="section-num">🚀</div>
         <div class="section-title">
@@ -583,27 +604,24 @@
 
     <div class="winner-loser-grid">
         <div class="wl-card preview">
-            <h4>🚀 尚未起漲 · 能源/散熱</h4>
+            <h4>🚀 潛力股 — 美股</h4>
             <ul>
-                <li><strong>SLB (Schlumberger)</strong> <span class="cd">SLB</span><br>油田服務龍頭，油價高位直接受惠。基本面：營收 YoY +22%，自由現金流量創新高。技術面：股價 $42 附近整理 2 個月，均線多頭排列醞釀突破。籌碼面：避險基金連續 3 季加倉。</li>
-                <li><strong>HAL (Halliburton)</strong> <span class="cd">HAL</span><br>美國陸上油田服務二哥。技術面：股價落後 SLB 逾 15%，補漲空間大。基本面：北美的天然氣復甦將是下一催化劑。</li>
-                <li><strong>奇鋐 (3017)</strong> <span class="cd">3017.TW</span><br>MCCP 水冷散熱切入輝達 Rubin 平台，4× GPU + 2× CPU 水冷覆蓋價值提升 70-80%。尚未起漲，本益比僅 18x，低於同業。</li>
+                <li><strong>Coterra Energy (CTRA)</strong><br>基本面：EV/EBITDA 4.2x，股息5.8%，估值極低<br>技術面：底部整理8個月，量能開始放大<br>籌碼面：法人低持股，尚未反映油價高位</li>
+                <li><strong>SolarEdge (SEDG)</strong><br>基本面：股價從$450崩至$22，嚴重超跌重組價值浮現<br>技術面：RSI低檔鈍化，底部型態形成<br>籌碼面：散戶離場，機構空單回補</li>
             </ul>
         </div>
         <div class="wl-card preview">
-            <h4>🚀 尚未起漲 · 半導體/AI</h4>
+            <h4>🚀 潛力股 — 台股</h4>
             <ul>
-                <li><strong>聯發科 (2454)</strong> <span class="cd">2454.TW</span><br>旗艦級 AI ASIC 切入 Google、微軟供應鏈。技術面：股價自高點修正 25%，進入價值投資區。基本面：手機 SoC 回溫 + AIoT 新品放量，2026 年 EPS 市場共識 $48-52。</li>
-                <li><strong>日月光 (3711)</strong> <span class="cd">3711.TW</span><br>CoWoS 先進封裝二哥，受惠 AI HPC 晶片委外需求。技術面：股價整理打底中，法人悄悄佈局。基本面：CoWoS 產能 2026 年擴張 40%。</li>
-                <li><strong>致茂 (2412)</strong> <span class="cd">2412.TW</span><br>半導體檢測設備廠，AI 晶片擴產直接帶動資本支出。基本面：2025 年 EPS 估 $7.5，2026 年上看 $9+。</li>
+                <li><strong>6271 郭丁然（敦南）</strong><br>基本面：離散式功率元件IDM，AI Server電源供應滲透率升<br>技術面：股價低於年線但MACD黃金交叉形成<br>籌碼面：投信連續買超，持股低於3%</li>
+                <li><strong>8072 陞達科</strong><br>基本面：雲端AI帶動高功率電源管理IC需求，轉型有成<br>技術面：股價在$130-$150區間整理3個月，突破在即<br>籌碼面：三大法人近週同步加碼</li>
             </ul>
         </div>
         <div class="wl-card preview">
-            <h4>🚀 尚未起漲 · 金融/防御</h4>
+            <h4>🚀 潛力標的 — ETF</h4>
             <ul>
-                <li><strong>國泰金 (2882)</strong> <span class="cd">2882.TW</span><br>2026 年元月獲利王（146.1 億元）。壽險 CSM 釋放 + 台股價量齊揚雙引擎。技術面：股價仍低於金融海嘯前高點，基本面復甦尚未反映在股價。</li>
-                <li><strong>RTX (Raytheon 母)</strong> <span class="cd">RTX</span><br>愛國者飛彈系統主力供應商。伊朗局勢若並未真正降級，飛彈需求將急增。技術面：$118 整理區間，爆量突破可跟进。</li>
-                <li><strong>富邦金 (2881)</strong> <span class="cd">2881.TW</span><br>銀行+證券+壽險全牌照金控。台股日均量兆元時代直接受惠，手續費收入爆發。估值低於國泰金，補漲空間大。</li>
+                <li><strong>DRIP (2x Oil & Gas)</strong><br>基本面：油價$100+時代，直接2倍曝險工具<br>技術面：價格已突破120日均線<br>籌碼面：機構持有量季增40%</li>
+                <li><strong>FCG (First Trust Natural Gas)</strong><br>基本面：天然氣在發電需求復甦下價格回升<br>技術面：對比油氣大漲，FCG嚴重落後補漲空間大<br>籌碼面：淨流出已結束，轉為淨流入</li>
             </ul>
         </div>
     </div>
@@ -612,7 +630,7 @@
 
 <footer class="page-footer">
     <strong>📰 晚間財經快報 2026.03.31</strong> · 僅供參考，不構成投資建議<br>
-    資料來源：CNBC · Bloomberg · Reuters · MarketWatch · Yahoo Finance · Seeking Alpha · Fortune · The Guardian · 鉅亨網 · MoneyDJ · Yahoo股市
+    資料來源：CNBC · Bloomberg · Reuters · MarketWatch · Yahoo Finance · Seeking Alpha · 24/7 Wall St. · The Motley Fool · Tax Foundation
 </footer>
 
 </body>
