@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>晚報 2026.03.31｜財經蛛</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #05050a;
+      --card: #0d0d1a;
+      --card2: #12121f;
+      --neon-cyan: #00f5d4;
+      --neon-pink: #f72585;
+      --neon-yellow: #fee440;
+      --neon-blue: #4cc9f0;
+      --green: #00e5a0;
+      --red: #ff3a6e;
+      --text: #e8e8f0;
+      --muted: #6b6b8a;
+      --border: #1a1a2e;
+      --glow-cyan: rgba(0,245,212,0.12);
+      --glow-pink: rgba(247,37,133,0.12);
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Noto Sans TC', 'Space Grotesk', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
+
+    header {
+      position: relative;
+      overflow: hidden;
+      background: var(--bg);
+      padding: 48px 24px 40px;
+      border-bottom: 1px solid var(--border);
+    }
+    header::before {
+      content: '';
+      position: absolute;
+      top: -200px;
+      left: -100px;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(ellipse at center, rgba(0,245,212,0.05) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    header::after {
+      content: '';
+      position: absolute;
+      bottom: -100px;
+      right: -100px;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(ellipse at center, rgba(247,37,133,0.05) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .inner { max-width: 880px; margin: 0 auto; position: relative; z-index: 1; }
+    .kicker {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--neon-cyan);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .kicker::before { content: '◆'; font-size: 6px; }
+    h1 { font-size: clamp(30px, 5vw, 52px); font-weight: 900; line-height: 1.05; letter-spacing: -0.03em; margin-bottom: 10px; }
+    h1 .cyan { color: var(--neon-cyan); }
+    h1 .pink { color: var(--neon-pink); }
+    .meta { font-size: 12px; color: var(--muted); letter-spacing: 0.05em; }
+
+    .neon-bar {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-top: 2px solid var(--neon-cyan);
+      padding: 20px 28px;
+      display: flex;
+      gap: 0;
+      margin-bottom: 36px;
+      overflow-x: auto;
+    }
+    .nb {
+      flex: 1;
+      min-width: 120px;
+      padding: 0 20px;
+      border-right: 1px solid var(--border);
+    }
+    .nb:last-child { border-right: none; }
+    .nb .lbl { font-size: 9px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
+    .nb .val { font-family: 'Space Grotesk', monospace; font-size: 20px; font-weight: 700; color: var(--text); }
+    .nb .chg { font-family: 'Space Grotesk', monospace; font-size: 11px; font-weight: 600; margin-top: 2px; }
+    .nb .up { color: var(--green); } .nb .dn { color: var(--red); }
+
+    .container { max-width: 880px; margin: 0 auto; padding: 0 20px 48px; }
+
+    .grid2 { display: grid; grid-template-columns: 1.4fr 1fr; gap: 16px; margin-bottom: 24px; }
+    @media(max-width:640px){ .grid2{grid-template-columns:1fr} }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .card-hd {
+      padding: 14px 20px;
+      border-bottom: 1px solid var(--border);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .card-hd.c-cyan { color: var(--neon-cyan); border-bottom-color: rgba(0,245,212,0.2); }
+    .card-hd.c-pink { color: var(--neon-pink); border-bottom-color: rgba(247,37,133,0.2); }
+    .card-hd.c-yellow { color: var(--neon-yellow); border-bottom-color: rgba(254,228,64,0.2); }
+    .card-bd { padding: 20px; }
+
+    .ticker {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .ticker-row {
+      display: flex;
+      align-items: center;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.03);
+      gap: 12px;
+    }
+    .ticker-row:last-child { border-bottom: none; }
+    .ticker-row .ico { font-size: 16px; width: 24px; text-align: center; }
+    .ticker-row .nm { font-weight: 700; font-size: 14px; flex: 1; }
+    .ticker-row .cd { font-size: 10px; color: var(--muted); font-family: 'Space Grotesk', monospace; margin-left: 4px; }
+    .ticker-row .px { font-family: 'Space Grotesk', monospace; font-weight: 700; font-size: 14px; }
+    .ticker-row .ch { font-family: 'Space Grotesk', monospace; font-size: 12px; font-weight: 600; min-width: 54px; text-align: right; }
+    .ticker-row .up { color: var(--green); } .ticker-row .dn { color: var(--red); }
+
+    .newz { display: flex; flex-direction: column; gap: 14px; }
+    .newz-item { padding-left: 14px; position: relative; }
+    .newz-item::before { content: '›'; position: absolute; left: 0; top: 0; color: var(--neon-pink); font-size: 14px; }
+    .newz-item p { font-size: 13px; color: var(--muted); line-height: 1.6; }
+    .newz-item p strong { color: var(--text); font-weight: 600; }
+
+    .summary-box {
+      background: linear-gradient(135deg, var(--glow-cyan), var(--glow-pink));
+      border: 1px solid rgba(0,245,212,0.15);
+      border-radius: 12px;
+      padding: 24px 28px;
+      margin-bottom: 24px;
+    }
+    .summary-box .lbl { font-size: 10px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--neon-cyan); margin-bottom: 10px; }
+    .summary-box p { font-size: 15px; color: var(--text); line-height: 1.8; font-weight: 400; }
+
+    .grid3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-bottom: 24px; }
+    @media(max-width:480px){ .grid3{grid-template-columns:1fr} }
+    .minicard { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 18px; }
+    .minicard .ttl { font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 10px; }
+    .minicard .ttl.c1 { color: var(--neon-yellow); } .minicard .ttl.c2 { color: var(--neon-blue); } .minicard .ttl.c3 { color: var(--neon-pink); }
+    .minicard ul { list-style: none; display: flex; flex-direction: column; gap: 7px; }
+    .minicard ul li { font-size: 12px; color: var(--muted); padding-left: 12px; position: relative; line-height: 1.5; }
+    .minicard ul li::before { content: '-'; position: absolute; left: 0; color: var(--neon-cyan); opacity: 0.5; }
+    .minicard ul li strong { color: var(--text); font-weight: 600; }
+
+    .divider { border: none; border-top: 1px solid var(--border); margin: 32px 0; }
+
+    .risk-section h3 { font-size: 13px; font-weight: 800; color: var(--neon-pink); letter-spacing: 0.08em; margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+    .risk-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); gap: 10px; }
+    .risk-item {
+      background: rgba(255,58,110,0.05);
+      border: 1px solid rgba(255,58,110,0.12);
+      border-radius: 8px;
+      padding: 14px 16px;
+    }
+    .risk-item .num { font-family: 'Space Grotesk', monospace; font-size: 18px; font-weight: 700; color: var(--red); margin-bottom: 4px; }
+    .risk-item p { font-size: 12px; color: var(--muted); line-height: 1.5; }
+    .risk-item p strong { color: var(--text); }
+
+    .footer { text-align: center; padding: 48px 20px; border-top: 1px solid var(--border); margin-top: 40px; }
+    .footer-logo { font-size: 18px; font-weight: 900; color: var(--neon-cyan); margin-bottom: 6px; }
+    .footer p { color: var(--muted); font-size: 11px; letter-spacing: 0.08em; }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="inner">
+    <div class="kicker">收盤總結 · 2026.03.31</div>
+    <h1><span class="cyan">晚報</span> <span style="color:var(--muted)">EVENING</span><br><span class="pink">WATCH</span></h1>
+    <div class="meta">美東時間 16:00 收盤　｜　台北時間 21:00</div>
+  </div>
+</header>
+
+<div style="max-width:880px;margin:0 auto;padding:0 20px;">
+  <div class="neon-bar">
+    <div class="nb">
+      <div class="lbl">加權指數</div>
+      <div class="val">32,518</div>
+      <div class="chg dn">▼ 1.80% 今日</div>
+    </div>
+    <div class="nb">
+      <div class="lbl">Nasdaq</div>
+      <div class="val">20,794</div>
+      <div class="chg dn">▼ 0.73%</div>
+    </div>
+    <div class="nb">
+      <div class="lbl">S&P 500</div>
+      <div class="val">6,336</div>
+      <div class="chg dn">▼ 0.39%</div>
+    </div>
+    <div class="nb">
+      <div class="lbl">布倫特</div>
+      <div class="val">$100</div>
+      <div class="chg dn">▼ 高位回落</div>
+    </div>
+    <div class="nb">
+      <div class="lbl">VIX</div>
+      <div class="val">30+</div>
+      <div class="chg up">↑ 居高不下</div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- 今日總結 -->
+  <div class="summary-box">
+    <div class="lbl">今日總結</div>
+    <p>【美伊談判曙光】美股今日震盪，川普釋出願意結束對伊朗軍事行動的信號，激勵股指期貨盤前上漲逾0.7%；然而伊朗襲擊科威特油輪的消息令油價盘中暴漲3%再回落，布倫特油價持穩100美元附近。台股受美股科技股拖累，半導體類股普遍回調，加權指數失守季線32,190點。市場觀望本週五（4/3）美國三月非農就業報告，預期失業率維持4.4%。</p>
+  </div>
+
+  <!-- 頭條 + 個股 -->
+  <div class="grid2">
+    <div class="card">
+      <div class="card-hd c-pink">💥 今日關鍵事件</div>
+      <div class="card-bd">
+        <div class="newz">
+          <div class="newz-item">
+            <p><strong>【美伊停火談判】</strong> — 川普表示願意結束對伊朗軍事行動，即使荷莫茲海峽維持封鎖，油價盤前下跌，市場情緒好轉</p>
+          </div>
+          <div class="newz-item">
+            <p><strong>【伊朗襲擊科威特油輪】</strong> — 伊朗在杜拜水域襲擊科威特油輪，油價盘中暴漲3%後回落，布倫特短暫觸及101美元</p>
+          </div>
+          <div class="newz-item">
+            <p><strong>【納指進入修正區】</strong> — 那斯達克綜合指數自高點回落逾10%，科技股賣壓沉重，VIX升至30以上</p>
+          </div>
+          <div class="newz-item">
+            <p><strong>【台股失守季線】</strong> — 台股今日早盤一度大跌486點，跌破季線32,190點，半導體與記憶體族群承壓</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-hd c-cyan">📈 重點個股收盤</div>
+      <div class="card-bd">
+        <div class="ticker">
+          <div class="ticker-row">
+            <span class="ico">🔷</span>
+            <span class="nm">台積電 ADR<span class="cd">TSM</span></span>
+            <span class="px">$186</span>
+            <span class="ch dn">▼1.2%</span>
+          </div>
+          <div class="ticker-row">
+            <span class="ico">🔶</span>
+            <span class="nm">美光科技<span class="cd">MU</span></span>
+            <span class="px">$98</span>
+            <span class="ch up">▲2.1%</span>
+          </div>
+          <div class="ticker-row">
+            <span class="ico">🔴</span>
+            <span class="nm">特斯拉<span class="cd">TSLA</span></span>
+            <span class="px">$355</span>
+            <span class="ch dn">▼1.81%</span>
+          </div>
+          <div class="ticker-row">
+            <span class="ico">🟢</span>
+            <span class="nm">埃克森美孚<span class="cd">XOM</span></span>
+            <span class="px">$112</span>
+            <span class="ch up">▲0.9%</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 三欄分析 -->
+  <div class="grid3">
+    <div class="minicard">
+      <div class="ttl c1">✅ 今日贏家</div>
+      <ul>
+        <li><strong>能源/石油股</strong> — 伊朗局勢緊張，布倫特持穩100美元上方</li>
+        <li><strong>記憶體族群</strong> — 美光HBM需求旺，股價逆勢上漲</li>
+        <li><strong>國防股</strong> — 中東局勢未解，洛克希德、雷神獲得青睞</li>
+      </ul>
+    </div>
+    <div class="minicard">
+      <div class="ttl c3">❌ 今日輸家</div>
+      <ul>
+        <li><strong>科技股/AI族群</strong> — 納指修正逾10%，輝達、博通受壓</li>
+        <li><strong>非必需消費</strong> — Tesla領跌，EV需求疑慮再現</li>
+        <li><strong>台灣半導體</strong> — 受美股科技拖累，台積電ADR走低</li>
+      </ul>
+    </div>
+    <div class="minicard">
+      <div class="ttl c2">📋 明日預告</div>
+      <ul>
+        <li><strong>JOLTS職位空缺</strong>（明日）— 反映勞動市場需求，受Fed高度關注</li>
+        <li><strong>消費者信心指數</strong>（明日）— 觀察消費動能是否放緩</li>
+        <li><strong>美光投資者日</strong> — 分析師目標價500-525美元，關注HBM產能指引</li>
+      </ul>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- 受益標的（已起漲） -->
+  <div class="card" style="margin-bottom:16px;">
+    <div class="card-hd c-yellow">📈 受益標的（已起漲）</div>
+    <div class="card-bd">
+      <div class="ticker">
+        <div class="ticker-row">
+          <span class="nm">美光 (MU)<span class="cd">MU</span></span>
+          <span class="px">$98</span>
+          <span class="ch up">▲ +2.1%</span>
+        </div>
+      </div>
+      <p style="color:var(--muted);font-size:12px;margin-top:10px;line-height:1.6;">【推薦理由：HBM4量產中、2026年產能全數售出，FQ2營收238.6億美元年增196%，AI伺服器需求爆發，記憶體超級循環共識形成，美光投資者日可關注目標價區間500-525美元】</p>
+    </div>
+  </div>
+
+  <!-- 潛力標的 -->
+  <div class="card" style="margin-bottom:16px;">
+    <div class="card-hd c-cyan">🚀 潛力標的（尚未起漲）</div>
+    <div class="card-bd">
+      <div class="ticker">
+        <div class="ticker-row">
+          <span class="nm">華邦電 (2341)<span class="cd">Taiwan</span></span>
+          <span class="px">NT$48</span>
+          <span class="ch dn" style="color:var(--muted);">整理中</span>
+        </div>
+      </div>
+      <p style="color:var(--muted);font-size:12px;margin-top:10px;line-height:1.6;">【基本面：利基型DRAM廠，2026年記憶體景氣回升受惠｜技術面：股價打底中，均線收斂｜籌碼面：外资連續小額買超｜題材連結：美光強彈帶動台系記憶體落後補漲，華邦電將受益於DRAM報價上漲】</p>
+    </div>
+  </div>
+
+  <!-- 受害標的 -->
+  <div class="card" style="margin-bottom:16px;">
+    <div class="card-hd c-pink">📉 受害標的警示</div>
+    <div class="card-bd">
+      <div class="ticker">
+        <div class="ticker-row">
+          <span class="nm">特斯拉 (TSLA)<span class="cd">TSLA</span></span>
+          <span class="px">$355</span>
+          <span class="ch dn">▼ 1.81%</span>
+        </div>
+      </div>
+      <p style="color:var(--muted);font-size:12px;margin-top:10px;line-height:1.6;">【受害理由：Q1交付數據未公告，市場信心不足；伊朗戰事推升油價，降低EV性價比吸引力；Robotaxi、AI轉型故事缺乏實質營收支撐，估值承壓】</p>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- 風險提示 -->
+  <div class="risk-section">
+    <h3>⚠️ 短線風險監控</h3>
+    <div class="risk-grid">
+      <div class="risk-item">
+        <div class="num">荷莫茲海峽風險</div>
+        <p>伊朗封鎖威脅未除，油價若突破105美元將加劇通膨，<strong>建議減碼非必需消費股</strong></p>
+      </div>
+      <div class="risk-item">
+        <div class="num">科技股修正加深</div>
+        <p>Nasdaq進入技術性修正（-10%），AI估值過高引發清算，<strong>停利賣壓可能延續1-2週</strong></p>
+      </div>
+      <div class="risk-item">
+        <div class="num">Fed升息機率22%</div>
+        <p>市場已定價2026年底前22%機率升息一碼，能源價格若持續高位，通膨預期將升溫，<strong>壓抑本益比擴張</strong></p>
+      </div>
+      <div class="risk-item">
+        <div class="num">台股季線失守</div>
+        <p>加權指數今日跌破季線32,190點，若短期無法收復，中期整理格局確立，<strong>留意半導體ETF (00891) 短線風險</strong></p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<footer class="footer">
+  <div class="footer-logo">🕷️ 財經蛛</div>
+  <p>晚報 2026.03.31 | 純研究參考，不構成投資建議</p>
+</footer>
+
+</body>
+</html>
