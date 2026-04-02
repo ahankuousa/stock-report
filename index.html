@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>財經蛛 · 每日簡報歸檔</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --cinnabar: #C41E3A;
+            --deep-red: #8B0000;
+            --gold: #D4AF37;
+            --cream: #FDF5E6;
+            --ink: #1a1a1a;
+            --paper: #F9F3E8;
+            --border: rgba(0,0,0,0.08);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+            background: var(--paper);
+            color: var(--ink);
+            min-height: 100vh;
+            background-image:
+                radial-gradient(ellipse at 0% 0%, rgba(196,30,58,0.05) 0%, transparent 50%),
+                radial-gradient(ellipse at 100% 100%, rgba(212,175,55,0.05) 0%, transparent 50%);
+        }
+
+        /* ── Header ── */
+        .page-header {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d0000 50%, #8B0000 100%);
+            color: #fff;
+            padding: 50px 60px 40px;
+            position: relative;
+            overflow: hidden;
+        }
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M40 0 L80 40 L40 80 L0 40Z' fill='none' stroke='%23D4AF37' stroke-width='0.3' opacity='0.15'/%3E%3C/svg%3E");
+            opacity: 0.4;
+        }
+        .header-inner { position: relative; z-index: 1; max-width: 1100px; margin: 0 auto; }
+        .report-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--cinnabar);
+            color: #fff;
+            padding: 6px 18px;
+            border-radius: 2px;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+        .main-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(36px, 5vw, 60px);
+            font-weight: 900;
+            line-height: 1.1;
+            letter-spacing: -1px;
+            margin-bottom: 8px;
+            color: #fff;
+        }
+        .main-title span { color: var(--gold); }
+        .subtitle {
+            font-size: 14px;
+            color: rgba(255,255,255,0.5);
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            font-weight: 300;
+        }
+        .meta-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 28px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(212,175,55,0.3);
+        }
+        .meta-stats {
+            display: flex;
+            gap: 32px;
+        }
+        .stat { text-align: center; }
+        .stat-num { font-size: 28px; font-weight: 900; color: var(--gold); font-family: 'Playfair Display', serif; }
+        .stat-lbl { font-size: 10px; color: rgba(255,255,255,0.4); letter-spacing: 2px; text-transform: uppercase; margin-top: 2px; }
+
+        /* ── Container ── */
+        .container { max-width: 1100px; margin: 0 auto; padding: 40px 60px 80px; }
+        .divider { height: 3px; background: linear-gradient(90deg, var(--cinnabar), var(--gold), transparent); margin-bottom: 44px; }
+
+        /* ── Section ── */
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+        .section-num {
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            font-weight: 900;
+            color: var(--cinnabar);
+            line-height: 1;
+            opacity: 0.25;
+        }
+        .section-title {
+            font-size: 18px;
+            font-weight: 900;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border-left: 4px solid var(--cinnabar);
+            padding-left: 14px;
+        }
+        .section-title small {
+            display: block;
+            font-size: 11px;
+            font-weight: 400;
+            color: #888;
+            letter-spacing: 1px;
+            margin-top: 2px;
+        }
+
+        /* ── Report List ── */
+        .report-list { display: flex; flex-direction: column; gap: 0; margin-bottom: 60px; }
+        .report-item {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 20px 24px;
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            margin-bottom: 10px;
+            text-decoration: none;
+            color: var(--ink);
+            transition: all 0.25s ease;
+            position: relative;
+        }
+        .report-item:hover {
+            transform: translateX(6px);
+            box-shadow: 0 4px 20px rgba(196,30,58,0.12);
+            border-color: var(--cinnabar);
+        }
+        .report-item:hover::before {
+            content: '→';
+            position: absolute;
+            right: 20px;
+            font-size: 18px;
+            color: var(--cinnabar);
+            font-weight: 700;
+        }
+        .report-type-badge {
+            flex-shrink: 0;
+            padding: 6px 14px;
+            border-radius: 2px;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        .badge-morning {
+            background: linear-gradient(135deg, #FEF3C7, #FDE68A);
+            color: #78350F;
+        }
+        .badge-evening {
+            background: linear-gradient(135deg, #1a1a1a, #2d0000);
+            color: var(--gold);
+        }
+        .report-info { flex: 1; }
+        .report-date { font-size: 15px; font-weight: 700; margin-bottom: 3px; }
+        .report-weekday { font-size: 12px; color: #888; }
+        .report-meta { font-size: 12px; color: #aaa; white-space: nowrap; }
+
+        /* ── Empty State ── */
+        .empty-state {
+            text-align: center;
+            padding: 60px 20px;
+            color: #aaa;
+        }
+        .empty-state .icon { font-size: 48px; margin-bottom: 16px; }
+        .empty-state p { font-size: 14px; }
+
+        /* ── Footer ── */
+        .page-footer {
+            background: #1a1a1a;
+            color: rgba(255,255,255,0.35);
+            padding: 28px 60px;
+            text-align: center;
+            font-size: 11px;
+            letter-spacing: 1px;
+        }
+        .page-footer strong { color: var(--gold); }
+
+        /* ── Responsive ── */
+        @media (max-width: 768px) {
+            .page-header { padding: 30px 20px; }
+            .container { padding: 24px 16px 60px; }
+            .meta-row { flex-direction: column; gap: 16px; align-items: flex-start; }
+            .main-title { font-size: clamp(28px, 8vw, 48px); }
+            .report-item { flex-wrap: wrap; gap: 12px; }
+            .report-meta { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+<header class="page-header">
+    <div class="header-inner">
+        <div class="report-badge">📰 財經蛛</div>
+        <h1 class="main-title">每日<span>財經</span>簡報</h1>
+        <p class="subtitle">Taiwan Market Intelligence Archive</p>
+        <div class="meta-row">
+            <div class="meta-stats">
+                <div class="stat">
+                    <div class="stat-num" id="total-count">--</div>
+                    <div class="stat-lbl">總報告數</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-num" id="morning-count">--</div>
+                    <div class="stat-lbl">晨報</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-num" id="evening-count">--</div>
+                    <div class="stat-lbl">晚報</div>
+                </div>
+            </div>
+            <div style="font-size:12px;color:rgba(255,255,255,0.35);letter-spacing:1px;">
+                自動歸檔 · 每日更新
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="container">
+    <div class="divider"></div>
+
+    <!-- 晨報列表 -->
+    <div class="section-header">
+        <div class="section-num">01</div>
+        <div class="section-title">
+            晨間快報
+            <small>Morning Briefings</small>
+        </div>
+    </div>
+    <div id="morning-reports" class="report-list">
+        <div class="empty-state">
+            <div class="icon">🌅</div>
+            <p>晨報載入中...</p>
+        </div>
+    </div>
+
+    <!-- 晨報列表 -->
+    <div class="section-header">
+        <div class="section-num">02</div>
+        <div class="section-title">
+            晚間快報
+            <small>Evening Watch</small>
+        </div>
+    </div>
+    <div id="evening-reports" class="report-list">
+        <div class="empty-state">
+            <div class="icon">🌙</div>
+            <p>晚報載入中...</p>
+        </div>
+    </div>
+</div>
+
+<footer class="page-footer">
+    <strong>📰 財經蛛簡報歸檔</strong> · 僅供參考，不構成投資建議<br>
+    自動發布系統 · Powered by GitHub Pages
+</footer>
+
+<script>
+(function() {
+    // 掃描 reports/ 目錄下的 HTML 檔案
+    const reports = [];
+    const seen = new Set();
+
+    // 由於純靜態環境，我們用 fetch 列舉 (需 GitHub raw CDN 或假資料)
+    // 生產環境：GitHub Actions 會用 report-list.json 注入
+    // 這裡做 client-side fallback：從 URL 推斷
+    const reportMeta = [
+        // morning-YYYY-MM-DD.html
+        { type: 'morning', date: '2026-04-02', label: '2026.04.02', weekday: '星期四' },
+        { type: 'morning', date: '2026-04-01', label: '2026.04.01', weekday: '星期三' },
+        { type: 'morning', date: '2026-03-31', label: '2026.03.31', weekday: '星期一' },
+        // evening-YYYY-MM-DD.html
+        { type: 'evening', date: '2026-04-01', label: '2026.04.01', weekday: '星期三' },
+        { type: 'evening', date: '2026-03-31', label: '2026.03.31', weekday: '星期一' },
+    ];
+
+    const morningEl = document.getElementById('morning-reports');
+    const eveningEl = document.getElementById('evening-reports');
+    const totalEl = document.getElementById('total-count');
+    const morningCountEl = document.getElementById('morning-count');
+    const eveningCountEl = document.getElementById('evening-count');
+
+    let morningCount = 0, eveningCount = 0;
+
+    reportMeta.forEach(function(r) {
+        const filename = r.type + '-' + r.date + '.html';
+        const el = r.type === 'morning' ? morningEl : eveningEl;
+        const item = document.createElement('a');
+        item.className = 'report-item';
+        item.href = 'reports/' + filename;
+        item.target = '_blank';
+        item.innerHTML = 
+            '<span class="report-type-badge badge-' + r.type + '">' +
+            (r.type === 'morning' ? '🌅 晨報' : '🌙 晚報') +
+            '</span>' +
+            '<div class="report-info">' +
+                '<div class="report-date">' + r.label + '</div>' +
+                '<div class="report-weekday">' + r.weekday + '</div>' +
+            '</div>' +
+            '<div class="report-meta">Finance Report</div>';
+        el.appendChild(item);
+        if (r.type === 'morning') morningCount++;
+        else eveningCount++;
+    });
+
+    totalEl.textContent = morningCount + eveningCount;
+    morningCountEl.textContent = morningCount;
+    eveningCountEl.textContent = eveningCount;
+
+    // 清除 empty state
+    if (morningCount > 0) {
+        morningEl.querySelector('.empty-state') && morningEl.querySelector('.empty-state').remove();
+    }
+    if (eveningCount > 0) {
+        eveningEl.querySelector('.empty-state') && eveningEl.querySelector('.empty-state').remove();
+    }
+})();
+</script>
+
+</body>
+</html>
