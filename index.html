@@ -218,15 +218,15 @@
         <div class="meta-row">
             <div class="meta-stats">
                 <div class="stat">
-                    <div class="stat-num" id="total-count">--</div>
+                    <div class="stat-num" id="total-count">5</div>
                     <div class="stat-lbl">總報告數</div>
                 </div>
                 <div class="stat">
-                    <div class="stat-num" id="morning-count">--</div>
+                    <div class="stat-num" id="morning-count">3</div>
                     <div class="stat-lbl">晨報</div>
                 </div>
                 <div class="stat">
-                    <div class="stat-num" id="evening-count">--</div>
+                    <div class="stat-num" id="evening-count">2</div>
                     <div class="stat-lbl">晚報</div>
                 </div>
             </div>
@@ -285,58 +285,10 @@
     // 由於純靜態環境，我們用 fetch 列舉 (需 GitHub raw CDN 或假資料)
     // 生產環境：GitHub Actions 會用 report-list.json 注入
     // 這裡做 client-side fallback：從 URL 推斷
-    const reportMeta = [
-        // morning-YYYY-MM-DD.html
-        { type: 'morning', date: '2026-04-02', label: '2026.04.02', weekday: '星期四' },
-        { type: 'morning', date: '2026-04-01', label: '2026.04.01', weekday: '星期三' },
-        { type: 'morning', date: '2026-03-31', label: '2026.03.31', weekday: '星期一' },
-        // evening-YYYY-MM-DD.html
-        { type: 'evening', date: '2026-04-01', label: '2026.04.01', weekday: '星期三' },
-        { type: 'evening', date: '2026-03-31', label: '2026.03.31', weekday: '星期一' },
-    ];
-
-    const morningEl = document.getElementById('morning-reports');
-    const eveningEl = document.getElementById('evening-reports');
-    const totalEl = document.getElementById('total-count');
-    const morningCountEl = document.getElementById('morning-count');
-    const eveningCountEl = document.getElementById('evening-count');
-
-    let morningCount = 0, eveningCount = 0;
-
-    reportMeta.forEach(function(r) {
-        const filename = r.type + '-' + r.date + '.html';
-        const el = r.type === 'morning' ? morningEl : eveningEl;
-        const item = document.createElement('a');
-        item.className = 'report-item';
-        item.href = 'reports/' + filename;
-        item.target = '_blank';
-        item.innerHTML = 
-            '<span class="report-type-badge badge-' + r.type + '">' +
-            (r.type === 'morning' ? '🌅 晨報' : '🌙 晚報') +
-            '</span>' +
-            '<div class="report-info">' +
-                '<div class="report-date">' + r.label + '</div>' +
-                '<div class="report-weekday">' + r.weekday + '</div>' +
-            '</div>' +
-            '<div class="report-meta">Finance Report</div>';
-        el.appendChild(item);
-        if (r.type === 'morning') morningCount++;
-        else eveningCount++;
-    });
-
-    totalEl.textContent = morningCount + eveningCount;
-    morningCountEl.textContent = morningCount;
-    eveningCountEl.textContent = eveningCount;
-
-    // 清除 empty state
-    if (morningCount > 0) {
-        morningEl.querySelector('.empty-state') && morningEl.querySelector('.empty-state').remove();
-    }
-    if (eveningCount > 0) {
-        eveningEl.querySelector('.empty-state') && eveningEl.querySelector('.empty-state').remove();
-    }
-})();
-</script>
+    const reportMeta = [{"type":"morning","date":"2026-04-02","label":"2026.04.02","weekday":"星期四"},
+        {"type":"morning","date":"2026-04-01","label":"2026.04.01","weekday":"星期三"},
+        {"type":"morning","date":"2026-03-31","label":"2026.03.31","weekday":"星期二"}];
+    </script>
 
 </body>
 </html>
