@@ -3,11 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>晨間財經快報 · 2026.05.12｜財經蛛</title>
+    <title>晚間財經快報 · 2026.05.12｜財經蛛</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Playfair+Display:wght@700;900&display=swap');
         :root {
             --cinnabar: #C41E3A;
             --deep-red: #8B0000;
@@ -337,7 +336,7 @@
 
         @media (max-width: 768px) {
             .page-header { padding: 30px 20px; }
-            .container { padding: 24px 16px 40px; overflow-x: hidden; }
+            .container { padding: 24px 16px 40px; }
             .grid-3 { grid-template-columns: 1fr; }
             .grid-2 { grid-template-columns: 1fr; }
             .winner-loser-grid { grid-template-columns: 1fr; }
@@ -349,7 +348,11 @@
             .main-title { font-size: clamp(32px, 8vw, 56px); }
             .insight-box { padding: 24px; }
             .insight-box::before { display: none; }
-            .data-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+            .container { overflow-x: hidden; }
+            .data-table-wrap {
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
             .data-table-wrap::after {
                 content: '← 左右滑動 →';
                 display: block;
@@ -366,13 +369,13 @@
 
 <header class="page-header">
     <div class="header-inner">
-        <div class="report-badge">📰 Morning Briefing</div>
-        <h1 class="main-title">晨間<span>財經</span>快報</h1>
+        <div class="report-badge">📰 Evening Watch</div>
+        <h1 class="main-title">晚間<span>財經</span>快報</h1>
         <p class="subtitle">Taiwan Market Intelligence Report</p>
         <div class="meta-row">
             <div class="date-info">
                 <strong>2026.05.12</strong>
-                星期二 · 08:30 出刊
+                星期二 · 21:00 出刊
             </div>
             <div class="index-boxes">
                 <div class="idx-box">
@@ -386,14 +389,14 @@
                     <div class="idx-chg dn">▼ -55</div>
                 </div>
                 <div class="idx-box">
-                    <div class="idx-label">WTI 原油</div>
-                    <div class="idx-val">$98.36</div>
-                    <div class="idx-chg up">▲ +3.08%</div>
+                    <div class="idx-label">NVDA</div>
+                    <div class="idx-val">$219.44</div>
+                    <div class="idx-chg up">▲ +1.97%</div>
                 </div>
                 <div class="idx-box">
-                    <div class="idx-label">VIX</div>
-                    <div class="idx-val">18.38</div>
-                    <div class="idx-chg up">▲ +6.9%</div>
+                    <div class="idx-label">MU</div>
+                    <div class="idx-val">$795.33</div>
+                    <div class="idx-chg up">▲ +6.50%</div>
                 </div>
             </div>
         </div>
@@ -413,41 +416,41 @@
 
     <div class="grid-3">
         <div class="card">
-            <span class="card-tag tag-energy">⚡ 能源</span>
-            <h3>美股能源股領漲，XOM 大漲近 4%</h3>
-            <p>美股 5/11 能源族群表現突出， ExxonMobil（XOM）大漲 3.53%，主因中東地緣風險升溫帶動油價朝 $100 大關邁進，激勵相關板塊。</p>
+            <span class="card-tag tag-market">📊 總經金融</span>
+            <h3>私募信貸市場震盪：KKR 基金信貸額度遭縮減</h3>
+            <p>由摩根大通領導的銀行團決定收緊對 KKR 私募信用基金的信貸額度，反映私人信貸市場流動性趨緊。事件源於該基金近期虧損，銀行端對風險敞口更加謹慎。</p>
             <div class="card-metric">
                 <div>
-                    <div class="metric-val">$149.68</div>
-                    <div class="metric-lbl">XOM 收盤價</div>
+                    <div class="metric-val">KKR</div>
+                    <div class="metric-lbl">標的</div>
                 </div>
-                <div class="metric-chg up">▲ +3.53%</div>
+                <div class="metric-chg dn">信貸額度緊縮</div>
             </div>
         </div>
 
         <div class="card">
-            <span class="card-tag tag-tech">🤖 科技</span>
-            <h3>美光（MU）大漲 6.5%，記憶體供需好轉</h3>
-            <p>美光單日暴漲 6.50%，股價創近期新高。HBM 需求旺盛、AI 資料中心建設加速，記憶體景氣回溫訊號明確，機構陸續上調評等。</p>
+            <span class="card-tag tag-energy">🚗 汽車</span>
+            <h3>GM 大砍 IT 部門數百名人員</h3>
+            <p>通用汽車宣布裁減數百名 IT 資訊部門白領員工，為評估營運需求進行的成本縮減行動。此為汽車業持續朝向軟體定義車輛（SDV）轉型的結構性訊號。</p>
             <div class="card-metric">
                 <div>
-                    <div class="metric-val">$795.33</div>
-                    <div class="metric-lbl">MU 收盤價</div>
+                    <div class="metric-val">GM</div>
+                    <div class="metric-lbl">Symbol</div>
                 </div>
-                <div class="metric-chg up">▲ +6.50%</div>
+                <div class="metric-chg dn">裁員進行中</div>
             </div>
         </div>
 
         <div class="card">
-            <span class="card-tag tag-market">📊 總經</span>
-            <h3>VIX 升至 18.38，市場震盪加劇</h3>
-            <p>恐慌指數 VIX 單日上升近 7%，顯示市場避險情緒升溫。台股當日加權指數小漲 0.45%，但台積電反而小跌 2.40%，半導體面臨壓力。</p>
+            <span class="card-tag tag-market">🏠 房市</span>
+            <h3>4 月新屋銷售不如預期</h3>
+            <p>美國 4 月新屋銷售數據低於市場預期，高房貸利率持續壓抑購屋需求。抵押貸款利率維持高檔，令首購族負擔加重，房市復甦動能受阻。</p>
             <div class="card-metric">
                 <div>
-                    <div class="metric-val">18.38</div>
-                    <div class="metric-lbl">VIX 收盤</div>
+                    <div class="metric-val">4月</div>
+                    <div class="metric-lbl">數據月份</div>
                 </div>
-                <div class="metric-chg up">▲ +6.9%</div>
+                <div class="metric-chg dn">▼ 需求低於預期</div>
             </div>
         </div>
     </div>
@@ -467,102 +470,66 @@
                 <th>代號</th>
                 <th>名稱</th>
                 <th>類型</th>
-                <th>當前價格</th>
+                <th>收盤價</th>
                 <th>漲跌幅</th>
-                <th>趨勢</th>
                 <th>備註</th>
+                <th>追蹤摘要</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td><strong>AAPL</strong></td>
-                <td>Apple</td>
-                <td>美股</td>
-                <td>$292.68</td>
-                <td class="dn">▼ -0.22%</td>
-                <td><span class="tag-pill pill-neutral">震盪</span></td>
-                <td>AI 功能落後同業，股價小幅回調</td>
+                <td><strong>2330</strong></td>
+                <td>台積電</td>
+                <td>台股上市</td>
+                <td>2,235 元</td>
+                <td><span style="color:#E74C3C">▼ -2.40%</span></td>
+                <td><span class="tag-pill pill-risk">警示</span></td>
+                <td>AI 需求支撐，ADR 跌抑制明日表現</td>
             </tr>
             <tr>
-                <td><strong>NVDA</strong></td>
-                <td>NVIDIA</td>
-                <td>美股</td>
-                <td>$219.44</td>
-                <td class="up">▲ +1.97%</td>
+                <td><strong>3711</strong></td>
+                <td>日月光投控</td>
+                <td>台股上市</td>
+                <td>537 元</td>
+                <td><span style="color:#27AE60">▲ +4.07%</span></td>
                 <td><span class="tag-pill pill-buy">強勢</span></td>
-                <td>AI 晶片需求熱絡，股價持續高檔</td>
+                <td>封測需求回溫，股價突破型態</td>
+            </tr>
+            <tr>
+                <td><strong>4971</strong></td>
+                <td>IET-KY</td>
+                <td>上櫃</td>
+                <td>795 元</td>
+                <td><span style="color:#27AE60">▲ +9.96%</span></td>
+                <td><span class="tag-pill pill-buy">大漲</span></td>
+                <td>今日最大漲幅個股，成交量同步放大</td>
+            </tr>
+            <tr>
+                <td><strong>MU</strong></td>
+                <td>美光</td>
+                <td>美股</td>
+                <td>$795.33</td>
+                <td><span style="color:#27AE60">▲ +6.50%</span></td>
+                <td><span class="tag-pill pill-buy">強勢</span></td>
+                <td>HBM 需求帶動，AI 記憶體前景佳</td>
+            </tr>
+            <tr>
+                <td><strong>XOM</strong></td>
+                <td>艾克森美孚</td>
+                <td>美股</td>
+                <td>$149.68</td>
+                <td><span style="color:#27AE60">▲ +3.53%</span></td>
+                <td><span class="tag-pill pill-buy">買入</span></td>
+                <td>能源價格回升，推升能源股表現</td>
             </tr>
             <tr>
                 <td><strong>TSM</strong></td>
                 <td>台積電 ADR</td>
                 <td>美股</td>
                 <td>$404.54</td>
-                <td class="dn">▼ -1.73%</td>
-                <td><span class="tag-pill pill-watch">觀望</span></td>
-                <td>ADR 相對台股折價，國際資金觀望</td>
-            </tr>
-            <tr>
-                <td><strong>2330</strong></td>
-                <td>台積電</td>
-                <td>台股上市</td>
-                <td>$2,235</td>
-                <td class="dn">▼ -2.40%</td>
-                <td><span class="tag-pill pill-watch">回調</span></td>
-                <td>當日 TWSE 實際收盤價</td>
-            </tr>
-            <tr>
-                <td><strong>2603</strong></td>
-                <td>長榮</td>
-                <td>台股上市</td>
-                <td>$214.00</td>
-                <td class="up">▲ +1.18%</td>
-                <td><span class="tag-pill pill-buy">反彈</span></td>
-                <td>當日 TWSE 實際收盤價</td>
-            </tr>
-            <tr>
-                <td><strong>1301</strong></td>
-                <td>南亞</td>
-                <td>台股上市</td>
-                <td>$49.25</td>
-                <td class="up">▲ +1.44%</td>
-                <td><span class="tag-pill pill-neutral">整理</span></td>
-                <td>當日 TWSE 實際收盤價</td>
-            </tr>
-            <tr>
-                <td><strong>8299</strong></td>
-                <td>群聯</td>
-                <td>台股上櫃</td>
-                <td>$2,670</td>
-                <td class="up">▲ +9.88%</td>
-                <td><span class="tag-pill pill-buy">強漲</span></td>
-                <td>當日 TPEx 實際收盤價</td>
-            </tr>
-            <tr>
-                <td><strong>3491</strong></td>
-                <td>昇達科</td>
-                <td>台股上櫃</td>
-                <td>$1,820</td>
-                <td class="up">▲ +9.97%</td>
-                <td><span class="tag-pill pill-buy">強漲</span></td>
-                <td>當日 TPEx 實際收盤價</td>
-            </tr>
-            <tr>
-                <td><strong>3105</strong></td>
-                <td>穩懋</td>
-                <td>台股上櫃</td>
-                <td>$526.00</td>
-                <td class="up">▲ +6.80%</td>
-                <td><span class="tag-pill pill-buy">反彈</span></td>
-                <td>當日 TPEx 實際收盤價</td>
-            </tr>
-            <tr>
-                <td><strong>4971</strong></td>
-                <td>IET-KY</td>
-                <td>台股上櫃</td>
-                <td>$723.00</td>
-                <td class="up">▲ +5.09%</td>
-                <td><span class="tag-pill pill-buy">反彈</span></td>
-                <td>當日 TPEx 實際收盤價</td>
+                <td><span style="color:#E74C3C">▼ -1.73%</span></td>
+                <td><span class="tag-pill pill-risk">警示</span></td>
+                <td>科技股氣氛偏空，ADR 走弱影響加權</td>
             </tr>
         </tbody>
     </table>
@@ -571,21 +538,21 @@
     <div class="section-header">
         <div class="section-num">03</div>
         <div class="section-title">
-            受害標的警示
+            受影響標的警示
             <small>Risk Alert</small>
         </div>
     </div>
 
     <div class="grid-2">
         <div class="highlight-card">
-            <span class="card-tag tag-energy">⚠️ 受害標的</span>
-            <h3>台積電（2330）— 獲利了結賣壓</h3>
-            <p>台積電 ADR 跟現股雙雙走弱，投資人對 AI 資本支出能否持續高度期待，獲利了結賣壓導致股價從前波高點拉回，短期需觀望 ADR 走向。</p>
+            <span class="card-tag tag-market">⚠️ 警示</span>
+            <h3>台積電（2330）：ADR 走弱，今日跌 2.40%</h3>
+            <p>台積電今日現股大跌 2.40%，收 2,235 元，成交量逾 4.6 萬張。美國科技股氛圍偏空，疊加台積電 ADR（TSM）在美跌 1.73%，明日加權可能持續承壓。投資人需留意 AI 供應鏈短期情緒變化。</p>
         </div>
         <div class="highlight-card">
-            <span class="card-tag tag-tech">⚠️ 受害標的</span>
-            <h3>Apple（AAPL）— AI 敘事疲弱</h3>
-            <p>相較 NVIDIA、AMD 等 AI 晶片族群全線大漲，Apple 在 AI 競爭中落後同業的疑慮仍在，資金明顯流向半導體而非消費電子，股價小幅回調。</p>
+            <span class="card-tag tag-energy">⚠️ 警示</span>
+            <h3>穩懋（3105）、昇達科（3491）：今日重挫</h3>
+            <p>穩懋（3105）下跌 2.66% 收 512 元，昇達科（3491）更大跌 3.02% 收 1,765 元。射頻及通訊元件個股今日承壓，顯示非 AI 半導體族群信心不足，資金持續集中在少數強勢股。</p>
         </div>
     </div>
 
@@ -599,9 +566,9 @@
 
     <div class="insight-box">
         <h3>🔍 財經蛛深度解析</h3>
-        <p>2026 年 5 月 11 日亞洲市場呈現地庫蠱式分化格局：台股加權指數在台積電下跌的情況下仍逆勢小漲，主因航運、塑化及櫃買市場多檔強勢股挺身而出。記憶體大廠美光 MU 暴漲逾 6%，透露 HBM 與 AI 資料中心需求結構性好轉的訊號，值得持續追蹤。</p>
+        <p>【今日市場主題】美股記憶體與能源股強勢，AI 供應鏈個股走勢持續分化。MU 大漲 6.50% 反映 HBM/AI 記憶體需求長線看好，而台積電現股及 ADR 雙雙回落，顯示市場對半導體景氣循環高點的憂慮升溫。</p>
         <br>
-        <p style="color:rgba(255,255,255,0.8)">【操作建議】台積電短線承壓，但 ADR 折價已達一定幅度，非基本面反轉訊號。記憶體（MU）、功率半導體（穩懋 3105）短線可持續關注。櫃買市場昇達科、群聯雙雙攻上漲停，顯示資金往中小型成長股輪動迹象明顯。</p>
+        <p style="color:rgba(255,255,255,0.8)">【台股觀察】加權指數小漲 0.45%，但護國神山台積電逆勢大跌 2.40%，顯示今日漲點主要由非電族群（台塑四寶、航運、、金融）所貢獻。資金持續輪動至低基期價值股，AI 供應鏈短期可能進入整理格局。</p>
     </div>
 
     <div class="section-header">
@@ -614,20 +581,20 @@
 
     <div class="grid-3">
         <div class="card" style="border-left: 4px solid #E74C3C;">
-            <h3>🚨 地緣政治油價風險</h3>
-            <p>WTI 逼近 $100，若中東局势持续緊張，能源價格壓力加劇，通膨回落速度放緩，聯準會降息預期將再度推遲。</p>
+            <h3>🚨 私募信貸風險蔓延</h3>
+            <p>KKR 私募信用基金信貸額度遭縮減，為私人信貸市場流動性敲響警鐘。若此趨勢擴散，可能觸發更廣泛的金融市場風險規避情緒。</p>
         </div>
         <div class="card" style="border-left: 4px solid #E74C3C;">
-            <h3>🚨 VIX 短期彈升</h3>
-            <p>VIX 單日彈升近 7%，市場情緒偏恐慌。若美股後續無實質利多支撐，可能引發連動性拋壓，亞股難以獨善其身。</p>
+            <h3>🚨 房市需求持續低迷</h3>
+            <p>美國 4 月新屋銷售低於預期，高利率環境抑制房地產需求。若此趨勢延續，將影響家具、建材、家電等相關循環性消費產業。</p>
         </div>
         <div class="card" style="border-left: 4px solid #E74C3C;">
-            <h3>🚨 台積電高檔回調</h3>
-            <p>台積電現股跌破 $2,250，若 ADR 持續弱勢，短線可能考驗 $2,200 整數關卡，建議投資人先行停利。</p>
+            <h3>🚨 台積電 ADR 技術面轉弱</h3>
+            <p>台積電 ADR（TSM）今日跌 1.73%，若美股科技股持續回調，台股半導體供應鏈明日將面臨更大調整壓力，留意系統性風險。</p>
         </div>
     </div>
 
-    <!-- 潛力標的（尚未起漲） -->
+    <!-- 潛力標的（尚未起漲）-->
     <div class="section-header">
         <div class="section-num">🚀</div>
         <div class="section-title">
@@ -638,17 +605,33 @@
 
     <div class="winner-loser-grid">
         <div class="wl-card preview">
-            <h4>🚀 尚未起漲潛力股</h4>
-            <p style="font-size:13px; color:#555; line-height:1.7;">資料不足，暫不列出。<br><br>原因：本區塊需要完整的基本面、技術面、籌碼面三方交叉查證，方可提出具體標的，目前尚無充足來源資訊支持此區塊之內容，故從缺。</p>
+            <h4>📌 觀察名單</h4>
+            <ul>
+                <li><strong>3491 昇達科</strong><br>今日跌 3.02%，但 5G 毫米波基建長線需求明確，股價若止跌可關注佈局時機。</li>
+                <li><strong>2603 長榮</strong><br>今日小漲 1.18%，航運運價指數仍在高檔整理，貨櫃景氣循環尚未反轉。</li>
+            </ul>
+        </div>
+        <div class="wl-card winner">
+            <h4>💹 今日強勢股</h4>
+            <ul>
+                <li><strong>4971 IET-KY</strong>（上櫃）<br>今日大漲 +9.96%，成交量同步放大，基本面具轉機題材，但追高需設停利。</li>
+                <li><strong>3711 日月光投控</strong><br>今日 +4.07%，封測景氣回溫，半導體後段製造持續受惠 AI 晶片放量。</li>
+            </ul>
+        </div>
+        <div class="wl-card loser">
+            <h4>⚠️ 今日弱勢股</h4>
+            <ul>
+                <li><strong>3105 穩懋</strong>（上櫃）<br>今日大跌 -2.66%，砷化鎵族群信心不足，射頻元件需求復甦時程延後。</li>
+                <li><strong>2330 台積電</strong>（上市）<br>今日重挫 -2.40%，護國神山 ADR 在美亦跌，市場情緒偏空，短線整理時間可能拉長。</li>
+            </ul>
         </div>
     </div>
 
 </div>
 
 <footer class="page-footer">
-    <strong>📰 晨間財經快報 2026.05.12</strong> · 僅供參考，不構成投資建議<br>
-    資料來源：TWSE OpenAPI · TPEx OpenAPI · Yahoo Finance (yfinance) · CNBC<br>
-    所有股票代號與公司名稱均已對應 TWSE/TPEx 官方資料，本報告不預測具體價格走向
+    <strong>📰 晚間財經快報 2026.05.12</strong> · 僅供參考，不構成投資建議<br>
+    資料來源：TWSE（台灣證交所）· TPEx（證券櫃檯買賣中心）· yfinance · CNBC · Reuters
 </footer>
 
 </body>
