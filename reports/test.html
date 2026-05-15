@@ -3,11 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>晚間財經快報 · 2026.05.13｜財經蛛</title>
+    <title>晨間財經快報 · 2026.05.15｜財經蛛</title>
+    <!-- Google Fonts (for HTML viewing) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+    <!-- System fallback fonts (for PDF export) -->
     <style>
+        /* PDF export font fallbacks — applied before external fonts load */
         @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Playfair+Display:wght@700;900&display=swap');
+    <style>
         :root {
             --cinnabar: #C41E3A;
             --deep-red: #8B0000;
@@ -335,13 +339,6 @@
         }
         .page-footer strong { color: var(--gold); }
 
-        .data-note {
-            font-size: 11px;
-            color: #888;
-            margin-top: 8px;
-            line-height: 1.6;
-        }
-
         @media (max-width: 768px) {
             .page-header { padding: 30px 20px; }
             .container { padding: 24px 16px 40px; }
@@ -356,6 +353,8 @@
             .main-title { font-size: clamp(32px, 8vw, 56px); }
             .insight-box { padding: 24px; }
             .insight-box::before { display: none; }
+
+            /* 手機表格：保持結構，容許水平滾動 */
             .container { overflow-x: hidden; }
             .data-table-wrap {
                 overflow-x: auto;
@@ -377,34 +376,34 @@
 
 <header class="page-header">
     <div class="header-inner">
-        <div class="report-badge">📰 Evening Watch</div>
-        <h1 class="main-title">晚間<span>財經</span>快報</h1>
+        <div class="report-badge">📰 Morning Watch</div>
+        <h1 class="main-title">晨間<span>財經</span>快報</h1>
         <p class="subtitle">Taiwan Market Intelligence Report</p>
         <div class="meta-row">
             <div class="date-info">
-                <strong>2026.05.13</strong>
-                星期三 · 21:00 出刊
+                <strong>2026.05.15</strong>
+                星期五 · 08:30 出刊
             </div>
             <div class="index-boxes">
                 <div class="idx-box">
                     <div class="idx-label">加權指數</div>
-                    <div class="idx-val">41,898</div>
-                    <div class="idx-chg up">▲ +108.26 點</div>
+                    <div class="idx-val">41,751</div>
+                    <div class="idx-chg up">▲ +377 點</div>
                 </div>
                 <div class="idx-box">
-                    <div class="idx-label">台積電</div>
-                    <div class="idx-val">2,255</div>
-                    <div class="idx-chg up">▲ +20</div>
+                    <div class="idx-label">台積電 ADR</div>
+                    <div class="idx-val">$417.7</div>
+                    <div class="idx-chg up">▲ +4.48%</div>
                 </div>
                 <div class="idx-box">
                     <div class="idx-label">WTI 原油</div>
-                    <div class="idx-val">$102.48</div>
-                    <div class="idx-chg up">▲ +$0.30</div>
+                    <div class="idx-val">$101.8</div>
+                    <div class="idx-chg up">▲ +0.79%</div>
                 </div>
                 <div class="idx-box">
                     <div class="idx-label">VIX</div>
-                    <div class="idx-val">18.11</div>
-                    <div class="idx-chg up">▲ +0.44%</div>
+                    <div class="idx-val">17.26</div>
+                    <div class="idx-chg dn">▼ -3.4%</div>
                 </div>
             </div>
         </div>
@@ -417,48 +416,48 @@
     <div class="section-header">
         <div class="section-num">01</div>
         <div class="section-title">
-            今日聚焦事件
-            <small>Key Events of the Day</small>
+            昨日市場回顧
+            <small>Market Recap · May 14, 2026</small>
         </div>
     </div>
 
     <div class="grid-3">
         <div class="card">
-            <span class="card-tag tag-tech">🤖 科技半導體</span>
-            <h3>美光（MU）重挫 3.61%</h3>
-            <p>美光最新季度財報顯示營收低於市場預期，記憶體需求放緩疑慮升溫，拖累股價單日大跌近 4%，為今日科技股最大输家之一。</p>
+            <span class="card-tag tag-tech">🤖 半導體</span>
+            <h3>台積電 ADR 大漲 4.48%</h3>
+            <p>台積電（TSM）昨日 ADR 報 $417.72，單日大漲 $17.92。市場推測與美中晶片競爭加劇、各國補助先進製程有利台積電接單有關。台灣現貨價 $2,270 同步走高 +$50。</p>
             <div class="card-metric">
                 <div>
-                    <div class="metric-val">$766.58</div>
-                    <div class="metric-lbl">收盤價</div>
+                    <div class="metric-val">$417.72</div>
+                    <div class="metric-lbl">TSM ADR</div>
                 </div>
-                <div class="metric-chg dn">▼ -3.61%</div>
+                <div class="metric-chg up">▲ +4.48%</div>
             </div>
         </div>
 
         <div class="card">
-            <span class="card-tag tag-energy">⚡ 能源</span>
-            <h3>台積電 ADR 走弱，現股持穩</h3>
-            <p>台積電 ADR（TSM）今日下跌 1.79% 至 $397.28，惟台灣現股（2330）逆勢上漲 +20 元，收於 2,255 元，反映台灣市場資金持續青睞。</p>
+            <span class="card-tag tag-tech">💻 AI 晶片</span>
+            <h3>NVDA 大漲 4.39%，MU 重挫 3.44%</h3>
+            <p>NVIDIA 宣布新一代 AI 加速器進入量產，市場情緒高漲，股價創高。Micron 受記憶體報價壓力影響，單日大跌逾 3%，在半導體供應鏈中走勢分歧。</p>
             <div class="card-metric">
                 <div>
-                    <div class="metric-val">$397.28</div>
-                    <div class="metric-lbl">TSM ADR</div>
+                    <div class="metric-val">$235.74</div>
+                    <div class="metric-lbl">NVDA 收盤</div>
                 </div>
-                <div class="metric-chg dn">▼ -1.79%</div>
+                <div class="metric-chg up">▲ +4.39%</div>
             </div>
         </div>
 
         <div class="card">
             <span class="card-tag tag-market">📊 總經</span>
-            <h3>VIX 升至 18.11，市場情緒觀望</h3>
-            <p>VIX 波動率指數小幅回升至 18.11（+0.44%），顯示市場對美中貿易局勢及Fed利率路徑的不確定性仍保持謹慎，期指呈現分化格局。</p>
+            <h3>南韓 KOSPI 突破 8,000 創新高</h3>
+            <p>美中貿易談判傳出好消息，南韓股市 KOSPI 突破 8,000 點大關創歷史新紀錄。台股加權指數同步大漲 377 點（+0.91%），收 41,751 點。</p>
             <div class="card-metric">
                 <div>
-                    <div class="metric-val">18.11</div>
-                    <div class="metric-lbl">VIX 指數</div>
+                    <div class="metric-val">41,751</div>
+                    <div class="metric-lbl">加權指數</div>
                 </div>
-                <div class="metric-chg up">▲ +0.44%</div>
+                <div class="metric-chg up">▲ +0.91%</div>
             </div>
         </div>
     </div>
@@ -466,8 +465,8 @@
     <div class="section-header">
         <div class="section-num">02</div>
         <div class="section-title">
-            重點標的追蹤
-            <small>Investment Picks Tracker</small>
+            重要個股報價
+            <small>Key Stocks · 2026.05.14 收盤</small>
         </div>
     </div>
 
@@ -477,67 +476,108 @@
             <tr>
                 <th>代號</th>
                 <th>名稱</th>
-                <th>類型</th>
-                <th>當前價格</th>
-                <th>漲跌幅</th>
-                <th>推薦</th>
-                <th>理由摘要</th>
+                <th>市場</th>
+                <th>收盤價</th>
+                <th>漲跌</th>
+                <th>備註</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td><strong>AAPL</strong></td>
-                <td>Apple</td>
-                <td>美股</td>
-                <td>$294.80</td>
-                <td class="up">▲ +0.72%</td>
-                <td><span class="tag-pill pill-buy">買入</span></td>
-                <td>iPhone 需求持穩，服務收入持續成長；本週財報前市場情绪正面</td>
-            </tr>
-            <tr>
                 <td><strong>2330</strong></td>
                 <td>台積電</td>
-                <td>台股</td>
-                <td>2,255 元</td>
-                <td class="up">▲ +20</td>
-                <td><span class="tag-pill pill-buy">買入</span></td>
-                <td>AI 晶片需求剛性，先進製程產能滿載；台灣市場資金持續流入</td>
+                <td>TWSE 上市</td>
+                <td>$2,270</td>
+                <td><span style="color:#E74C3C">▲ +50</span></td>
+                <td>半導體、先進製程領導者</td>
+            </tr>
+            <tr>
+                <td><strong>3711</strong></td>
+                <td>日月光投控</td>
+                <td>TWSE 上市</td>
+                <td>$548</td>
+                <td><span style="color:#888">— 平盤</span></td>
+                <td>封測龍頭，價格持平</td>
+            </tr>
+            <tr>
+                <td><strong>8299</strong></td>
+                <td>群聯</td>
+                <td>TPEx 上櫃</td>
+                <td>$2,880</td>
+                <td><span style="color:#E74C3C">▲ +260</span></td>
+                <td>NAND 控制晶片，強勢大漲</td>
+            </tr>
+            <tr>
+                <td><strong>3491</strong></td>
+                <td>昇達科</td>
+                <td>TPEx 上櫃</td>
+                <td>$1,625</td>
+                <td><span style="color:#27AE60">▼ -95</span></td>
+                <td>網通射頻，修正壓力</td>
+            </tr>
+            <tr>
+                <td><strong>4971</strong></td>
+                <td>IET-KY</td>
+                <td>TPEx 上櫃</td>
+                <td>$783</td>
+                <td><span style="color:#E74C3C">▲ +29</span></td>
+                <td>功率半導體，穩健走高</td>
+            </tr>
+            <tr>
+                <td><strong>3105</strong></td>
+                <td>穩懋</td>
+                <td>TPEx 上櫃</td>
+                <td>$483.5</td>
+                <td><span style="color:#27AE60">▼ -12</span></td>
+                <td>砷化鎵 PA，承壓回調</td>
+            </tr>
+            <tr>
+                <td><strong>2603</strong></td>
+                <td>長榮</td>
+                <td>TWSE 上市</td>
+                <td>$211.5</td>
+                <td><span style="color:#E74C3C">▲ +1.50</span></td>
+                <td>航運報價支撐，緩步回升</td>
+            </tr>
+            <tr>
+                <td><strong>6505</strong></td>
+                <td>台塑化</td>
+                <td>TWSE 上市</td>
+                <td>$52.4</td>
+                <td><span style="color:#27AE60">▼ -0.50</span></td>
+                <td>石化報價偏弱，小跌</td>
+            </tr>
+            <tr>
+                <td><strong>1301</strong></td>
+                <td>南亞</td>
+                <td>TWSE 上市</td>
+                <td>$46.1</td>
+                <td><span style="color:#27AE60">▼ -0.80</span></td>
+                <td>EG 報價低迷，壓力持續</td>
+            </tr>
+            <tr>
+                <td><strong>MU</strong></td>
+                <td>Micron</td>
+                <td>美股</td>
+                <td>$776.01</td>
+                <td><span style="color:#27AE60">▼ -3.44%</span></td>
+                <td>HBM 競爭加劇，股價重挫</td>
             </tr>
             <tr>
                 <td><strong>NVDA</strong></td>
                 <td>NVIDIA</td>
                 <td>美股</td>
-                <td>$220.78</td>
-                <td class="up">▲ +0.61%</td>
-                <td><span class="tag-pill pill-buy">買入</span></td>
-                <td>AI GPU 需求維持高速增長；Blackwell 架構出貨逐步放量</td>
+                <td>$235.74</td>
+                <td><span style="color:#E74C3C">▲ +4.39%</span></td>
+                <td>AI 加速器量產利多</td>
             </tr>
             <tr>
-                <td><strong>XOM</strong></td>
-                <td>ExxonMobil</td>
+                <td><strong>TSM</strong></td>
+                <td>台積電 ADR</td>
                 <td>美股</td>
-                <td>$150.63</td>
-                <td class="up">▲ +0.63%</td>
-                <td><span class="tag-pill pill-neutral">中性</span></td>
-                <td>油價走揚支撐股價，能源業務現金回饋穩健；估值合理偏低</td>
-            </tr>
-            <tr>
-                <td><strong>2603</strong></td>
-                <td>長榮</td>
-                <td>台股</td>
-                <td>214.00 元</td>
-                <td>— 0.00%</td>
-                <td><span class="tag-pill pill-watch">觀望</span></td>
-                <td>運價指數震盪整理，基本面復甦節奏待觀察</td>
-            </tr>
-            <tr>
-                <td><strong>MU</strong></td>
-                <td>美光</td>
-                <td>美股</td>
-                <td>$766.58</td>
-                <td class="dn">▼ -3.61%</td>
-                <td><span class="tag-pill pill-watch">觀望</span></td>
-                <td>財報低於預期，記憶體景氣動能放缓；短期建議觀望</td>
+                <td>$417.72</td>
+                <td><span style="color:#E74C3C">▲ +4.48%</span></td>
+                <td>ADR 與現貨同步走揚</td>
             </tr>
         </tbody>
     </table>
@@ -546,27 +586,6 @@
     <div class="section-header">
         <div class="section-num">03</div>
         <div class="section-title">
-            受害標的警示
-            <small>Risk Alert</small>
-        </div>
-    </div>
-
-    <div class="grid-2">
-        <div class="highlight-card">
-            <span class="card-tag tag-tech">⚠️ 受害標的</span>
-            <h3>美光（MU）— 記憶體景氣疑慮再起</h3>
-            <p>美光最新季度財報顯示營收年減，DRAM 及 NAND 市場需求放緩信號浮現，股價單日重挫 3.61%，短期記憶體族群可能持續承壓。</p>
-        </div>
-        <div class="highlight-card">
-            <span class="card-tag tag-energy">⚠️ 受害標的</span>
-            <h3>TSM ADR（台積電）— ADR 與現股走勢分化</h3>
-            <p>台積電 ADR 今日下跌 1.79% 至 $397.28，反映國際資金對地緣政治風險的擔憂，但台灣現股現貨市場（2330）仍受本土資金青睞，逆勢收漲 +20 元，兩市場走勢持續分化。</p>
-        </div>
-    </div>
-
-    <div class="section-header">
-        <div class="section-num">04</div>
-        <div class="section-title">
             分析師觀點
             <small>Analyst Insight</small>
         </div>
@@ -574,13 +593,15 @@
 
     <div class="insight-box">
         <h3>🔍 財經蛛深度解析</h3>
-        <p>【美股與台股今日呈現分化格局】美股主要指數小幅拉回（SPY -0.15%、QQQ -0.85%），科技硬體股普遍承壓，MU 重挫逾 3% 最受矚目；惟 NVDA 小漲 0.61%，顯示 AI 主線人氣尚未退潮。台股加權指數則逆勢收漲 108 點（+0.26%）至 41,898，AI 供應鏈及台積電領漲，外資在台灣現貨市場買盤積極，為指數提供支撐。</p>
+        <p>【晶片自主化浪潮，台積電供應鏈最穩贏】<br>
+        美中科技戰促使各國補助半導體在地化，台積電（2330）挟先進製程優勢，成為美、日、歐各方爭相拉攏的對象。NVIDIA 新 AI 晶片量產帶動相關族群，而 Micron 在 HBM 市場遭三星、SK 海力士激烈競爭，股價逆勢重挫 3.44%。</p>
         <br>
-        <p style="color:rgba(255,255,255,0.8)">【後市觀察重點】美中貿易談判進展、Fed 利率決策會議紀錄（5/14 發布），以及台積電法說會對 Q3 展望的看法，將是本週市場方向的重要觀察窗口。VIX 升至 18.11，顯示期權市場對短期波動預期升溫，建議謹慎操作。</p>
+        <p>【台股加權站上 41,751，AI 供應鏈為主旋律】<br>
+        台股昨日大漲 377 點，半導體、AI 先進封測、網通為多頭主軸。群聯（8299）受 NAND 控制晶片需求支撐，股價大漲 $260。相對之下，傳產塑化族群（6505、1301）受制於中國報價競爭，表現落後。VIX 下滑至 17.26，市場風險情緒小幅降溫。</p>
     </div>
 
     <div class="section-header">
-        <div class="section-num">05</div>
+        <div class="section-num">04</div>
         <div class="section-title">
             風險提示
             <small>Risk Disclosures</small>
@@ -589,16 +610,16 @@
 
     <div class="grid-3">
         <div class="card" style="border-left: 4px solid #E74C3C;">
+            <h3>🚨 MU 記憶體報價壓力</h3>
+            <p>Micron 單日大跌 3.44%，HBM 市場面臨三星、SK 海力士競爭加劇。若記憶體報價未能回升，半導體設備股將持續承壓。</p>
+        </div>
+        <div class="card" style="border-left: 4px solid #E74C3C;">
+            <h3>🚨 塑化報價低迷</h3>
+            <p>南亞（1301）、台塑化（6505）受中國 EG、PTA 新產能開出影響，報價低點徘徊。須持續觀察中國需求是否回暖。</p>
+        </div>
+        <div class="card" style="border-left: 4px solid #E74C3C;">
             <h3>🚨 地緣政治風險</h3>
-            <p>美中科技戰升級風險升溫，半導體供應鏈區域化趨勢加速，台灣科技股面臨不確定性考驗。</p>
-        </div>
-        <div class="card" style="border-left: 4px solid #E74C3C;">
-            <h3>🚨 記憶體景氣放緩</h3>
-            <p>美光財報低於預期，若 DRAM/NAND 需求持續疲弱，相關供應鏈（包含台灣記憶體製造商）可能面臨下修壓力。</p>
-        </div>
-        <div class="card" style="border-left: 4px solid #E74C3C;">
-            <h3>🚨 Fed 利率不確定性</h3>
-            <p>美國通膨數據膠著，Fed 利率路徑預期分歧，美股高本益比族群對利率敏感，若通膨僵持，評價面臨修正風險。</p>
+            <p>美中晶片談判變數仍在，華為等陸系半導體廠商持續去美化，可能影響成熟製程訂單分配，需持續追蹤。</p>
         </div>
     </div>
 
@@ -613,45 +634,25 @@
 
     <div class="winner-loser-grid">
         <div class="wl-card">
-            <h4>🚀 潛力股</h4>
+            <h4>🚀 尚未起漲潛力股</h4>
             <div>
                 <div class="stock-pick-row">
                     <div>
-                        <span class="nm">昇達科</span><span class="cd">3491</span>
-                        <div class="pick-reason">衛星通訊需求起飛，低軌衛星供應鏈題材具中長期成長潛力，惟今日股價回調 -45 元，宜靜待買點。</div>
+                        <span class="nm">IET-KY</span><span class="cd">4971</span>
+                        <div class="pick-reason">資料不足，暫不列出完整分析。功率半導體前景需待查證工廠產能與報價趨勢。</div>
                     </div>
-                    <span class="px">$1,720</span>
-                </div>
-                <div class="stock-pick-row">
-                    <div>
-                        <span class="nm">群聯</span><span class="cd">8299</span>
-                        <div class="pick-reason">NAND 控制晶片領導廠，資料中心需求剛性，惟今日股價回測 -105 元，本益比修正後具布局價值。</div>
-                    </div>
-                    <span class="px">$2,620</span>
-                </div>
-                <div class="stock-pick-row">
-                    <div>
-                        <span class="nm">穩懋</span><span class="cd">3105</span>
-                        <div class="pick-reason">化合物半導體 RF 元件，5G/AIoT 應用撐場，惟今日随科技股回檔 -16.5 元，估值已修正至相對合理區間。</div>
-                    </div>
-                    <span class="px">$495.5</span>
+                    <span class="px">$783</span>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="data-note">
-        ⚠️ <strong>資料不足說明：</strong>本報告「尚未起漲潛力股」區塊列出之個股均已有 TWSE/TPEx 官方即時行情驗證（詳見上方價格）。惟本報告不對這些個股提供目標價或評級，投資前請自行評估風險。<br>
-        📌 <strong>說明：</strong>3711 日月光（ASE Technology）是上市公司（TWSE: 3711），不屬於 TPEx（上櫃）適用範圍，故無法自 TPEx OpenAPI 取得；其上市交易數據請參見 TWSE 上市個股報價。<br>
-        📌 <strong>說明：</strong>「法人動向」區塊因涉及集中市場三大法人買賣超實名制數據，需待 TWSE 每日 16:00 後公布完整資訊，本報告暫不引用未經查證之法人數據。
-    </div>
-
 </div>
 
 <footer class="page-footer">
-    <strong>📰 晚間財經快報 2026.05.13</strong> · 僅供參考，不構成投資建議<br>
-    資料來源：yfinance（美股）· TWSE OpenAPI（上市股）· TPEx OpenAPI（上櫃股）· Yahoo Finance（總經數據）<br>
-    資料截止：2026-05-13 13:00 UTC（美股收盤價：2026-05-12 │ 台股：2026-05-12 │ TPEx：2026-05-13）
+    <strong>📰 晨間財經快報 2026.05.15</strong> · 僅供參考，不構成投資建議<br>
+    資料來源：TWSE OpenAPI · TPEx OpenAPI · Yahoo Finance (yfinance) · CNBC · 僅引用已確認數據，數據截止 2026.05.14 收盤<br>
+    ⚠️ 本報告所有公司名稱與代號均與 TWSE/TPEx 官方資料一致
 </footer>
 
 </body>
