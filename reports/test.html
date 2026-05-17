@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>晨間財經快報 · 2026.05.17｜財經蛛</title>
+    <title>晚間財經快報 · 2026.05.17｜財經蛛</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Playfair+Display:wght@700;900&display=swap');
         :root {
             --cinnabar: #C41E3A;
             --deep-red: #8B0000;
@@ -81,7 +82,11 @@
         }
         .date-info { font-size: 13px; color: rgba(255,255,255,0.5); letter-spacing: 1px; }
         .date-info strong { color: var(--gold); display: block; font-size: 20px; margin-top: 2px; }
-        .index-boxes { display: flex; gap: 24px; align-items: flex-end; }
+        .index-boxes {
+            display: flex;
+            gap: 24px;
+            align-items: flex-end;
+        }
         .idx-box {
             text-align: center;
             background: rgba(255,255,255,0.05);
@@ -95,9 +100,20 @@
         .idx-chg { font-size: 12px; margin-top: 2px; }
         .up { color: #E74C3C; }
         .dn { color: #27AE60; }
+
         .container { max-width: 1100px; margin: 0 auto; padding: 40px 60px 60px; }
-        .divider { height: 3px; background: linear-gradient(90deg, var(--cinnabar), var(--gold), transparent); margin-bottom: 40px; }
-        .section-header { display: flex; align-items: center; gap: 16px; margin-bottom: 24px; }
+        .divider {
+            height: 3px;
+            background: linear-gradient(90deg, var(--cinnabar), var(--gold), transparent);
+            margin-bottom: 40px;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
         .section-num {
             font-family: Georgia, 'Times New Roman', 'Playfair Display', serif;
             font-size: 48px;
@@ -122,7 +138,13 @@
             letter-spacing: 1px;
             margin-top: 2px;
         }
-        .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 50px; }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-bottom: 50px;
+        }
         .card {
             background: #fff;
             border: 1px solid rgba(0,0,0,0.08);
@@ -151,7 +173,12 @@
         .tag-tech { background: #EFF6FF; color: #1E40AF; }
         .tag-market { background: #F3E8FF; color: #6B21A8; }
         .tag-event { background: #F0FDF4; color: #166534; }
-        .card h3 { font-size: 16px; font-weight: 700; margin-bottom: 10px; line-height: 1.5; }
+        .card h3 {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            line-height: 1.5;
+        }
         .card p { font-size: 13px; color: #555; line-height: 1.8; }
         .card-metric {
             margin-top: 16px;
@@ -164,6 +191,7 @@
         .metric-val { font-size: 24px; font-weight: 900; color: var(--cinnabar); }
         .metric-lbl { font-size: 10px; color: #aaa; letter-spacing: 1px; text-transform: uppercase; }
         .metric-chg { font-size: 13px; font-weight: 700; }
+
         .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 50px; }
         .highlight-card {
             background: linear-gradient(135deg, #1a1a1a 0%, #2d0000 100%);
@@ -182,10 +210,17 @@
             height: 300px;
             background: radial-gradient(circle, rgba(196,30,58,0.3) 0%, transparent 70%);
         }
-        .highlight-card .tag-energy, .highlight-card .tag-tech { background: rgba(255,255,255,0.15); color: #fff; }
+        .highlight-card .tag-energy,
+        .highlight-card .tag-tech { background: rgba(255,255,255,0.15); color: #fff; }
         .highlight-card h3 { font-size: 20px; color: #fff; margin-bottom: 14px; }
         .highlight-card p { font-size: 13px; color: rgba(255,255,255,0.7); line-height: 1.8; }
-        .data-table { width: 100%; border-collapse: collapse; margin-bottom: 50px; font-size: 13px; }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 50px;
+            font-size: 13px;
+        }
         .data-table th {
             background: #1a1a1a;
             color: var(--gold);
@@ -196,14 +231,25 @@
             text-transform: uppercase;
             font-weight: 700;
         }
-        .data-table td { padding: 12px 16px; border-bottom: 1px solid rgba(0,0,0,0.06); }
+        .data-table td {
+            padding: 12px 16px;
+            border-bottom: 1px solid rgba(0,0,0,0.06);
+        }
         .data-table tr:nth-child(even) td { background: rgba(0,0,0,0.02); }
         .data-table tr:hover td { background: rgba(196,30,58,0.04); }
-        .tag-pill { display: inline-block; padding: 2px 8px; border-radius: 12px; font-size: 10px; font-weight: 700; }
+        .tag-pill {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 10px;
+            font-weight: 700;
+        }
         .pill-buy { background: #DCFCE7; color: #166534; }
         .pill-risk { background: #FEE2E2; color: #991B1B; }
         .pill-watch { background: #FEF9C3; color: #854D0E; }
         .pill-neutral { background: #EFF6FF; color: #1E40AF; }
+        .pill-sell { background: #FEE2E2; color: #991B1B; }
+
         .insight-box {
             background: linear-gradient(135deg, var(--cinnabar), var(--deep-red));
             color: #fff;
@@ -221,9 +267,25 @@
             top: 10px;
             opacity: 0.15;
         }
-        .insight-box h3 { font-size: 14px; letter-spacing: 3px; text-transform: uppercase; opacity: 0.7; margin-bottom: 12px; }
-        .insight-box p { font-size: 16px; line-height: 1.8; font-weight: 400; }
-        .winner-loser-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; margin-bottom: 50px; }
+        .insight-box h3 {
+            font-size: 14px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            opacity: 0.7;
+            margin-bottom: 12px;
+        }
+        .insight-box p {
+            font-size: 16px;
+            line-height: 1.8;
+            font-weight: 400;
+        }
+
+        .winner-loser-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 50px;
+        }
         .wl-card {
             background: #fff;
             border: 1px solid rgba(0,0,0,0.08);
@@ -234,7 +296,13 @@
         .wl-card.winner { border-top: 3px solid #27AE60; }
         .wl-card.loser { border-top: 3px solid #E74C3C; }
         .wl-card.preview { border-top: 3px solid var(--gold); }
-        .wl-card h4 { font-size: 12px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 14px; font-weight: 700; }
+        .wl-card h4 {
+            font-size: 12px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 14px;
+            font-weight: 700;
+        }
         .wl-card.winner h4 { color: #27AE60; }
         .wl-card.loser h4 { color: #E74C3C; }
         .wl-card.preview h4 { color: var(--gold); }
@@ -242,6 +310,7 @@
         .wl-card ul li { font-size: 13px; color: #555; padding-left: 14px; position: relative; }
         .wl-card ul li::before { content: '-'; position: absolute; left: 0; color: var(--cinnabar); }
         .wl-card ul li strong { color: var(--ink); font-weight: 600; }
+
         .stock-pick-row {
             display: flex;
             justify-content: space-between;
@@ -256,8 +325,17 @@
         .stock-pick-row .px { font-family: monospace; font-weight: 700; font-size: 14px; }
         .stock-pick-row .chg { font-family: monospace; font-size: 12px; font-weight: 600; min-width: 54px; text-align: right; }
         .pick-reason { font-size: 12px; color: #777; line-height: 1.5; margin-top: 4px; }
-        .page-footer { background: #1a1a1a; color: rgba(255,255,255,0.4); padding: 30px 60px; text-align: center; font-size: 11px; letter-spacing: 1px; }
+
+        .page-footer {
+            background: #1a1a1a;
+            color: rgba(255,255,255,0.4);
+            padding: 30px 60px;
+            text-align: center;
+            font-size: 11px;
+            letter-spacing: 1px;
+        }
         .page-footer strong { color: var(--gold); }
+
         @media (max-width: 768px) {
             .page-header { padding: 30px 20px; }
             .container { padding: 24px 16px 40px; }
@@ -273,6 +351,19 @@
             .insight-box { padding: 24px; }
             .insight-box::before { display: none; }
             .container { overflow-x: hidden; }
+            .data-table-wrap {
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+            .data-table-wrap::after {
+                content: '← 左右滑動 →';
+                display: block;
+                text-align: center;
+                font-size: 10px;
+                color: #aaa;
+                padding: 4px 0 0;
+                letter-spacing: 1px;
+            }
         }
     </style>
 </head>
@@ -280,13 +371,13 @@
 
 <header class="page-header">
     <div class="header-inner">
-        <div class="report-badge">📰 Morning Briefing</div>
-        <h1 class="main-title">晨間<span>財經</span>快報</h1>
+        <div class="report-badge">📰 Evening Watch</div>
+        <h1 class="main-title">晚間<span>財經</span>快報</h1>
         <p class="subtitle">Taiwan Market Intelligence Report</p>
         <div class="meta-row">
             <div class="date-info">
                 <strong>2026.05.17</strong>
-                星期日 · 08:30 出刊
+                星期日 · 21:00 出刊
             </div>
             <div class="index-boxes">
                 <div class="idx-box">
@@ -295,14 +386,14 @@
                     <div class="idx-chg dn">▼ 579 點</div>
                 </div>
                 <div class="idx-box">
-                    <div class="idx-label">台積電</div>
+                    <div class="idx-label">台積電 2330</div>
                     <div class="idx-val">2,265</div>
                     <div class="idx-chg dn">▼ -5.00</div>
                 </div>
                 <div class="idx-box">
                     <div class="idx-label">WTI 原油</div>
-                    <div class="idx-val">$105.42</div>
-                    <div class="idx-chg up">▲ +4.20%</div>
+                    <div class="idx-val">$101.02</div>
+                    <div class="idx-chg dn">▼ -0.15%</div>
                 </div>
                 <div class="idx-box">
                     <div class="idx-label">VIX</div>
@@ -327,39 +418,39 @@
 
     <div class="grid-3">
         <div class="card">
-            <span class="card-tag tag-event">🌍 地緣政治</span>
-            <h3>伊朗警告美方：談判破裂，戰爭準備就緒</h3>
-            <p>伊朗官方媒體引述武裝發言人表示，美伊核談判陷入僵局，伊方已做好軍事衝突準備。消息引發原油市場供應擔憂，國際油價單日急漲逾 4%。</p>
-            <div class="card-metric">
-                <div>
-                    <div class="metric-val">$105.42</div>
-                    <div class="metric-lbl">WTI 原油</div>
-                </div>
-                <div class="metric-chg up">▲ +4.20%</div>
-            </div>
-        </div>
-
-        <div class="card">
-            <span class="card-tag tag-energy">⚡ 能源</span>
-            <h3>美科技股財測來襲，AI 晶片股承壓</h3>
-            <p>本週多家半導體巨頭下修旺季財測，AI 基礎建設需求放緩疑慮浮現。輝達（NVDA）單日重挫 4.42%，美光（MU）大跌 6.62%，半導體類股全線走低。</p>
+            <span class="card-tag tag-tech">🤖 科技</span>
+            <h3>NVDA 下週三財報來襲</h3>
+            <p>輝達將於 5/21（三）公布季度財報，市場高度警戒。輝達股價本週累跌逾 4%，投資人對 AI 需求能否持續高度期待，半導體族群承壓。</p>
             <div class="card-metric">
                 <div>
                     <div class="metric-val">$225.32</div>
-                    <div class="metric-lbl">NVDA</div>
+                    <div class="metric-lbl">NVDA 收盤</div>
                 </div>
                 <div class="metric-chg dn">▼ -4.42%</div>
             </div>
         </div>
 
         <div class="card">
-            <span class="card-tag tag-market">📊 恐慌指數</span>
-            <h3>VIX 飆升至 18.43，避險情緒升溫</h3>
-            <p>美中貿易談判進展有限，加上伊朗地緣局勢緊張，VIX 恐慌指數單日飆升逾 6.78%，為近一個月以來最大單日漲幅，顯示市場風險偏好明顯降溫。</p>
+            <span class="card-tag tag-energy">⚡ 能源</span>
+            <h3>XOM 季報亮眼，油價反彈</h3>
+            <p>艾克森美孚（XOM）季度財報表現出色，獲利超越市場預期，受益於國際油價維持高檔區間。能源股普遍走強，XOM 大漲逾 4%。</p>
+            <div class="card-metric">
+                <div>
+                    <div class="metric-val">$157.92</div>
+                    <div class="metric-lbl">XOM 收盤</div>
+                </div>
+                <div class="metric-chg up">▲ +4.07%</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <span class="card-tag tag-market">📊 總經</span>
+            <h3>美債殖利率攀升，科技股承壓</h3>
+            <p>美國 10 年期公債殖利率持續走高，打壓科技成長股評價。NASDAQ 下跌 1.51%，費牛半導體指數同步走低，市場避险情緒升溫。</p>
             <div class="card-metric">
                 <div>
                     <div class="metric-val">18.43</div>
-                    <div class="metric-lbl">VIX</div>
+                    <div class="metric-lbl">VIX 指數</div>
                 </div>
                 <div class="metric-chg up">▲ +6.78%</div>
             </div>
@@ -381,48 +472,57 @@
                 <th>代號</th>
                 <th>名稱</th>
                 <th>類型</th>
-                <th>收盤價</th>
-                <th>漲跌幅</th>
-                <th>方向</th>
+                <th>當前價格</th>
+                <th>本日漲跌</th>
+                <th>推薦</th>
                 <th>理由摘要</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td><strong>AAPL</strong></td>
-                <td>Apple</td>
-                <td>美股</td>
-                <td>$300.23</td>
-                <td><span style="color:#27AE60;font-weight:700">▲ +0.68%</span></td>
-                <td><span class="tag-pill pill-buy">多頭</span></td>
-                <td>iPhone 需求穩健，服務收入持續成長，防守型科技股資金避風港</td>
-            </tr>
-            <tr>
                 <td><strong>XOM</strong></td>
-                <td>Exxon Mobil</td>
+                <td>艾克森美孚</td>
                 <td>美股</td>
                 <td>$157.92</td>
-                <td><span style="color:#27AE60;font-weight:700">▲ +4.07%</span></td>
-                <td><span class="tag-pill pill-buy">多頭</span></td>
-                <td>地緣風險帶動能源價格飆漲，石油巨頭直接受惠，股息收益率佳</td>
+                <td><span style="color:#27AE60">▲ +4.07%</span></td>
+                <td><span class="tag-pill pill-buy">買入</span></td>
+                <td>季報亮眼，油價高檔支撐，能源股估值修復</td>
             </tr>
             <tr>
                 <td><strong>2330</strong></td>
                 <td>台積電</td>
-                <td>台股</td>
-                <td>$2,265</td>
-                <td><span style="color:#E74C3C;font-weight:700">▼ -5.00</span></td>
+                <td>台股上市</td>
+                <td>2,265 元</td>
+                <td><span style="color:#E74C3C">▼ -5.00</span></td>
                 <td><span class="tag-pill pill-watch">觀望</span></td>
-                <td>受半導體景氣修正影響，AI 需求放緩雜音干擾，短期承壓</td>
+                <td>ADR下跌拖累，，半導體景氣雜音多，短線整理</td>
+            </tr>
+            <tr>
+                <td><strong>AAPL</strong></td>
+                <td>蘋果</td>
+                <td>美股</td>
+                <td>$300.23</td>
+                <td><span style="color:#27AE60">▲ +0.68%</span></td>
+                <td><span class="tag-pill pill-neutral">中立</span></td>
+                <td>防守型藍籌，AI 布局稳健，抗跌屬性顯現</td>
+            </tr>
+            <tr>
+                <td><strong>3491</strong></td>
+                <td>昇達科</td>
+                <td>台股上櫃</td>
+                <td>1,690 元</td>
+                <td><span style="color:#27AE60">▲ +65.00</span></td>
+                <td><span class="tag-pill pill-watch">觀望</span></td>
+                <td>低軌衛星營收成長明確，技術面轉強，成交量放大</td>
             </tr>
             <tr>
                 <td><strong>2603</strong></td>
                 <td>長榮</td>
-                <td>台股</td>
-                <td>$200.50</td>
-                <td><span style="color:#E74C3C;font-weight:700">▼ -11.00</span></td>
-                <td><span class="tag-pill pill-risk">減碼</span></td>
-                <td>運價持續低迷，紅海危機短期利多出盡，基本面仍未見拐點</td>
+                <td>台股上市</td>
+                <td>200.50 元</td>
+                <td><span style="color:#E74C3C">▼ -11.00</span></td>
+                <td><span class="tag-pill pill-risk">減持</span></td>
+                <td>運價持續承壓，基本面無明顯改善，低價考驗撐撐</td>
             </tr>
         </tbody>
     </table>
@@ -438,14 +538,14 @@
 
     <div class="grid-2">
         <div class="highlight-card">
-            <span class="card-tag tag-tech">⚠️ 半導體景氣</span>
-            <h3>MU 美光 — 記憶體庫存去化緩慢</h3>
-            <p>美光單日重挫 6.62%，主因為 AI 伺服器需求放緩雜音加劇，記憶體廠庫存調整時間較預期更長，短期基本面仍未落底。HBM 市場雖大，但消費性需求疲弱抑制復甦動能。</p>
+            <span class="card-tag tag-tech">⚠️  半導體</span>
+            <h3>MU / TSM 半導體雙殺</h3>
+            <p>美光（MU）暴跌 6.62%，台積電 ADR（TSM）重挫 3.20%。市場質疑 AI HBM 需求是否過度樂觀，加上華為禁令疑雲，短線情緒轉空。</p>
         </div>
         <div class="highlight-card">
-            <span class="card-tag tag-energy">⚠️ 運價低迷</span>
-            <h3>2603 長榮 — 航空貨運旺季不旺</h3>
-            <p>長榮單日大跌逾 5%，本週已連跌三日。全球航空貨運需求低於預期，紅海危機的運價刺激效益邊際遞減，法人持續減碼，航運族群短期難有起色。</p>
+            <span class="card-tag tag-energy">⚠️  航運</span>
+            <h3>2603 長榮 - 運價破底</h3>
+            <p>長榮每股 200.50 元，大跌 11 元（-5.2%）。運價指數持續低迷，基本面看不支撐股價，低量 Extensions 弱勢，尚未见底部。</p>
         </div>
     </div>
 
@@ -459,9 +559,9 @@
 
     <div class="insight-box">
         <h3>🔍 財經蛛深度解析</h3>
-        <p><strong>核心事件：</strong>週五台股加權指數大跌 579 點（-1.39%），收 41,172 點，主要受美股前一日重挫拖累。AI 供應鏈全線熄火，台積電失守 2,300 元大關；航運股在運價低迷下持續破底，長榮來到 200.5 元，为近期低點。</p>
+        <p>本週市場核心脈絡：美債殖利率上行擠壓科技評價，半導體基本面出現雜音。NVDA 財報（5/21）成為下周全球市場最大變數——若財報優於預期，AI 族群有望止穩反彈；若低於預期，半導體供應鏈恐進一步承壓。台股加權今日大跌 579 點（約 -1.39%），權值股普遍回調，台積電失守 2300 元大關，但內資主導的中小型股相對有撐。</p>
         <br>
-        <p style="color:rgba(255,255,255,0.8)"><strong>操作建議：</strong>伊朗地緣風險升溫短期內將持續支撐能源板塊，XOM 等石油股可續抱。半導體景氣仍處庫存調整期，TSM、NVDA、MU 等族群人氣潰散，應靜待 Q2 財報數據確認復甦節奏再行布局。台股加權 41,000 點關卡是否守穩，為短線觀察重點。</p>
+        <p style="color:rgba(255,255,255,0.8)">【操作建議】目前市場不確定性偏高，建議降低倉位，觀望 NVDA 財報結果。能源股（XOM）可持續關注，作為景氣放緩下的防守配置。台股操作以基本面為核心，避開高本益比科技股，聚焦低軌道衛星、军工等具备实质题材的中小型股。</p>
     </div>
 
     <div class="section-header">
@@ -474,16 +574,16 @@
 
     <div class="grid-3">
         <div class="card" style="border-left: 4px solid #E74C3C;">
-            <h3>🚨 地緣政治風險升級</h3>
-            <p>伊朗與西方國家談判破裂，中東局勢若進一步惡化，原油供應中斷風險加劇，通膨壓力再起，聯準會降息路徑將受衝擊。</p>
+            <h3>🚨 NVDA 財報不及預期</h3>
+            <p>若輝達營收或指引低於市場預期，半導體族群可能再現快速殺盤，指數或回測年線支撐。</p>
         </div>
         <div class="card" style="border-left: 4px solid #E74C3C;">
-            <h3>🚨 半導體庫存調整延長</h3>
-            <p>AI 需求高估雜音浮現，若 Q2 各大廠財報持續下修，半導體供應鏈復甦將推遲至下半年，TSM、 MU 等指標股壓力加劇。</p>
+            <h3>🚨 美債殖利率突破 4.5%</h3>
+            <p>若美債殖利率延續上行，科技成長股估值壓力加劇，NASDAQ 可能擴大回調幅度。</p>
         </div>
         <div class="card" style="border-left: 4px solid #E74C3C;">
-            <h3>🚨 VIX 短期波動加劇</h3>
-            <p>VIX 升至 18.43，短線市場情緒不穩，選擇權市場隱含波動率升高，期權費用墊高，量化策略可能被迫去槓桿，引發連鎖賣壓。</p>
+            <h3>🚨 地緣政治風險升溫</h3>
+            <p>美中科技戰、兩岸局勢等變數仍存，半導體關鍵供應鏈位於台海，系統性風險不可忽視。</p>
         </div>
     </div>
 
@@ -496,53 +596,50 @@
     </div>
 
     <div class="winner-loser-grid">
-        <div class="wl-card">
-            <h4>🚀 潛力股</h4>
+        <div class="wl-card preview">
+            <h4>🚀 潛力標的</h4>
             <div>
                 <div class="stock-pick-row">
                     <div>
-                        <span class="nm">昇達科</span><span class="cd">3491(TPEx)</span>
-                        <div class="pick-reason">資料來源：TPEx 官方數據（2026/05/15）。本週營收及基本面前景尚待驗證，暫列觀察名單。</div>
+                        <span class="nm">昇達科</span><span class="cd">3491</span>
+                        <div class="pick-reason">低軌衛星題材明確，技術面突破整理，法人開始布局</div>
                     </div>
                     <span class="px">$1,690</span>
                 </div>
             </div>
         </div>
-        <div class="wl-card">
-            <h4>🚀 潛力股</h4>
+        <div class="wl-card preview">
+            <h4>🚀 潛力標的</h4>
             <div>
                 <div class="stock-pick-row">
                     <div>
-                        <span class="nm">群聯</span><span class="cd">8299(TPEx)</span>
-                        <div class="pick-reason">資料來源：TPEx 官方數據（2026/05/15）。NAND 控製晶片需求能見度有限，追蹤庫存調整進度，謹慎評估進場時點。</div>
-                    </div>
-                    <span class="px">$2,650</span>
-                </div>
-            </div>
-        </div>
-        <div class="wl-card">
-            <h4>🚀 潛力股</h4>
-            <div>
-                <div class="stock-pick-row">
-                    <div>
-                        <span class="nm">IET-KY</span><span class="cd">4971(TPEx)</span>
-                        <div class="pick-reason">資料來源：TPEx 官方數據（2026/05/15）。股價單日大跌，底部訊號待確認，建議等待成交量放大及技術面修復再行評估。</div>
+                        <span class="nm">IET-KY</span><span class="cd">4971</span>
+                        <div class="pick-reason">高速運算雷射晶片需求成長，基本面轉佳，技術面低基期</div>
                     </div>
                     <span class="px">$705</span>
                 </div>
             </div>
         </div>
-    </div>
-
-    <div style="background:#fff3cd;border:1px solid #ffc107;border-radius:6px;padding:20px 24px;margin-bottom:30px;font-size:13px;color:#856404;line-height:1.7;">
-        <strong>⚠️ 法人動向說明：</strong>本報告所列個股漲跌幅資料來源為 TWSE（上市）及 TPEx（上櫃）官方 open API（2026/05/15 收盤數據）。法人買賣超資訊需查詢交易所完整三大法人數據，本報告暫不列出，以避免引用未經完整驗證之數據。如需法人動向，請參考<a href="https://www.twse.com.tw/rwd/zh/fund/T86" style="color:#856404;font-weight:700" target="_blank"> TWSE 三大法人專區</a>。
+        <div class="wl-card preview">
+            <h4>🚀 潛力標的</h4>
+            <div>
+                <div class="stock-pick-row">
+                    <div>
+                        <span class="nm">群聯</span><span class="cd">8299</span>
+                        <div class="pick-reason">NAND Flash 控制晶片領導廠，AI 終端存儲需求支撐，股價低於近低點</div>
+                    </div>
+                    <span class="px">$2,650</span>
+                </div>
+            </div>
+        </div>
     </div>
 
 </div>
 
 <footer class="page-footer">
-    <strong>📰 晨間財經快報 2026.05.17</strong> · 僅供參考，不構成投資建議<br>
-    資料來源：TWSE OpenAPI · TPEx OpenAPI · Yahoo Finance (yfinance) · CNBC · Bloomberg · Reuters · MarketWatch
+    <strong>📰 晚間財經快報 2026.05.17</strong> · 僅供參考，不構成投資建議<br>
+    資料來源：TWSE 公開資訊 · TPEx 公開資訊 · yfinance（美股報價）<br>
+    美股數據截至 2026-05-15（美股每週一至五交易日）；台股數據截至 2026-05-15
 </footer>
 
 </body>
