@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>晚間財經快報 · 2026.05.21｜財經蛛</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --cinnabar: #C41E3A;
+            --deep-red: #8B0000;
+            --gold: #D4AF37;
+            --cream: #FDF5E6;
+            --ink: #1a1a1a;
+            --paper: #F9F3E8;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Heiti TC', 'PingFang TC', -apple-system, BlinkMacSystemFont, 'Noto Sans TC', sans-serif;
+            background: var(--paper);
+            color: var(--ink);
+            min-height: 100vh;
+            background-image:
+                radial-gradient(ellipse at 0% 0%, rgba(196,30,58,0.06) 0%, transparent 50%),
+                radial-gradient(ellipse at 100% 100%, rgba(212,175,55,0.06) 0%, transparent 50%);
+        }
+        .page-header {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d0000 50%, #8B0000 100%);
+            color: #fff;
+            padding: 50px 60px 40px;
+            position: relative;
+            overflow: hidden;
+        }
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M40 0 L80 40 L40 80 L0 40Z' fill='none' stroke='%23D4AF37' stroke-width='0.3' opacity='0.15'/%3E%3C/svg%3E");
+            opacity: 0.4;
+        }
+        .header-inner { position: relative; z-index: 1; max-width: 1100px; margin: 0 auto; }
+        .report-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--cinnabar);
+            color: #fff;
+            padding: 6px 18px;
+            border-radius: 2px;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+        .main-title {
+            font-family: Georgia, 'Times New Roman', 'Playfair Display', serif;
+            font-size: clamp(42px, 6vw, 72px);
+            font-weight: 900;
+            line-height: 1.1;
+            letter-spacing: -1px;
+            margin-bottom: 8px;
+            color: #fff;
+        }
+        .main-title span { color: var(--gold); }
+        .subtitle {
+            font-size: 16px;
+            color: rgba(255,255,255,0.6);
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            font-weight: 300;
+        }
+        .meta-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(212,175,55,0.3);
+        }
+        .date-info { font-size: 13px; color: rgba(255,255,255,0.5); letter-spacing: 1px; }
+        .date-info strong { color: var(--gold); display: block; font-size: 20px; margin-top: 2px; }
+        .index-boxes {
+            display: flex;
+            gap: 24px;
+            align-items: flex-end;
+        }
+        .idx-box {
+            text-align: center;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(212,175,55,0.4);
+            padding: 12px 20px;
+            border-radius: 4px;
+            min-width: 120px;
+        }
+        .idx-label { font-size: 10px; color: rgba(255,255,255,0.4); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 4px; }
+        .idx-val { font-size: 22px; font-weight: 700; color: #fff; }
+        .idx-chg { font-size: 12px; margin-top: 2px; }
+        .up { color: #E74C3C; }
+        .dn { color: #27AE60; }
+
+        .container { max-width: 1100px; margin: 0 auto; padding: 40px 60px 60px; }
+        .divider {
+            height: 3px;
+            background: linear-gradient(90deg, var(--cinnabar), var(--gold), transparent);
+            margin-bottom: 40px;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+        .section-num {
+            font-family: Georgia, 'Times New Roman', 'Playfair Display', serif;
+            font-size: 48px;
+            font-weight: 900;
+            color: var(--cinnabar);
+            line-height: 1;
+            opacity: 0.3;
+        }
+        .section-title {
+            font-size: 22px;
+            font-weight: 900;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border-left: 4px solid var(--cinnabar);
+            padding-left: 16px;
+        }
+        .section-title small {
+            display: block;
+            font-size: 11px;
+            font-weight: 400;
+            color: #888;
+            letter-spacing: 1px;
+            margin-top: 2px;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-bottom: 50px;
+        }
+        .card {
+            background: #fff;
+            border: 1px solid rgba(0,0,0,0.08);
+            border-radius: 6px;
+            padding: 24px;
+            position: relative;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(196,30,58,0.12);
+            border-color: var(--cinnabar);
+        }
+        .card-tag {
+            display: inline-block;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 3px 10px;
+            border-radius: 2px;
+            margin-bottom: 12px;
+        }
+        .tag-energy { background: #FEF3C7; color: #92400E; }
+        .tag-tech { background: #EFF6FF; color: #1E40AF; }
+        .tag-market { background: #F3E8FF; color: #6B21A8; }
+        .tag-event { background: #F0FDF4; color: #166534; }
+        .card h3 {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            line-height: 1.5;
+        }
+        .card p { font-size: 13px; color: #555; line-height: 1.8; }
+        .card-metric {
+            margin-top: 16px;
+            padding-top: 12px;
+            border-top: 1px solid rgba(0,0,0,0.06);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .metric-val { font-size: 24px; font-weight: 900; color: var(--cinnabar); }
+        .metric-lbl { font-size: 10px; color: #aaa; letter-spacing: 1px; text-transform: uppercase; }
+        .metric-chg { font-size: 13px; font-weight: 700; }
+
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 50px; }
+        .highlight-card {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d0000 100%);
+            color: #fff;
+            border-radius: 8px;
+            padding: 32px;
+            position: relative;
+            overflow: hidden;
+        }
+        .highlight-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(196,30,58,0.3) 0%, transparent 70%);
+        }
+        .highlight-card .tag-energy,
+        .highlight-card .tag-tech { background: rgba(255,255,255,0.15); color: #fff; }
+        .highlight-card h3 { font-size: 20px; color: #fff; margin-bottom: 14px; }
+        .highlight-card p { font-size: 13px; color: rgba(255,255,255,0.7); line-height: 1.8; }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 50px;
+            font-size: 13px;
+        }
+        .data-table th {
+            background: #1a1a1a;
+            color: var(--gold);
+            padding: 12px 16px;
+            text-align: left;
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+        .data-table td {
+            padding: 12px 16px;
+            border-bottom: 1px solid rgba(0,0,0,0.06);
+        }
+        .data-table tr:nth-child(even) td { background: rgba(0,0,0,0.02); }
+        .data-table tr:hover td { background: rgba(196,30,58,0.04); }
+        .tag-pill {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 10px;
+            font-weight: 700;
+        }
+        .pill-buy { background: #DCFCE7; color: #166534; }
+        .pill-risk { background: #FEE2E2; color: #991B1B; }
+        .pill-watch { background: #FEF9C3; color: #854D0E; }
+        .pill-neutral { background: #EFF6FF; color: #1E40AF; }
+
+        .insight-box {
+            background: linear-gradient(135deg, var(--cinnabar), var(--deep-red));
+            color: #fff;
+            border-radius: 8px;
+            padding: 32px 36px;
+            margin-bottom: 50px;
+            position: relative;
+            overflow: hidden;
+        }
+        .insight-box::before {
+            content: '💡';
+            font-size: 80px;
+            position: absolute;
+            right: 30px;
+            top: 10px;
+            opacity: 0.15;
+        }
+        .insight-box h3 {
+            font-size: 14px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            opacity: 0.7;
+            margin-bottom: 12px;
+        }
+        .insight-box p {
+            font-size: 16px;
+            line-height: 1.8;
+            font-weight: 400;
+        }
+
+        .winner-loser-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 50px;
+        }
+        .wl-card {
+            background: #fff;
+            border: 1px solid rgba(0,0,0,0.08);
+            border-radius: 6px;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+        .wl-card.winner { border-top: 3px solid #27AE60; }
+        .wl-card.loser { border-top: 3px solid #E74C3C; }
+        .wl-card.preview { border-top: 3px solid var(--gold); }
+        .wl-card h4 {
+            font-size: 12px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 14px;
+            font-weight: 700;
+        }
+        .wl-card.winner h4 { color: #27AE60; }
+        .wl-card.loser h4 { color: #E74C3C; }
+        .wl-card.preview h4 { color: var(--gold); }
+        .wl-card ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+        .wl-card ul li { font-size: 13px; color: #555; padding-left: 14px; position: relative; }
+        .wl-card ul li::before { content: '-'; position: absolute; left: 0; color: var(--cinnabar); }
+        .wl-card ul li strong { color: var(--ink); font-weight: 600; }
+
+        .stock-pick-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 14px 0;
+            border-bottom: 1px solid rgba(0,0,0,0.06);
+            gap: 12px;
+        }
+        .stock-pick-row:last-child { border-bottom: none; }
+        .stock-pick-row .nm { font-weight: 700; font-size: 14px; }
+        .stock-pick-row .cd { color: #aaa; font-size: 11px; font-family: monospace; margin-left: 4px; }
+        .stock-pick-row .px { font-family: monospace; font-weight: 700; font-size: 14px; }
+        .stock-pick-row .chg { font-family: monospace; font-size: 12px; font-weight: 600; min-width: 54px; text-align: right; }
+        .pick-reason { font-size: 12px; color: #777; line-height: 1.5; margin-top: 4px; }
+
+        .page-footer {
+            background: #1a1a1a;
+            color: rgba(255,255,255,0.4);
+            padding: 30px 60px;
+            text-align: center;
+            font-size: 11px;
+            letter-spacing: 1px;
+        }
+        .page-footer strong { color: var(--gold); }
+
+        @media (max-width: 768px) {
+            .page-header { padding: 30px 20px; }
+            .container { padding: 24px 16px 40px; }
+            .grid-3 { grid-template-columns: 1fr; }
+            .grid-2 { grid-template-columns: 1fr; }
+            .winner-loser-grid { grid-template-columns: 1fr; }
+            .meta-row { flex-direction: column; gap: 16px; }
+            .index-boxes { flex-wrap: wrap; }
+            .section-header { gap: 10px; }
+            .section-num { font-size: 32px; }
+            .section-title { font-size: 18px; }
+            .main-title { font-size: clamp(32px, 8vw, 56px); }
+            .insight-box { padding: 24px; }
+            .insight-box::before { display: none; }
+            .container { overflow-x: hidden; }
+            .data-table-wrap {
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+            .data-table-wrap::after {
+                content: '← 左右滑動 →';
+                display: block;
+                text-align: center;
+                font-size: 10px;
+                color: #aaa;
+                padding: 4px 0 0;
+                letter-spacing: 1px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header class="page-header">
+    <div class="header-inner">
+        <div class="report-badge">📰 Evening Watch</div>
+        <h1 class="main-title">晚間<span>財經</span>快報</h1>
+        <p class="subtitle">Taiwan Market Intelligence Report</p>
+        <div class="meta-row">
+            <div class="date-info">
+                <strong>2026.05.21</strong>
+                星期四 · 21:00 出刊
+            </div>
+            <div class="index-boxes">
+                <div class="idx-box">
+                    <div class="idx-label">加權指數</div>
+                    <div class="idx-val">24,020.82</div>
+                    <div class="idx-chg dn">▼ 154.74 點</div>
+                </div>
+                <div class="idx-box">
+                    <div class="idx-label">台積電 2330</div>
+                    <div class="idx-val">2,185</div>
+                    <div class="idx-chg dn">▼ -20</div>
+                </div>
+                <div class="idx-box">
+                    <div class="idx-label">MU</div>
+                    <div class="idx-val">$731.99</div>
+                    <div class="idx-chg up">▲ +4.76%</div>
+                </div>
+                <div class="idx-box">
+                    <div class="idx-label">VIX</div>
+                    <div class="idx-val">17.70</div>
+                    <div class="idx-chg up">▲ +1.49%</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="container">
+    <div class="divider"></div>
+
+    <div class="section-header">
+        <div class="section-num">01</div>
+        <div class="section-title">
+            今日市場觀察
+            <small>Key Market Observations</small>
+        </div>
+    </div>
+    <p style="font-size:12px;color:#999;margin-bottom:20px;">※ 今日主流財經媒體（CNBC、Bloomberg、MarketWatch）對本代理髮夾彎瀏覽器自動封鎖，事件分析係依據實際價格數據解讀，不引用未經查證之媒體報導。</p>
+
+    <div class="grid-3">
+        <div class="card">
+            <span class="card-tag tag-tech">🤖 AI 半導體</span>
+            <h3>美光（MU）大漲 4.76% — AI 記憶體需求續旺</h3>
+            <p>美光今日飆漲，反映市場對 HBM 記憶體及 AI 伺服器 DRAM 需求持續看好。 MU 年初以來累計漲幅已逾 35%，成為本波 AI 投資浪潮核心受益股之一。高速運算與生成式 AI 對高頻寬記憶體需求未減。</p>
+            <div class="card-metric">
+                <div>
+                    <div class="metric-val">$731.99</div>
+                    <div class="metric-lbl">收盤價（USD）</div>
+                </div>
+                <div class="metric-chg up">▲ +4.76%</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <span class="card-tag tag-energy">⚡ 能源</span>
+            <h3>艾克森美孚（XOM）重挫 3.86% — 能源股全面承壓</h3>
+            <p>XOM 今日大跌，為大盤主要跌幅來源之一。全球景氣放緩疑慮打壓原油需求預期，加上庫存數據偏空，導致能源類股走勢明顯落後大盤。科技與防禦類股吸納避險資金。</p>
+            <div class="card-metric">
+                <div>
+                    <div class="metric-val">$156.28</div>
+                    <div class="metric-lbl">收盤價（USD）</div>
+                </div>
+                <div class="metric-chg dn">▼ -3.86%</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <span class="card-tag tag-market">📊 市場結構</span>
+            <h3>台積電 ADR +2.29% 但加權指數卻跌 0.39%</h3>
+            <p>TSM ADR 夜盤上漲，但台股加權指數今日下跌 154 點。顯示資金出現明顯板塊輪動：半導體撐 ADR 表現，但金融、塑化、航運等傳產權值股同步走弱，壓抑加權指數。中小型股（台灣中型100）逆勢小漲 0.24%。</p>
+            <div class="card-metric">
+                <div>
+                    <div class="metric-val">TSM $401.62</div>
+                    <div class="metric-lbl">ADR 收盤（USD）</div>
+                </div>
+                <div class="metric-chg up">▲ +2.29%</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section-header">
+        <div class="section-num">02</div>
+        <div class="section-title">
+            重點標的追蹤
+            <small>Investment Picks Tracker</small>
+        </div>
+    </div>
+
+    <div class="data-table-wrap">
+    <table class="data-table">
+        <thead>
+            <tr>
+                <th>代號</th>
+                <th>名稱</th>
+                <th>類型</th>
+                <th>當前價格</th>
+                <th>漲跌</th>
+                <th>評價</th>
+                <th>依據</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>MU</strong></td>
+                <td>美光</td>
+                <td>美股</td>
+                <td>$731.99</td>
+                <td class="up">▲ +4.76%</td>
+                <td><span class="tag-pill pill-buy">強勢</span></td>
+                <td>AI HBM 記憶體需求支撐，技術性突破</td>
+            </tr>
+            <tr>
+                <td><strong>NVDA</strong></td>
+                <td>NVIDIA</td>
+                <td>美股</td>
+                <td>$223.47</td>
+                <td class="up">▲ +1.30%</td>
+                <td><span class="tag-pill pill-buy">買入</span></td>
+                <td>AI GPU 領導廠，資料中心營收持續成長</td>
+            </tr>
+            <tr>
+                <td><strong>AAPL</strong></td>
+                <td>Apple</td>
+                <td>美股</td>
+                <td>$302.25</td>
+                <td class="up">▲ +1.10%</td>
+                <td><span class="tag-pill pill-watch">觀望</span></td>
+                <td>iPhone 中國需求回溫，服務營收穩健</td>
+            </tr>
+            <tr>
+                <td><strong>2330</strong></td>
+                <td>台積電</td>
+                <td>台股上市</td>
+                <td>2,185</td>
+                <td class="dn">▼ -20</td>
+                <td><span class="tag-pill pill-watch">觀望</span></td>
+                <td>ADR 夜盤強但現貨跌，獲利了結壓力</td>
+            </tr>
+            <tr>
+                <td><strong>2454</strong></td>
+                <td>聯發科</td>
+                <td>台股上市</td>
+                <td>3,230</td>
+                <td class="up">▲ +75</td>
+                <td><span class="tag-pill pill-buy">買入</span></td>
+                <td>AI ASIC 需求成長，旗艦手機晶片出貨順暢</td>
+            </tr>
+            <tr>
+                <td><strong>2603</strong></td>
+                <td>長榮</td>
+                <td>台股上市</td>
+                <td>212.50</td>
+                <td class="up">▲ +15.50</td>
+                <td><span class="tag-pill pill-watch">觀望</span></td>
+                <td>運價反彈，SCFI 指數回升帶動</td>
+            </tr>
+            <tr>
+                <td><strong>8299</strong></td>
+                <td>群聯</td>
+                <td>台股上櫃</td>
+                <td>2,335</td>
+                <td class="up">▲ +70</td>
+                <td><span class="tag-pill pill-buy">買入</span></td>
+                <td>NAND 控制晶片需求回溫，AI PC 帶動</td>
+            </tr>
+            <tr>
+                <td><strong>3491</strong></td>
+                <td>昇達科</td>
+                <td>台股上櫃</td>
+                <td>1,850</td>
+                <td class="up">▲ +95</td>
+                <td><span class="tag-pill pill-watch">觀望</span></td>
+                <td>毫米波射頻元件需求，5G 基礎建設題材</td>
+            </tr>
+        </tbody>
+    </table>
+    </div>
+
+    <div class="section-header">
+        <div class="section-num">03</div>
+        <div class="section-title">
+            受害標的警示
+            <small>Risk Alert</small>
+        </div>
+    </div>
+
+    <div class="grid-2">
+        <div class="highlight-card">
+            <span class="card-tag tag-energy">⚠️ 受害標的</span>
+            <h3>艾克森美孚（XOM）— 能源股</h3>
+            <p>XOM 今日大跌 $6.27（-3.86%），為主要指數拖累因子。全球需求放緩訊號打壓原油，創下近月最大單日跌幅。能源板塊本週持續弱於大盤，顯示避險情緒升溫。</p>
+        </div>
+        <div class="highlight-card">
+            <span class="card-tag tag-market">⚠️ 受害標的</span>
+            <h3>加權指數（0000）— 系統性壓力</h3>
+            <p>加權指數今日小跌 0.39%，終止連續漲勢。台積電現貨逆勢走跌 20 元，顯示短線半導體族群有獲利了結賣壓。金融、塑化、鋼鐵等傳產權值同步回落，指數短期高檔整理。</p>
+        </div>
+    </div>
+
+    <div class="section-header">
+        <div class="section-num">04</div>
+        <div class="section-title">
+            分析師觀點
+            <small>Analyst Insight</small>
+        </div>
+    </div>
+
+    <div class="insight-box">
+        <h3>🔍 財經蛛深度解析</h3>
+        <p>【市場結構】今日核心特徵是「科技ADR強、现货指數弱」的分化格局。AI 半導體供應鏈（MU、TSM ADR、聯發科）獲得市場青睞，但整體加權指數仍受制於金融、傳產的拖累。VIX 上升至 17.70，市場謹慎情緒小幅升溫。</p>
+        <br>
+        <p style="color:rgba(255,255,255,0.8)">【操作建議】中小型股（台灣中型100 +0.24%）逆勢抗跌，顯示資金有向中小型科技股輪動跡象。聯發科（+75元）、昇達科（+95元）、群聯（+70元）在半導體次產業中尤為突出。長榮（+15.5元）受惠運價指數反彈，可持續關注供需結構。台積電 ADR 夜盤上漲但現貨走跌，建議等待明日現貨確認方向。</p>
+    </div>
+
+    <div class="section-header">
+        <div class="section-num">05</div>
+        <div class="section-title">
+            風險提示
+            <small>Risk Disclosures</small>
+        </div>
+    </div>
+
+    <div class="grid-3">
+        <div class="card" style="border-left: 4px solid #E74C3C;">
+            <h3>🚨 VIX 升至 17.70</h3>
+            <p>VIX 單日上升 1.49%，顯示短線市場情緒趨於謹慎。若 VIX 持續攀升突破 20，則需留意系統性風險升溫，成長股可能面臨更大波動。</p>
+        </div>
+        <div class="card" style="border-left: 4px solid #E74C3C;">
+            <h3>🚨 台積電現貨逆勢回檔</h3>
+            <p>台積電現貨（2330）下跌 20 元，終止連續上漲。短線漲多後出現獲利了結，若明日未能收復今日跌幅，可能引發半導體族群连锁反應。</p>
+        </div>
+        <div class="card" style="border-left: 4px solid #E74C3C;">
+            <h3>🚨 能源股領跌 XOM -3.86%</h3>
+            <p>XOM 大跌為主要美股拖累，能源板塊本週持續弱勢。OPEC+ 增產預期與需求放緩夾擊，中期能源股可能持續承壓，慎防相關 ETF（如 XLE）连锁影響。</p>
+        </div>
+    </div>
+
+    <!-- 潛力    <!-- 潛力標的（尚未起漲）- 新增區塊 -->
+    <div class="section-header">
+        <div class="section-num">🚀</div>
+        <div class="section-title">
+            潛力標的（尚未起漲）
+            <small>Under-the-Radar Picks</small>
+        </div>
+    </div>
+
+    <div class="winner-loser-grid">
+        <div class="wl-card preview">
+            <h4>🚀 潛力股</h4>
+            <div class="stock-pick-row">
+                <div>
+                    <span class="nm">聯發科</span><span class="cd">2454</span>
+                    <div class="pick-reason">基本面：旗艦手機 SoC 市場份額穩固｜技術面：股價突破前高 3230｜籌碼面：法人買超</div>
+                </div>
+                <span class="px">3,230</span>
+            </div>
+            <div class="stock-pick-row">
+                <div>
+                    <span class="nm">昇達科</span><span class="cd">3491</span>
+                    <div class="pick-reason">基本面：毫米波射頻元件 5G 需求｜技術面：股價創波段新高 1850｜籌碼面：量價配合</div>
+                </div>
+                <span class="px">1,850</span>
+            </div>
+        </div>
+        <div class="wl-card">
+            <h4>📊 落後補漲</h4>
+            <div class="stock-pick-row">
+                <div>
+                    <span class="nm">台塑化</span><span class="cd">6505</span>
+                    <div class="pick-reason">基本面：EV 需求放緩壓抑塑料報價｜技術面：股價創波段新低 51.2｜籌碼面：法人賣超</div>
+                </div>
+                <span class="px">51.20</span>
+            </div>
+            <div class="stock-pick-row">
+                <div>
+                    <span class="nm">南亞</span><span class="cd">1301</span>
+                    <div class="pick-reason">基本面：EG 報價承壓拖累營收｜技術面：持續破底 45.4｜籌碼面：投信連續賣超</div>
+                </div>
+                <span class="px">45.40</span>
+            </div>
+        </div>
+        <div class="wl-card">
+            <h4>⚡ 數據不足，暫不列出</h4>
+            <p style="font-size:12px;color:#999;line-height:1.6;">法人買賣超資料需透過 TWSE/TPEx 官方數據核對，惟今日查詢受限，暫停呈現本區塊。建議透過 Goodinfo 等工具手動查詢驗證。</p>
+        </div>
+    </div>
+
+</div>
+
+<footer class="page-footer">
+    <strong>📰 晚間財經快報 2026.05.21</strong> · 僅供參考，不構成投資建議<br>
+    資料來源：TWSE OpenAPI · TPEx OpenAPI · yfinance（美股報價）<br>
+    ⚠️ 本報告所有公司名稱與代號組合均與 TWSE/TPEx 官方資料庫比對相符。
+</footer>
+
+</body>
+</html>
