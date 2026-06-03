@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>晚間財經快報 · 2026.06.03｜財經蛛</title>
+    <!-- Google Fonts (for HTML viewing) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+    <!-- System fallback fonts (for PDF export) -->
+    <style>
+        /* PDF export font fallbacks — applied before external fonts load */
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Playfair+Display:wght@700;900&display=swap');
+    <style>
+        :root {
+            --cinnabar: #C41E3A;
+            --deep-red: #8B0000;
+            --gold: #D4AF37;
+            --cream: #FDF5E6;
+            --ink: #1a1a1a;
+            --paper: #F9F3E8;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Heiti TC', 'PingFang TC', -apple-system, BlinkMacSystemFont, 'Noto Sans TC', sans-serif;
+            background: var(--paper);
+            color: var(--ink);
+            min-height: 100vh;
+            background-image:
+                radial-gradient(ellipse at 0% 0%, rgba(196,30,58,0.06) 0%, transparent 50%),
+                radial-gradient(ellipse at 100% 100%, rgba(212,175,55,0.06) 0%, transparent 50%);
+        }
+        .page-header {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d0000 50%, #8B0000 100%);
+            color: #fff;
+            padding: 50px 60px 40px;
+            position: relative;
+            overflow: hidden;
+        }
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M40 0 L80 40 L40 80 L0 40Z' fill='none' stroke='%23D4AF37' stroke-width='0.3' opacity='0.15'/%3E%3C/svg%3E");
+            opacity: 0.4;
+        }
+        .header-inner { position: relative; z-index: 1; max-width: 1100px; margin: 0 auto; }
+        .report-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--cinnabar);
+            color: #fff;
+            padding: 6px 18px;
+            border-radius: 2px;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+        .main-title {
+            font-family: Georgia, 'Times New Roman', 'Playfair Display', serif;
+            font-size: clamp(42px, 6vw, 72px);
+            font-weight: 900;
+            line-height: 1.1;
+            letter-spacing: -1px;
+            margin-bottom: 8px;
+            color: #fff;
+        }
+        .main-title span { color: var(--gold); }
+        .subtitle {
+            font-size: 16px;
+            color: rgba(255,255,255,0.6);
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            font-weight: 300;
+        }
+        .meta-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(212,175,55,0.3);
+        }
+        .date-info { font-size: 13px; color: rgba(255,255,255,0.5); letter-spacing: 1px; }
+        .date-info strong { color: var(--gold); display: block; font-size: 20px; margin-top: 2px; }
+        .index-boxes {
+            display: flex;
+            gap: 24px;
+            align-items: flex-end;
+        }
+        .idx-box {
+            text-align: center;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(212,175,55,0.4);
+            padding: 12px 20px;
+            border-radius: 4px;
+            min-width: 120px;
+        }
+        .idx-label { font-size: 10px; color: rgba(255,255,255,0.4); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 4px; }
+        .idx-val { font-size: 22px; font-weight: 700; color: #fff; }
+        .idx-chg { font-size: 12px; margin-top: 2px; }
+        .up { color: #E74C3C; }
+        .dn { color: #27AE60; }
+
+        .container { max-width: 1100px; margin: 0 auto; padding: 40px 60px 60px; }
+        .divider {
+            height: 3px;
+            background: linear-gradient(90deg, var(--cinnabar), var(--gold), transparent);
+            margin-bottom: 40px;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+        .section-num {
+            font-family: Georgia, 'Times New Roman', 'Playfair Display', serif;
+            font-size: 48px;
+            font-weight: 900;
+            color: var(--cinnabar);
+            line-height: 1;
+            opacity: 0.3;
+        }
+        .section-title {
+            font-size: 22px;
+            font-weight: 900;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border-left: 4px solid var(--cinnabar);
+            padding-left: 16px;
+        }
+        .section-title small {
+            display: block;
+            font-size: 11px;
+            font-weight: 400;
+            color: #888;
+            letter-spacing: 1px;
+            margin-top: 2px;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-bottom: 50px;
+        }
+        .card {
+            background: #fff;
+            border: 1px solid rgba(0,0,0,0.08);
+            border-radius: 6px;
+            padding: 24px;
+            position: relative;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(196,30,58,0.12);
+            border-color: var(--cinnabar);
+        }
+        .card-tag {
+            display: inline-block;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 3px 10px;
+            border-radius: 2px;
+            margin-bottom: 12px;
+        }
+        .tag-energy { background: #FEF3C7; color: #92400E; }
+        .tag-tech { background: #EFF6FF; color: #1E40AF; }
+        .tag-market { background: #F3E8FF; color: #6B21A8; }
+        .tag-event { background: #F0FDF4; color: #166534; }
+        .card h3 {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            line-height: 1.5;
+        }
+        .card p { font-size: 13px; color: #555; line-height: 1.8; }
+        .card-metric {
+            margin-top: 16px;
+            padding-top: 12px;
+            border-top: 1px solid rgba(0,0,0,0.06);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .metric-val { font-size: 24px; font-weight: 900; color: var(--cinnabar); }
+        .metric-lbl { font-size: 10px; color: #aaa; letter-spacing: 1px; text-transform: uppercase; }
+        .metric-chg { font-size: 13px; font-weight: 700; }
+
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 50px; }
+        .highlight-card {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d0000 100%);
+            color: #fff;
+            border-radius: 8px;
+            padding: 32px;
+            position: relative;
+            overflow: hidden;
+        }
+        .highlight-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(196,30,58,0.3) 0%, transparent 70%);
+        }
+        .highlight-card .tag-energy,
+        .highlight-card .tag-tech { background: rgba(255,255,255,0.15); color: #fff; }
+        .highlight-card h3 { font-size: 20px; color: #fff; margin-bottom: 14px; }
+        .highlight-card p { font-size: 13px; color: rgba(255,255,255,0.7); line-height: 1.8; }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 50px;
+            font-size: 13px;
+        }
+        .data-table th {
+            background: #1a1a1a;
+            color: var(--gold);
+            padding: 12px 16px;
+            text-align: left;
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+        .data-table td {
+            padding: 12px 16px;
+            border-bottom: 1px solid rgba(0,0,0,0.06);
+        }
+        .data-table tr:nth-child(even) td { background: rgba(0,0,0,0.02); }
+        .data-table tr:hover td { background: rgba(196,30,58,0.04); }
+        .tag-pill {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 10px;
+            font-weight: 700;
+        }
+        .pill-buy { background: #DCFCE7; color: #166534; }
+        .pill-risk { background: #FEE2E2; color: #991B1B; }
+        .pill-watch { background: #FEF9C3; color: #854D0E; }
+        .pill-neutral { background: #EFF6FF; color: #1E40AF; }
+
+        .insight-box {
+            background: linear-gradient(135deg, var(--cinnabar), var(--deep-red));
+            color: #fff;
+            border-radius: 8px;
+            padding: 32px 36px;
+            margin-bottom: 50px;
+            position: relative;
+            overflow: hidden;
+        }
+        .insight-box::before {
+            content: '💡';
+            font-size: 80px;
+            position: absolute;
+            right: 30px;
+            top: 10px;
+            opacity: 0.15;
+        }
+        .insight-box h3 {
+            font-size: 14px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            opacity: 0.7;
+            margin-bottom: 12px;
+        }
+        .insight-box p {
+            font-size: 16px;
+            line-height: 1.8;
+            font-weight: 400;
+        }
+
+        .winner-loser-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 50px;
+        }
+        .wl-card {
+            background: #fff;
+            border: 1px solid rgba(0,0,0,0.08);
+            border-radius: 6px;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+        .wl-card.winner { border-top: 3px solid #27AE60; }
+        .wl-card.loser { border-top: 3px solid #E74C3C; }
+        .wl-card.preview { border-top: 3px solid var(--gold); }
+        .wl-card h4 {
+            font-size: 12px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 14px;
+            font-weight: 700;
+        }
+        .wl-card.winner h4 { color: #27AE60; }
+        .wl-card.loser h4 { color: #E74C3C; }
+        .wl-card.preview h4 { color: var(--gold); }
+        .wl-card ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+        .wl-card ul li { font-size: 13px; color: #555; padding-left: 14px; position: relative; }
+        .wl-card ul li::before { content: '-'; position: absolute; left: 0; color: var(--cinnabar); }
+        .wl-card ul li strong { color: var(--ink); font-weight: 600; }
+
+        .stock-pick-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 14px 0;
+            border-bottom: 1px solid rgba(0,0,0,0.06);
+            gap: 12px;
+        }
+        .stock-pick-row:last-child { border-bottom: none; }
+        .stock-pick-row .nm { font-weight: 700; font-size: 14px; }
+        .stock-pick-row .cd { color: #aaa; font-size: 11px; font-family: monospace; margin-left: 4px; }
+        .stock-pick-row .px { font-family: monospace; font-weight: 700; font-size: 14px; }
+        .stock-pick-row .chg { font-family: monospace; font-size: 12px; font-weight: 600; min-width: 54px; text-align: right; }
+        .pick-reason { font-size: 12px; color: #777; line-height: 1.5; margin-top: 4px; }
+
+        .page-footer {
+            background: #1a1a1a;
+            color: rgba(255,255,255,0.4);
+            padding: 30px 60px;
+            text-align: center;
+            font-size: 11px;
+            letter-spacing: 1px;
+        }
+        .page-footer strong { color: var(--gold); }
+
+        @media (max-width: 768px) {
+            .page-header { padding: 30px 20px; }
+            .container { padding: 24px 16px 40px; }
+            .grid-3 { grid-template-columns: 1fr; }
+            .grid-2 { grid-template-columns: 1fr; }
+            .winner-loser-grid { grid-template-columns: 1fr; }
+            .meta-row { flex-direction: column; gap: 16px; }
+            .index-boxes { flex-wrap: wrap; }
+            .section-header { gap: 10px; }
+            .section-num { font-size: 32px; }
+            .section-title { font-size: 18px; }
+            .main-title { font-size: clamp(32px, 8vw, 56px); }
+            .insight-box { padding: 24px; }
+            .insight-box::before { display: none; }
+
+            /* 手機表格：保持結構，容許水平滾動 */
+            .container { overflow-x: hidden; }
+            .data-table-wrap {
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+            .data-table-wrap::after {
+                content: '← 左右滑動 →';
+                display: block;
+                text-align: center;
+                font-size: 10px;
+                color: #aaa;
+                padding: 4px 0 0;
+                letter-spacing: 1px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header class="page-header">
+    <div class="header-inner">
+        <div class="report-badge">📰 Evening Watch</div>
+        <h1 class="main-title">晚間<span>財經</span>快報</h1>
+        <p class="subtitle">Taiwan Market Intelligence Report</p>
+        <div class="meta-row">
+            <div class="date-info">
+                <strong>2026.06.03</strong>
+                星期三 · 21:00 出刊
+            </div>
+            <div class="index-boxes">
+                <div class="idx-box">
+                    <div class="idx-label">加權指數</div>
+                    <div class="idx-val">45,557</div>
+                    <div class="idx-chg up">▲ +219 點 (+0.48%)</div>
+                </div>
+                <div class="idx-box">
+                    <div class="idx-label">台積電 2330</div>
+                    <div class="idx-val">2,380</div>
+                    <div class="idx-chg up">▲ +25 元</div>
+                </div>
+                <div class="idx-box">
+                    <div class="idx-label">S&amp;P 500</div>
+                    <div class="idx-val">7,609.78</div>
+                    <div class="idx-chg up">▲ +0.13%</div>
+                </div>
+                <div class="idx-box">
+                    <div class="idx-label">Nasdaq</div>
+                    <div class="idx-val">27,093.90</div>
+                    <div class="idx-chg up">▲ +0.06%</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="container">
+    <div class="divider"></div>
+
+    <div class="section-header">
+        <div class="section-num">01</div>
+        <div class="section-title">
+            今日聚焦事件
+            <small>Key Events of the Day</small>
+        </div>
+    </div>
+
+    <div class="grid-3">
+        <div class="card">
+            <span class="card-tag tag-market">📊 台股加權</span>
+            <h3>台股 6/2 收 45,557 續寫新高</h3>
+            <p>加權指數早盤一度大漲逾 570 點至 45,915.92，隨後獲利了結翻黑，全日震盪逾千點，終場上漲 219.40 點收 45,557.31（+0.48%），再創歷史新高；電子類股指數上漲 0.37%、金融類股指數上漲 2.20%，櫃買指數下跌 1.21%。</p>
+            <div class="card-metric">
+                <div>
+                    <div class="metric-val">45,557</div>
+                    <div class="metric-lbl">加權收盤指數</div>
+                </div>
+                <div class="metric-chg up">▲ +0.48%</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <span class="card-tag tag-tech">🤖 美股科技</span>
+            <h3>S&amp;P 500 連 9 漲 收 7,609.78</h3>
+            <p>美股 6/2 四大指數再創新高，S&amp;P 500 收 7,609.78（+0.13%），Nasdaq 27,093.90，Dow 51,307.79；當日僅四個類股收黑，公用事業與科技股領漲，Hewlett Packard 表現突出，市場靜待 6/8 蘋果 WWDC 與本週非農數據。</p>
+            <div class="card-metric">
+                <div>
+                    <div class="metric-val">7,609.78</div>
+                    <div class="metric-lbl">S&amp;P 500 收盤</div>
+                </div>
+                <div class="metric-chg up">▲ 連 9 漲</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <span class="card-tag tag-energy">⚡ 半導體</span>
+            <h3>TSM ADR +2.54% 收 $446.69</h3>
+            <p>台積電 ADR 6/2 收 $446.69（+2.54%），市場聚焦 TSMC 2026 Technology Symposium 技術更新與先進製程進度；台股台積電現貨 6/2 收 2,380 元（+25 元），ADR 漲幅領先 ADR 溢價收斂至 13.7%（兩年低）。</p>
+            <div class="card-metric">
+                <div>
+                    <div class="metric-val">$446.69</div>
+                    <div class="metric-lbl">TSM ADR</div>
+                </div>
+                <div class="metric-chg up">▲ +2.54%</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section-header">
+        <div class="section-num">02</div>
+        <div class="section-title">
+            重點個股收盤追蹤
+            <small>Key Stocks Close Tracker</small>
+        </div>
+    </div>
+
+    <div class="data-table-wrap">
+    <table class="data-table">
+        <thead>
+            <tr>
+                <th>市場</th>
+                <th>代號</th>
+                <th>名稱</th>
+                <th>收盤價</th>
+                <th>漲跌</th>
+                <th>漲跌幅</th>
+                <th>備註</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>美股 ETF</td>
+                <td><strong>SPY</strong></td>
+                <td>SPDR S&amp;P 500 ETF</td>
+                <td>$759.57</td>
+                <td class="up">+1.03</td>
+                <td class="up">+0.14%</td>
+                <td>追蹤 S&amp;P 500</td>
+            </tr>
+            <tr>
+                <td>美股 ETF</td>
+                <td><strong>QQQ</strong></td>
+                <td>Invesco QQQ (Nasdaq-100)</td>
+                <td>$746.16</td>
+                <td class="up">+3.42</td>
+                <td class="up">+0.46%</td>
+                <td>追蹤 Nasdaq-100</td>
+            </tr>
+            <tr>
+                <td>美股 ADR</td>
+                <td><strong>TSM</strong></td>
+                <td>台積電 ADR</td>
+                <td>$446.69</td>
+                <td class="up">+11.06</td>
+                <td class="up">+2.54%</td>
+                <td>半導體龍頭</td>
+            </tr>
+            <tr>
+                <td>美股</td>
+                <td><strong>MU</strong></td>
+                <td>Micron Technology</td>
+                <td>$1,064.10</td>
+                <td class="up">+28.60</td>
+                <td class="up">+2.76%</td>
+                <td>記憶體族群</td>
+            </tr>
+            <tr>
+                <td>美股</td>
+                <td><strong>AAPL</strong></td>
+                <td>Apple Inc.</td>
+                <td>$315.20</td>
+                <td class="up">+8.89</td>
+                <td class="up">+2.90%</td>
+                <td>6/8 WWDC 題材發酵</td>
+            </tr>
+            <tr>
+                <td>美股</td>
+                <td><strong>NVDA</strong></td>
+                <td>NVIDIA Corp.</td>
+                <td>$222.82</td>
+                <td class="dn">-1.54</td>
+                <td class="dn">-0.69%</td>
+                <td>AI 晶片龍頭，技術性回檔</td>
+            </tr>
+            <tr>
+                <td>美股</td>
+                <td><strong>XOM</strong></td>
+                <td>Exxon Mobil</td>
+                <td>$149.56</td>
+                <td class="up">+0.18</td>
+                <td class="up">+0.12%</td>
+                <td>能源類股持平</td>
+            </tr>
+            <tr>
+                <td>台股上市</td>
+                <td><strong>2330</strong></td>
+                <td>台積電</td>
+                <td>2,380.00</td>
+                <td class="up">+25.00</td>
+                <td class="up">+1.06%</td>
+                <td>半導體龍頭</td>
+            </tr>
+            <tr>
+                <td>台股上市</td>
+                <td><strong>1303</strong></td>
+                <td>南亞</td>
+                <td>112.50</td>
+                <td class="up">+5.00</td>
+                <td class="up">+4.65%</td>
+                <td>塑膠化工類</td>
+            </tr>
+            <tr>
+                <td>台股上市</td>
+                <td><strong>6505</strong></td>
+                <td>台塑化</td>
+                <td>54.50</td>
+                <td class="up">+1.20</td>
+                <td class="up">+2.25%</td>
+                <td>塑膠化工類</td>
+            </tr>
+            <tr>
+                <td>台股上市</td>
+                <td><strong>2603</strong></td>
+                <td>長榮</td>
+                <td>231.00</td>
+                <td class="up">+7.00</td>
+                <td class="up">+3.13%</td>
+                <td>航運類股</td>
+            </tr>
+            <tr>
+                <td>台股上市</td>
+                <td><strong>3711</strong></td>
+                <td>日月光投控</td>
+                <td>590.00</td>
+                <td class="dn">-11.00</td>
+                <td class="dn">-1.83%</td>
+                <td>封測龍頭，6/2 列入上市</td>
+            </tr>
+            <tr>
+                <td>台股上櫃</td>
+                <td><strong>3491</strong></td>
+                <td>昇達科</td>
+                <td>2,020.00</td>
+                <td class="dn">-50.00</td>
+                <td class="dn">-2.41%</td>
+                <td>通訊元件</td>
+            </tr>
+            <tr>
+                <td>台股上櫃</td>
+                <td><strong>8299</strong></td>
+                <td>群聯</td>
+                <td>2,685.00</td>
+                <td class="dn">-135.00</td>
+                <td class="dn">-4.79%</td>
+                <td>NAND 控制 IC</td>
+            </tr>
+            <tr>
+                <td>台股上櫃</td>
+                <td><strong>4971</strong></td>
+                <td>IET-KY</td>
+                <td>716.00</td>
+                <td class="up">+5.00</td>
+                <td class="up">+0.70%</td>
+                <td>KY 股，電源相關</td>
+            </tr>
+            <tr>
+                <td>台股上櫃</td>
+                <td><strong>3105</strong></td>
+                <td>穩懋</td>
+                <td>515.00</td>
+                <td class="dn">-4.00</td>
+                <td class="dn">-0.77%</td>
+                <td>化合物半導體</td>
+            </tr>
+        </tbody>
+    </table>
+    </div>
+
+    <div class="section-header">
+        <div class="section-num">03</div>
+        <div class="section-title">
+            受害標的警示
+            <small>Risk Alert</small>
+        </div>
+    </div>
+
+    <div class="grid-2">
+        <div class="highlight-card">
+            <span class="card-tag tag-energy">⚠️ 高檔震盪</span>
+            <h3>台股加權指數 高檔震盪風險</h3>
+            <p>台股 6/2 當日震盪逾千點，盤中觸及 45,915.92 高點後翻黑再拉尾盤；投顧提醒指數位處歷史高檔區，短線獲利了結賣壓需密切留意。櫃買指數當日 -1.21% 與加權指數呈現背離，顯示資金由中小型股流向大型權值股。</p>
+        </div>
+        <div class="highlight-card">
+            <span class="card-tag tag-tech">⚠️ 上櫃半導體弱勢</span>
+            <h3>上櫃半導體股價承壓</h3>
+            <p>上櫃半導體相關個股 6/3 普遍走弱：群聯 8299 -4.79%、昇達科 3491 -2.41%、穩懋 3105 -0.77%；與美光 MU、台積電 ADR 強勢形成對比，反映上櫃市場資金輪動至上層大型股之結構。</p>
+        </div>
+    </div>
+
+    <div class="section-header">
+        <div class="section-num">04</div>
+        <div class="section-title">
+            財經蛛深度解析
+            <small>Web Spider Insight</small>
+        </div>
+    </div>
+
+    <div class="insight-box">
+        <h3>🔍 晚間觀察：新高後的結構性分化</h3>
+        <p>台股 6/2 收在 45,557 續創新高，但盤中千點震盪已透露「高檔換手」訊號。當日電子 +0.37%、金融 +2.20%、櫃買 -1.21% 的背離，意味著資金正從中小型股流向大型權值股與金融股，這是典型「末升段」輪動特徵。</p>
+        <br>
+        <p style="color:rgba(255,255,255,0.8)">美股 S&amp;P 500 連 9 漲看似強勢，但個股表現已出現分化：AAPL +2.9% 反映 WWDC 6/8 前的 iOS 27 / AI Siri 題材提前發酵，MU +2.76% 與 TSM +2.54% 同受惠記憶體與先進製程題材；NVDA -0.69% 短線休息。建議短線追價慎選，密切關注 6/8 WWDC 與本週五非農就業數據。</p>
+    </div>
+
+    <div class="section-header">
+        <div class="section-num">05</div>
+        <div class="section-title">
+            風險提示
+            <small>Risk Disclosures</small>
+        </div>
+    </div>
+
+    <div class="grid-3">
+        <div class="card" style="border-left: 4px solid #E74C3C;">
+            <h3>🚨 高檔震盪風險</h3>
+            <p>加權指數位處歷史高檔，6/2 單日震盪逾千點。短線若美股轉弱或台積電回檔，指數易出現技術性修正。</p>
+        </div>
+        <div class="card" style="border-left: 4px solid #E74C3C;">
+            <h3>🚨 WWDC 結果不確定</h3>
+            <p>蘋果 AAPL 已提前反映 6/8 WWDC 題材，若發表內容（iOS 27 / AI Siri）低於市場期待，股價可能利多出盡。</p>
+        </div>
+        <div class="card" style="border-left: 4px solid #E74C3C;">
+            <h3>🚨 非農數據變數</h3>
+            <p>本週五美國將公布非農就業報告，數據強勁可能延後聯準會降息時程，影響科技股估值；數據過弱則恐衝擊景氣復甦信心。</p>
+        </div>
+    </div>
+
+    <!-- 潛力標的（尚未起漲） -->
+    <div class="section-header">
+        <div class="section-num">🚀</div>
+        <div class="section-title">
+            潛力標的（尚未起漲）
+            <small>Under-the-Radar Picks</small>
+        </div>
+    </div>
+
+    <div class="winner-loser-grid">
+        <div class="wl-card preview" style="grid-column: 1 / -1;">
+            <h4>資料不足，暫不列出</h4>
+            <ul>
+                <li>本報為「資料驅動」報告，潛力標的需具備：① 基本面明確利多（事件/財報/法人連買）② 技術面尚未起漲（均線糾結、量縮整理）③ 籌碼面法人偏多 三項條件的完整查證。</li>
+                <li>今晚產出時間已逾收盤後 1 小時，尚未完成上述三面向的交叉查證；若勉強列示則有捏造之虞。</li>
+                <li>建議：明晨 07:30 晨報將以「盤後法人買賣超 + 融資增減 + 技術面突破」三項公開數據完整查證後，再列示潛力股。</li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+
+<footer class="page-footer">
+    <strong>📰 晚間財經快報 2026.06.03</strong> · 僅供參考，不構成投資建議<br>
+    資料來源：yfinance（美股 2026-06-02 收盤）· TWSE OpenAPI（台股上市 2026-06-02 收盤）· TPEx OpenAPI（台股上櫃 2026-06-03 收盤）· Bloomberg · TheStreet · Taiwan News · 世界日報
+</footer>
+
+</body>
+</html>
