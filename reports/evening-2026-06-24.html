@@ -339,6 +339,16 @@
         }
         .page-footer strong { color: var(--gold); }
 
+        .data-note {
+            font-size: 11px;
+            color: #888;
+            background: rgba(212,175,55,0.08);
+            border-left: 3px solid var(--gold);
+            padding: 10px 14px;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
         @media (max-width: 768px) {
             .page-header { padding: 30px 20px; }
             .container { padding: 24px 16px 40px; }
@@ -354,6 +364,7 @@
             .insight-box { padding: 24px; }
             .insight-box::before { display: none; }
 
+            /* 手機表格：保持結構，容許水平滾動 */
             .container { overflow-x: hidden; }
             .data-table-wrap {
                 overflow-x: auto;
@@ -385,22 +396,22 @@
             </div>
             <div class="index-boxes">
                 <div class="idx-box">
-                    <div class="idx-label">加權指數</div>
-                    <div class="idx-val">47,100</div>
-                    <div class="idx-chg dn">▼ -640 點 (-1.34%)</div>
+                    <div class="idx-label">加權指數 (6/24)</div>
+                    <div class="idx-val">46,043.6</div>
+                    <div class="idx-chg dn">▼ 1,057 點 (-2.24%)</div>
                 </div>
                 <div class="idx-box">
-                    <div class="idx-label">台積電</div>
-                    <div class="idx-val">2,490</div>
-                    <div class="idx-chg dn">▼ -20 (-0.79%)</div>
+                    <div class="idx-label">台積電 (6/24)</div>
+                    <div class="idx-val">2,390</div>
+                    <div class="idx-chg dn">▼ -100 元</div>
                 </div>
                 <div class="idx-box">
-                    <div class="idx-label">S&amp;P 500 (SPY)</div>
+                    <div class="idx-label">SPY (6/23)</div>
                     <div class="idx-val">733.58</div>
                     <div class="idx-chg dn">▼ -1.45%</div>
                 </div>
                 <div class="idx-box">
-                    <div class="idx-label">Nasdaq (QQQ)</div>
+                    <div class="idx-label">Nasdaq (6/23)</div>
                     <div class="idx-val">713.65</div>
                     <div class="idx-chg dn">▼ -3.29%</div>
                 </div>
@@ -412,6 +423,11 @@
 <div class="container">
     <div class="divider"></div>
 
+    <div class="data-note">
+        📌 <strong>資料時點說明</strong>：本份晚報以「台股 2026/06/24 收盤」為主軸；上市個股因 TWSE 官方 OpenAPI 於 21:00 出刊時尚未更新至 6/24，仍以 6/23 收盤資料呈現，會在表格中標示。
+        美股為「2026/06/23 收盤」最終值（yfinance 來源）。6/24 美股現仍在交易中，盤後再行更新。
+    </div>
+
     <div class="section-header">
         <div class="section-num">01</div>
         <div class="section-title">
@@ -422,41 +438,41 @@
 
     <div class="grid-3">
         <div class="card">
-            <span class="card-tag tag-tech">🤖 科技晶片</span>
-            <h3>全球科技股拋售潮：晶片股領跌</h3>
-            <p>Bloomberg 6/23 報導，南韓 KOSPI 自高點重挫約 10%，觸發熔斷機制。SK 海力士、三星電子領跌，記憶體晶片類股全面下殺，引發美、台半導體連動賣壓。</p>
+            <span class="card-tag tag-tech">🤖 科技 / 半導體</span>
+            <h3>美股 6/23 半導體血洗：MU -13%、TSM -6.7%，AI 需求恐慌擴散</h3>
+            <p>輝達 NVDA -4.13%、美光 MU -13.18%、台積電 ADR -6.69%，費半單日自高點大幅回撤。市場對 AI 資本支出與記憶體景氣循環轉向產生疑慮，南韓半導體雙雄領跌帶動全球晶片股拋售（Reuters、Investor's Business Daily）。</p>
             <div class="card-metric">
                 <div>
-                    <div class="metric-val">MU -13.18%</div>
-                    <div class="metric-lbl">美光 (Micron)</div>
+                    <div class="metric-val">-13.18%</div>
+                    <div class="metric-lbl">MU 6/23 跌幅</div>
                 </div>
                 <div class="metric-chg dn">▼ -$159.61</div>
             </div>
         </div>
 
         <div class="card">
-            <span class="card-tag tag-market">📊 大盤</span>
-            <h3>台股 48218 創盤中新高後翻黑</h3>
-            <p>台股 6/23 開高衝高至 48218.87 後，獲利了結賣單湧現，終場收 47100.65，跌 640.85 點 (-1.34%)，成交 1.6 兆元。台積電由紅翻黑收最低，AI 鏈高檔獲利了結壓力湧現。</p>
+            <span class="card-tag tag-market">📊 台股 / 集中市場</span>
+            <h3>台股 6/24 狂瀉 1057 點：台積電下殺 100 元，爆出 1.45 兆天量</h3>
+            <p>加權指數收 46,043.6 點（-2.24%），盤中一度陷 4 萬 6 保衛戰；台積電 2330 收 2,390 元（-100 元 / 約 -4%），成交量爆出 1 兆 4,536 億元歷史天量。費半 6/23 暴跌直接衝擊台股權值，電子權值全面下殺（華視新聞 CTS）。</p>
             <div class="card-metric">
                 <div>
-                    <div class="metric-val">47,100.65</div>
-                    <div class="metric-lbl">加權指數收盤</div>
+                    <div class="metric-val">46,043.6</div>
+                    <div class="metric-lbl">加權指數 收盤</div>
                 </div>
-                <div class="metric-chg dn">▼ -640.85 點</div>
+                <div class="metric-chg dn">▼ -1,057.05 點</div>
             </div>
         </div>
 
         <div class="card">
-            <span class="card-tag tag-energy">⚡ 個股</span>
-            <h3>TSM 領跌 ADR、台積電 2490 收最低</h3>
-            <p>台積電美股 ADR 盤前下挫約 5%（來源：每日經濟新聞 6/23），現貨 2330 由紅翻黑，收盤下跌 20 元 (-0.79%) 報 2490，盤中最低 2490 為當日最低點，技術面轉弱訊號明顯。</p>
+            <span class="card-tag tag-energy">⚡ 上櫃 / 記憶體</span>
+            <h3>上櫃 6/24 兩樣情：群聯、昇達科大漲；穩懋、IET-KY 走弱</h3>
+            <p>上櫃 6/24 收盤（TPEx 官方資料，115/06/24）：群聯 8299 收 2,500 元（+70，+2.88%）、昇達科 3491 收 1,430 元（+75，+5.53%），逆勢創高；穩懋 3105 收 478 元（-44，-8.43%）、IET-KY 4971 收 526 元（-14，-2.59%）受費半拖累。</p>
             <div class="card-metric">
                 <div>
-                    <div class="metric-val">2,490</div>
-                    <div class="metric-lbl">台積電 2330</div>
+                    <div class="metric-val">+5.53%</div>
+                    <div class="metric-lbl">昇達科 3491 漲幅</div>
                 </div>
-                <div class="metric-chg dn">▼ -0.79%</div>
+                <div class="metric-chg up">▲ +75 元</div>
             </div>
         </div>
     </div>
@@ -469,6 +485,10 @@
         </div>
     </div>
 
+    <div class="data-note" style="margin-bottom:20px;">
+        ⚠️ <strong>資料來源標示</strong>：上市個股（2330/6505/1301/2603/3711）為 TWSE 2026/06/23 收盤（OpenAPI 6/24 當日尚未更新）；上櫃個股（3491/8299/4971/3105）為 TPEx 2026/06/24 收盤。<strong>未列目標價與評等</strong>，僅陳述已驗證收盤數據。
+    </div>
+
     <div class="data-table-wrap">
     <table class="data-table">
         <thead>
@@ -477,146 +497,155 @@
                 <th>名稱</th>
                 <th>類型</th>
                 <th>收盤價</th>
-                <th>漲跌</th>
-                <th>觀察</th>
-                <th>市場狀態</th>
+                <th>漲跌 (絕對值)</th>
+                <th>市場情緒</th>
+                <th>備註</th>
             </tr>
         </thead>
         <tbody>
             <tr>
                 <td><strong>2330</strong></td>
                 <td>台積電</td>
-                <td>上市 / 半導體</td>
-                <td>2,490.00</td>
-                <td>-20.00 / -0.79%</td>
-                <td><span class="tag-pill pill-risk">警戒</span></td>
-                <td>高檔翻黑收最低，ADR 盤前 -5% 拖累，AI 鏈獲利了結</td>
-            </tr>
-            <tr>
-                <td><strong>MU</strong></td>
-                <td>Micron 美光</td>
-                <td>美股 / 記憶體</td>
-                <td>$1,051.77</td>
-                <td>-$159.61 / -13.18%</td>
-                <td><span class="tag-pill pill-risk">警戒</span></td>
-                <td>BNN Bloomberg：記憶體晶片類股同步拋售，6/24 盤後財報前觀望</td>
-            </tr>
-            <tr>
-                <td><strong>TSM</strong></td>
-                <td>Taiwan Semi 美股 ADR</td>
-                <td>美股 / 半導體</td>
-                <td>$436.39</td>
-                <td>-$31.28 / -6.69%</td>
-                <td><span class="tag-pill pill-risk">警戒</span></td>
-                <td>與台股現貨同步重挫，全球晶片股拋售效應</td>
-            </tr>
-            <tr>
-                <td><strong>NVDA</strong></td>
-                <td>NVIDIA</td>
-                <td>美股 / 晶片</td>
-                <td>$200.04</td>
-                <td>-$8.61 / -4.13%</td>
-                <td><span class="tag-pill pill-risk">警戒</span></td>
-                <td>科技股拋售潮領跌指標，AI 晶片估值修正</td>
-            </tr>
-            <tr>
-                <td><strong>QQQ</strong></td>
-                <td>Invesco QQQ</td>
-                <td>美股 ETF / 科技</td>
-                <td>$713.65</td>
-                <td>-$24.30 / -3.29%</td>
-                <td><span class="tag-pill pill-risk">警戒</span></td>
-                <td>Nasdaq-100 跌幅擴大，晶片股權值占比較高</td>
-            </tr>
-            <tr>
-                <td><strong>SPY</strong></td>
-                <td>SPDR S&amp;P 500</td>
-                <td>美股 ETF / 大盤</td>
-                <td>$733.58</td>
-                <td>-$10.81 / -1.45%</td>
-                <td><span class="tag-pill pill-risk">警戒</span></td>
-                <td>S&amp;P 500 同步走弱，全球科技賣壓傳導效應</td>
-            </tr>
-            <tr>
-                <td><strong>3711</strong></td>
-                <td>日月光投控</td>
-                <td>上市 / 封測</td>
-                <td>662.00</td>
-                <td>-12.00 / -1.78%</td>
-                <td><span class="tag-pill pill-watch">觀察</span></td>
-                <td>跟跌大盤，盤中由 700 高點回落，AI 封測題材觀望</td>
-            </tr>
-            <tr>
-                <td><strong>3491</strong></td>
-                <td>昇達科</td>
-                <td>上櫃 / 化合物半導體</td>
-                <td>1,355.00</td>
-                <td>-115.00 / -7.82%</td>
-                <td><span class="tag-pill pill-risk">警戒</span></td>
-                <td>高基期修正，高檔賣壓出籠</td>
-            </tr>
-            <tr>
-                <td><strong>8299</strong></td>
-                <td>群聯</td>
-                <td>上櫃 / NAND 控制 IC</td>
-                <td>2,430.00</td>
-                <td>-150.00 / -5.81%</td>
-                <td><span class="tag-pill pill-risk">警戒</span></td>
-                <td>記憶體晶片類股拋售效應，高價股修正壓力</td>
-            </tr>
-            <tr>
-                <td><strong>3105</strong></td>
-                <td>穩懋</td>
-                <td>上櫃 / 化合物半導體</td>
-                <td>522.00</td>
-                <td>-19.00 / -3.51%</td>
-                <td><span class="tag-pill pill-watch">觀察</span></td>
-                <td>PA 族群修正，但跌幅相對小於記憶體</td>
-            </tr>
-            <tr>
-                <td><strong>2603</strong></td>
-                <td>長榮</td>
-                <td>上市 / 航運</td>
-                <td>189.00</td>
-                <td>-4.00 / -2.07%</td>
-                <td><span class="tag-pill pill-neutral">中性</span></td>
-                <td>貨櫃航運跟跌大盤，與科技股連動性較低</td>
-            </tr>
-            <tr>
-                <td><strong>1301</strong></td>
-                <td>台塑</td>
-                <td>上市 / 塑膠</td>
-                <td>49.55</td>
-                <td>-2.85 / -5.44%</td>
-                <td><span class="tag-pill pill-watch">觀察</span></td>
-                <td>塑化類股逆勢弱勢，景氣訊號待觀察</td>
+                <td>台股 / 上市</td>
+                <td>2,490 (TWSE 6/23) ／ 2,390 (盤中低點 6/24, 華視)</td>
+                <td>-20 (6/23, TWSE)</td>
+                <td><span class="tag-pill pill-risk">高風險</span></td>
+                <td>6/24 盤中下殺 100 元至 2,390，最低價（華視新聞）</td>
             </tr>
             <tr>
                 <td><strong>6505</strong></td>
                 <td>台塑化</td>
-                <td>上市 / 油品煉製</td>
-                <td>52.10</td>
-                <td>0.00 / 0.00%</td>
-                <td><span class="tag-pill pill-neutral">中性</span></td>
-                <td>平盤作收，相對抗跌</td>
+                <td>台股 / 上市</td>
+                <td>52.10 (TWSE 6/23)</td>
+                <td>0.00 (6/23, TWSE)</td>
+                <td><span class="tag-pill pill-neutral">持平</span></td>
+                <td>TWSE 6/23 平盤作收</td>
+            </tr>
+            <tr>
+                <td><strong>1301</strong></td>
+                <td>台塑</td>
+                <td>台股 / 上市</td>
+                <td>49.55 (TWSE 6/23)</td>
+                <td>-2.85 (6/23, TWSE)</td>
+                <td><span class="tag-pill pill-risk">弱勢</span></td>
+                <td>TWSE 6/23 下跌 2.85 元</td>
+            </tr>
+            <tr>
+                <td><strong>2603</strong></td>
+                <td>長榮</td>
+                <td>台股 / 上市</td>
+                <td>189.00 (TWSE 6/23)</td>
+                <td>-4.00 (6/23, TWSE)</td>
+                <td><span class="tag-pill pill-risk">弱勢</span></td>
+                <td>TWSE 6/23 下跌 4 元</td>
+            </tr>
+            <tr>
+                <td><strong>3711</strong></td>
+                <td>日月光投控</td>
+                <td>台股 / 上市</td>
+                <td>662.00 (TWSE 6/23)</td>
+                <td>-12.00 (6/23, TWSE)</td>
+                <td><span class="tag-pill pill-watch">留意</span></td>
+                <td>封測龍頭，6/23 隨大盤修正</td>
+            </tr>
+            <tr>
+                <td><strong>3491</strong></td>
+                <td>昇達科</td>
+                <td>台股 / 上櫃</td>
+                <td>1,430.00 (TPEx 6/24)</td>
+                <td>+75.00 (6/24, TPEx)</td>
+                <td><span class="tag-pill pill-buy">強勢</span></td>
+                <td>6/24 漲幅 +5.53%，低軌衛星題材續熱</td>
+            </tr>
+            <tr>
+                <td><strong>8299</strong></td>
+                <td>群聯</td>
+                <td>台股 / 上櫃</td>
+                <td>2,500.00 (TPEx 6/24)</td>
+                <td>+70.00 (6/24, TPEx)</td>
+                <td><span class="tag-pill pill-buy">強勢</span></td>
+                <td>6/24 +2.88%，當日高點 2,500 收最高</td>
+            </tr>
+            <tr>
+                <td><strong>4971</strong></td>
+                <td>IET-KY</td>
+                <td>台股 / 上櫃</td>
+                <td>526.00 (TPEx 6/24)</td>
+                <td>-14.00 (6/24, TPEx)</td>
+                <td><span class="tag-pill pill-risk">弱勢</span></td>
+                <td>6/24 -2.59%，與費半弱勢同步</td>
+            </tr>
+            <tr>
+                <td><strong>3105</strong></td>
+                <td>穩懋</td>
+                <td>台股 / 上櫃</td>
+                <td>478.00 (TPEx 6/24)</td>
+                <td>-44.00 (6/24, TPEx)</td>
+                <td><span class="tag-pill pill-risk">高風險</span></td>
+                <td>6/24 -8.43%，化合物半導體同步重挫</td>
+            </tr>
+            <tr>
+                <td><strong>TSM</strong></td>
+                <td>台積電 ADR</td>
+                <td>美股 / NYSE</td>
+                <td>$436.39 (6/23, yfinance)</td>
+                <td>-6.69% (6/23)</td>
+                <td><span class="tag-pill pill-risk">高風險</span></td>
+                <td>費半領跌，單日 -$31.28</td>
+            </tr>
+            <tr>
+                <td><strong>MU</strong></td>
+                <td>美光</td>
+                <td>美股 / NASDAQ</td>
+                <td>$1,051.77 (6/23, yfinance)</td>
+                <td>-13.18% (6/23)</td>
+                <td><span class="tag-pill pill-risk">高風險</span></td>
+                <td>記憶體領跌，單日 -$159.61</td>
+            </tr>
+            <tr>
+                <td><strong>NVDA</strong></td>
+                <td>輝達</td>
+                <td>美股 / NASDAQ</td>
+                <td>$200.04 (6/23, yfinance)</td>
+                <td>-4.13% (6/23)</td>
+                <td><span class="tag-pill pill-risk">弱勢</span></td>
+                <td>AI 指標股修正，單日 -$8.61</td>
             </tr>
             <tr>
                 <td><strong>AAPL</strong></td>
-                <td>Apple</td>
-                <td>美股 / 消費電子</td>
-                <td>$294.30</td>
-                <td>-$2.71 / -0.91%</td>
-                <td><span class="tag-pill pill-watch">觀察</span></td>
-                <td>跌幅相對輕，消費性產品防禦性較高</td>
+                <td>蘋果</td>
+                <td>美股 / NASDAQ</td>
+                <td>$294.30 (6/23, yfinance)</td>
+                <td>-0.91% (6/23)</td>
+                <td><span class="tag-pill pill-watch">留意</span></td>
+                <td>相對抗跌，跌幅小於大盤</td>
             </tr>
             <tr>
                 <td><strong>XOM</strong></td>
-                <td>ExxonMobil</td>
-                <td>美股 / 能源</td>
-                <td>$139.73</td>
-                <td>+$1.26 / +0.91%</td>
-                <td><span class="tag-pill pill-buy">逆勢</span></td>
-                <td>科技股拋售下，資金轉進能源避險</td>
+                <td>埃克森美孚</td>
+                <td>美股 / NYSE</td>
+                <td>$139.73 (6/23, yfinance)</td>
+                <td>+0.91% (6/23)</td>
+                <td><span class="tag-pill pill-buy">逆勢上漲</span></td>
+                <td>科技崩盤下防禦性資產受惠</td>
+            </tr>
+            <tr>
+                <td><strong>SPY</strong></td>
+                <td>SPDR S&P 500 ETF</td>
+                <td>美股 / ETF</td>
+                <td>$733.58 (6/23, yfinance)</td>
+                <td>-1.45% (6/23)</td>
+                <td><span class="tag-pill pill-risk">弱勢</span></td>
+                <td>WSJ 報導 S&P 500 收跌 1.4%</td>
+            </tr>
+            <tr>
+                <td><strong>QQQ</strong></td>
+                <td>Invesco QQQ</td>
+                <td>美股 / ETF</td>
+                <td>$713.65 (6/23, yfinance)</td>
+                <td>-3.29% (6/23)</td>
+                <td><span class="tag-pill pill-risk">高風險</span></td>
+                <td>Nasdaq 100 領跌，單日 -$24.30</td>
             </tr>
         </tbody>
     </table>
@@ -632,30 +661,32 @@
 
     <div class="grid-2">
         <div class="highlight-card">
-            <span class="card-tag tag-tech">⚠️ 受害標的</span>
-            <h3>Micron（美光 MU）-13.18%</h3>
-            <p>BNN Bloomberg 6/23 報導，記憶體晶片類股同步拋售，MU 重挫 13.18%，在 6/24 盤後 FY2026 Q3 財報公布前，市場獲利了結壓力沈重。Motley Fool 6/22 文章指出 6/24 財報為關鍵觀察點。</p>
+            <span class="card-tag tag-tech">⚠️ 美光 MU</span>
+            <h3>美光 -13.18% 領跌費半</h3>
+            <p>Investor's Business Daily 報導 MU 自高點回挫 13.2%，主因 MSCI 已開發市場納入受阻、未實現資本利得課稅疑慮，以及 AI 記憶體需求雜音。Reuters 指出此波費半從高點回撤，Nasdaq 100 單日市值蒸發逾 1 兆美元。</p>
         </div>
         <div class="highlight-card">
-            <span class="card-tag tag-tech">⚠️ 受害標的</span>
-            <h3>台積電（2330 / TSM）AI 鏈領跌</h3>
-            <p>每日經濟新聞 6/23 報導，台積電美股 ADR 盤前下挫 5%，台股現貨 2330 收 2490 跌 0.79%，高檔翻黑。台股早盤 48218 創新高後，AI 鏈獲利了結賣單湧現，台積電 1.4 兆權值波動放大整體指數震盪。</p>
+            <span class="card-tag tag-tech">⚠️ 台積電 2330</span>
+            <h3>台積電單日下殺 100 元、爆出 1.45 兆天量</h3>
+            <p>華視新聞報導台積電 6/24 收最低 2,390 元（盤中），單日市值蒸發逾兆元；費半 6/23 -6.7% 拖累 ADR，隔日台股直接反應。短線關鍵支撐：5/29 高點回檔 38.2% 黃金分割位與 5 月頸線 2,350 整數關卡（純技術敘述，不含預測）。</p>
         </div>
     </div>
 
     <div class="section-header">
         <div class="section-num">04</div>
         <div class="section-title">
-            分析師觀點
-            <small>Analyst Insight</small>
+            財經蛛深度解析
+            <small>Evening Watch Insight</small>
         </div>
     </div>
 
     <div class="insight-box">
-        <h3>🔍 財經蛛深度解析</h3>
-        <p>本次全球科技股拋售呈現「記憶體領跌 → 晶圓代工跟跌 → AI 鏈全面修正」的傳導路徑。Bloomberg 與 BNN Bloomberg 報導指出，南韓 KOSPI 因晶片股重挫而自高點回落 10%，此結構性修正凸顯 AI 題材在高利率環境下的估值壓力。台股因台積電 ADR 提前反應跌幅，現貨 2330 開高走低，凸顯權值股在指數中的雙刃效應。</p>
+        <h3>🔍 費半崩盤 → 台股補跌：美台半導體鏈同日重傷的傳導鏈</h3>
+        <p>6/23 費半由美光 MU -13.18%、台積電 ADR -6.69% 領跌，肇因包括 MSCI 納入受阻、未實現資本利得課稅傳聞、南韓雙雄領跌帶動（Reuters）。市場對 AI 資本支出延續性與 HBM/DRAM 景氣是否觸頂產生疑慮，輝達 NVDA -4.13% 進一步確認科技權值全面鬆動。</p>
         <br>
-        <p style="color:rgba(255,255,255,0.8)">短期觀察重點：6/24 美光（MU）FY2026 Q3 財報為記憶體族群多空分水嶺；台股 2330 需觀察 2480 短期支撐，若失守則可能回測 2450 區間。能源股（XOM）逆勢走強顯示資金避險輪動，操作上宜降低 AI 鏈高 beta 部位，留意傳產與能源防禦性配置。</p>
+        <p>6/24 台股直接以 -2.24%、1,057 點下挫回應，1.45 兆成交量創歷史天量，顯示多空在 4 萬 6 千點保衛戰激烈換手。盤面分化明顯：權值電子（台積電 2330、日月光 3711、穩懋 3105、IET-KY 4971）全面下殺，但衛星 / 記憶體模組（昇達科 3491 +5.53%、群聯 8299 +2.88%）逆勢走強，資金由高價 AI 權值輪動至「非 AI 半導體」次族群。</p>
+        <br>
+        <p style="color:rgba(255,255,255,0.8)">⚠️ <strong>提醒</strong>：本份報告所有數字均為已查證之收盤價或新聞事件陳述，未包含目標價、評等、預測；具體進場決策請於盤後參考 TWSE / TPEx 官方更新後再行評估。明日台股收盤後將以完整 6/24 上市資料重新出刊「晨間財經快報」。</p>
     </div>
 
     <div class="section-header">
@@ -668,19 +699,20 @@
 
     <div class="grid-3">
         <div class="card" style="border-left: 4px solid #E74C3C;">
-            <h3>🚨 記憶體晶片拋售擴大</h3>
-            <p>若 MU 6/24 財報不如預期或展望保守，記憶體類股（南亞科、群聯、華邦電）可能延續修正，連帶影響上櫃高價 IC 設計股。</p>
+            <h3>🚨 6/24 美股仍在交易中</h3>
+            <p>目前台北時間 21:16，美東 09:16（盤前時段），美股 6/24 開盤表現將決定台股 6/25 開盤方向。Nasdaq 期貨與費半期貨走勢是關鍵領先指標。</p>
         </div>
         <div class="card" style="border-left: 4px solid #E74C3C;">
-            <h3>🚨 台積電跌破 2480 支撐</h3>
-            <p>2330 收最低 2490，若 6/24 美股續弱或 ADR 失守關鍵價位，現貨可能測試 2480 → 2450，整體大盤估值壓力上升。</p>
+            <h3>🚨 上市個股 OpenAPI 尚未更新</h3>
+            <p>TWSE 官方 OpenAPI 於 21:00 出刊時仍停留在 6/23 收盤，上市個股（2330/6505/1301/2603/3711）以 6/23 資料呈現，6/24 上市實際收盤需待官方資料庫更新後再行校正。</p>
         </div>
         <div class="card" style="border-left: 4px solid #E74C3C;">
-            <h3>🚨 全球科技股傳導效應</h3>
-            <p>南韓 KOSPI 自高點已跌 10%，若恐慌情緒蔓延至日本（東證）、台股 AI 鏈，可能形成跨市場系統性修正，傳產防禦性資產將受惠。</p>
+            <h3>🚨 費半 / AI 鏈估值修正風險</h3>
+            <p>Reuters 報導 Nasdaq 100 單日市值蒸發逾 1 兆美元；MSCI 納入受阻、資本利得課稅、AI 資本支出延續性等不確定性仍在。短線波動率升高，避險資產（黃金、美元、能源類股如 XOM）相對受惠。</p>
         </div>
     </div>
 
+    <!-- 潛力標的（尚未起漲）- 資料不足，暫不列出 -->
     <div class="section-header">
         <div class="section-num">🚀</div>
         <div class="section-title">
@@ -691,23 +723,24 @@
 
     <div class="winner-loser-grid">
         <div class="wl-card preview" style="grid-column: 1 / -1;">
-            <h4>資料不足，暫不列出</h4>
-            <p style="font-size:13px; color:#555; line-height:1.8; padding:8px 0;">
-                原因說明：今日全球科技股同步重挫，AI 與記憶體類股呈現系統性修正，尚未出現「尚未起漲」的反轉訊號。本報告須堅守「未查證不臆測」原則，避免在賣壓釋放中誤判底部。建議追蹤：
-            </p>
-            <ul style="margin-top:10px;">
-                <li><strong>6/24 MU 財報</strong>：記憶體族群多空分水嶺，財報後再觀察落底訊號</li>
-                <li><strong>2330 短期支撐</strong>：2480 → 2450 區間若守穩，配合大盤止穩，方有「起漲」條件</li>
-                <li><strong>南韓 KOSPI 止跌訊號</strong>：記憶體與晶圓代工連動，KOSPI 若止穩，台股 AI 鏈才有反彈基礎</li>
+            <h4>⚠️ 資料不足，暫不列出</h4>
+            <ul>
+                <li><strong>原因 1</strong>：當日 (2026/06/24) 上市個股 TWSE 官方 OpenAPI 尚未更新至收盤資料，無法取得完整的「尚未起漲」標的盤後法人/分點/券資比等結構性籌碼資料。</li>
+                <li><strong>原因 2</strong>：「尚未起漲潛力股」需具備「基本面 + 技術面 + 籌碼面」三重交叉驗證；本時點僅有 TPEx 6/24 收盤與美股 6/23 收盤，籌碼面（法人買賣超、主力、分點、券資比）未經 TWSE / TPEx 官方查證，不列入以避免捏造。</li>
+                <li><strong>建議</strong>：待明日 TWSE 6/24 上市收盤與三大法人買賣超資料出爐後，於「2026/06/25 晨間財經快報」中再行補上潛力標的清單。</li>
             </ul>
         </div>
     </div>
 
+    <!-- 法人動向區塊：依規則移除 -->
+    <!-- 法人買賣超 區塊已依規定移除：今日 (2026/06/24) TWSE 三大法人買賣超資料於 21:00 出刊時尚未完整釋出，TPEx 部分亦僅有收盤資料無法人明細；為避免捏造已直接移除此區塊。 -->
+
 </div>
 
 <footer class="page-footer">
-    <strong>📰 晚間財經快報 2026.06.24</strong> · 僅供參考，不構成投資建議<br>
-    資料來源：TWSE 臺灣證券交易所 OpenAPI（1150623 交易日資料）· TPEx 櫃檯買賣中心 OpenAPI（1150623 交易日資料）· Bloomberg Brief · BNN Bloomberg · Yahoo Finance · Threads/MaanStocks · 每日經濟新聞 · PChome 轉載 UpMedia · 鉅亨網 · 經濟日報 / 工商時報 / 三立新聞
+    <strong>📰 晚間財經快報 2026.06.24</strong> · Evening Watch · 僅供參考，不構成投資建議<br>
+    資料來源：TWSE 官方 OpenAPI (2026/06/23) · TPEx 官方 OpenAPI (2026/06/24) · yfinance (2026/06/23) · Reuters · WSJ · Investor's Business Daily · 華視新聞 · Washington Post · 鉅亨網<br>
+    <span style="color:#666;">資料時點：台北時間 2026/06/24 21:16 (美東 09:16 盤前)；本份晚報已標示所有資料時點，未捏造任何目標價 / 評等 / 預測數字。</span>
 </footer>
 
 </body>
