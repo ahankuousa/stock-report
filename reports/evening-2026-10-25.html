@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>晚間財經快報</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); min-height: 100vh; padding: 20px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        .header { text-align: center; padding: 30px 20px; background: linear-gradient(135deg, #c0392b 0%, #e74c3c 100%); border-radius: 20px; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(192, 57, 43, 0.3); }
+        .header h1 { color: white; font-size: 2.5em; font-weight: 800; margin-bottom: 10px; letter-spacing: 2px; }
+        .header .slogan { color: rgba(255,255,255,0.9); font-size: 1.2em; font-weight: 500; letter-spacing: 4px; text-transform: uppercase; }
+        .date { color: rgba(255,255,255,0.8); margin-top: 15px; font-size: 1em; }
+        .section { background: white; border-radius: 15px; padding: 25px; margin-bottom: 20px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); }
+        .section h2 { color: #c0392b; font-size: 1.4em; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 3px solid #e74c3c; display: flex; align-items: center; gap: 10px; }
+        .section h2 .icon { font-size: 1.5em; }
+        .market-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; }
+        .market-card { background: #f8f9fa; border-radius: 12px; padding: 15px; text-align: center; border-left: 4px solid #c0392b; }
+        .market-card .name { font-weight: 600; color: #2c3e50; font-size: 0.95em; }
+        .market-card .price { font-size: 1.4em; font-weight: 700; color: #1a1a2e; margin: 8px 0; }
+        .market-card .change { font-size: 0.9em; font-weight: 600; padding: 4px 10px; border-radius: 20px; display: inline-block; }
+        .positive { background: #d4edda; color: #155724; }
+        .negative { background: #f8d7da; color: #721c24; }
+        .neutral { background: #e2e3e5; color: #383d41; }
+        .stock-table { width: 100%; border-collapse: collapse; }
+        .stock-table th, .stock-table td { padding: 12px; text-align: left; border-bottom: 1px solid #eee; }
+        .stock-table th { background: #f8f9fa; color: #c0392b; font-weight: 600; }
+        .stock-table .code { font-weight: 600; color: #1a1a2e; }
+        .stock-table .name { color: #666; }
+        .news-item { padding: 15px; background: #f8f9fa; border-radius: 10px; margin-bottom: 12px; border-left: 4px solid #c0392b; }
+        .news-item .title { font-weight: 600; color: #1a1a2e; margin-bottom: 8px; }
+        .news-item .desc { color: #666; font-size: 0.9em; line-height: 1.5; }
+        .footer { text-align: center; padding: 20px; color: rgba(255,255,255,0.7); font-size: 0.85em; }
+        .note { background: #fff3cd; border-radius: 10px; padding: 15px; margin-top: 15px; color: #856404; font-size: 0.9em; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📰 晚間財經快報</h1>
+            <div class="slogan">Evening Watch</div>
+            <div class="date">2026年10月25日（民國115年10月22 交易日）｜美股截至 2026-10-23</div>
+        </div>
+
+        <div class="section">
+            <h2><span class="icon">🇺🇸</span> 美股動向</h2>
+            <div class="market-grid">
+                <div class="market-card"><div class="name">SPY 標普500 ETF<br><small>SPY</small></div><div class="price">759.97</div><div class="change negative">-0.52%</div></div>
+<div class="market-card"><div class="name">QQQ 那斯達克100 ETF<br><small>QQQ</small></div><div class="price">704.40</div><div class="change negative">-0.01%</div></div>
+<div class="market-card"><div class="name">XOM 埃克森美孚<br><small>XOM</small></div><div class="price">183.21</div><div class="change positive">+2.79%</div></div>
+<div class="market-card"><div class="name">TSM 台積電ADR<br><small>TSM</small></div><div class="price">418.51</div><div class="change positive">+1.49%</div></div>
+<div class="market-card"><div class="name">MU 美光科技<br><small>MU</small></div><div class="price">877.55</div><div class="change positive">+2.46%</div></div>
+<div class="market-card"><div class="name">AAPL 蘋果<br><small>AAPL</small></div><div class="price">347.73</div><div class="change negative">-0.14%</div></div>
+<div class="market-card"><div class="name">NVDA 輝達<br><small>NVDA</small></div><div class="price">210.96</div><div class="change negative">-0.59%</div></div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2><span class="icon">🇹🇼</span> 台股加權指數</h2>
+            <div class="market-card" style="max-width: 300px; margin: 0 auto;">
+                <div class="name">發行量加權股價指數</div>
+                <div class="price">46,041.43</div>
+                <div class="change negative">846.34 點 / -1.81%</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2><span class="icon">🏢</span> 上市個股</h2>
+            <table class="stock-table">
+                <thead>
+                    <tr>
+                        <th>代號</th>
+                        <th>名稱</th>
+                        <th>收盤價</th>
+                        <th>漲跌幅</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td class="code">2330</td><td class="name">台積電</td><td>2,385.00</td><td class="negative">-1.45%</td></tr>
+<tr><td class="code">6505</td><td class="name">台塑化</td><td>106.50</td><td class="negative">-2.74%</td></tr>
+<tr><td class="code">1301</td><td class="name">台塑</td><td>73.80</td><td class="negative">-4.16%</td></tr>
+<tr><td class="code">2603</td><td class="name">長榮</td><td>260.00</td><td class="positive">+0.97%</td></tr>
+<tr><td class="code">3711</td><td class="name">日月光投控</td><td>654.00</td><td class="negative">-4.39%</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2><span class="icon">📈</span> 上櫃個股</h2>
+            <table class="stock-table">
+                <thead>
+                    <tr>
+                        <th>代號</th>
+                        <th>名稱</th>
+                        <th>收盤價</th>
+                        <th>漲跌幅</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td class="code">3491</td><td class="name">昇達科</td><td>1,320.00</td><td class="negative">-7.69%</td></tr>
+<tr><td class="code">8299</td><td class="name">群聯</td><td>1,880.00</td><td class="negative">-2.59%</td></tr>
+<tr><td class="code">4971</td><td class="name">IET-KY</td><td>450.00</td><td class="negative">-6.74%</td></tr>
+<tr><td class="code">3105</td><td class="name">穩懋</td><td>486.00</td><td class="negative">-5.08%</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2><span class="icon">🌐</span> 國際財經焦點</h2>
+            
+<div class="news-item">
+  <div class="title">🛢️ 油價飆升引領壓力：布蘭特原油收 116.72 美元，創 4 月以來最高結算價</div>
+  <div class="desc">CNBC 報導，WTI 期貨上漲 3.8% 收在每桶 103.27 美元，布蘭特原油上漲 3.1% 收在 116.72 美元，為 4 月以來最高結算價，主要因市場傳出美國與以色列可能計畫再度攻擊伊朗，而伊朗表示已準備反擊。整週布蘭特原油累計漲逾 6%。<br>
+  <span style="color:#888;font-size:0.85em;">來源：CNBC《Stock market news for Oct. 23, 2026》、Newsquawk</span></div>
+</div>
+<div class="news-item">
+  <div class="title">📉 美股三大指數同步收低：道瓊重挫 652.82 點，S&amp;P 500 跌 0.5%</div>
+  <div class="desc">道瓊工業指數下跌 652.82 點（-1.2%）收 52,215.16 點；標普 500 指數下跌 39.75 點（-0.5%）收 7,623.68 點；那斯達克綜合指數下跌 53.52 點（-0.2%）收 25,955.34 點。AP 報導指出，週線方面 S&amp;P 500 與那斯達克分別下跌 0.5% 與 0.7%，道瓊則上漲 0.4%，賣壓明顯集中於傳產與工業類股。<br>
+  <span style="color:#888;font-size:0.85em;">來源：AP《How major US stock indexes fared Friday 10/23/2026》、24/7 Wall St.</span></div>
+</div>
+<div class="news-item">
+  <div class="title">💵 美國 10 年期公債殖利率逼近 5%，市場重新評價 AI 資本支出回報</div>
+  <div class="desc">10 年期美債殖利率當日上升逾 4 個基點至約 4.999%，前一日曾跌回 5% 下方，為一個月來首度。CNBC 報導指出，投資人對 AI 資料中心擴建所需龐大借貸保持戒心；Policy Magazine 分析則指出，本週納斯達克 100 自 10 月初高點回落逾 7%，但道瓊本月仍上漲近 4%，顯示資金正由科技股輪動至低波動、利率敏感類股。<br>
+  <span style="color:#888;font-size:0.85em;">來源：CNBC、Policy Magazine《The Case Against (Rate) Hiking》</span></div>
+</div>
+<div class="news-item">
+  <div class="title">📅 下週關鍵行程：10/28 聯準會利率決議 + Alphabet、Microsoft 財報；10/29 Amazon 財報</div>
+  <div class="desc">Reuters 報導美股在 AI 支出疑慮與油價上漲雙重壓力下收低，結束震盪的一週。市場將在 10 月 28 日迎來聯準會政策決定，同日 Alphabet 與 Microsoft 公布財報，10 月 29 日 Amazon 接棒，投資人將藉此檢視 AI 資本支出能否帶動獲利。24/7 Wall St. 報導，本週四大網安類股領漲，CrowdStrike 上漲 8.2%；AT&T、T-Mobile 等電信類股則列入跌幅前茅。<br>
+  <span style="color:#888;font-size:0.85em;">來源：Reuters、24/7 Wall St.、Yahoo Finance</span></div>
+</div>
+<div class="news-item">
+  <div class="title">📉 費城半導體指數（SOX）本週重挫，AI 融資成本疑慮升高</div>
+  <div class="desc">10/22 費半單日重挫 774.77 點（-6.72%）收在 10,731.98 點，盤中低點 10,666.41 點，較 6/22 創下的歷史盤中高點 14,655.29 點修正近 27%。TOPONE Markets 引述分析指出，本波殺盤主因已由「估值過高」修正轉為對「AI 資本支出能否變現」的深層疑慮，Meta 雖公布優於預期的第三季財報，但龐大資本支出導致十多年來首次現金淨流出，並宣布發行無投票權股票，進一步加深投資人對資金缺口的擔憂。<br>
+  <span style="color:#888;font-size:0.85em;">來源：TOPONE Markets、Reuters</span></div>
+</div>
+
+        </div>
+
+        <div class="section">
+            <h2><span class="icon">📰</span> 台股新聞</h2>
+            
+<div class="news-item">
+  <div class="title">📉 外資大舉提款 816.57 億元，台股重挫 846.34 點失守季線</div>
+  <div class="desc">依臺灣證券交易所資料，10 月 22 日加權指數收在 46,041.43 點，下跌 846.34 點、跌幅 1.81%，以全日最低點作收，跌破約 46,207 點的季線（60 日均線）。盤中最高 47,332.18 點，全日高低震幅達 1,290.75 點，成交金額 8,792.3 億元。外資及陸資當日賣超 816.57 億元，10 月以來累計賣超已逾 8,210.26 億元。<br>
+  <span style="color:#888;font-size:0.85em;">來源：臺灣證券交易所 OpenAPI（MI_INDEX）、自由財經／Newtalk／台灣新生報報導</span></div>
+</div>
+<div class="news-item">
+  <div class="title">🏛️ 三大法人合計賣超 1,001.6 億元，僅投信逆勢連 10 買</div>
+  <div class="desc">依證交所三大法人買賣金額統計，10/22 外資及陸資賣超 816.57 億元，自營商賣超 273.78 億元，投信買超 88.75 億元。投信自 10 月 8 日起連續 10 個交易日買超，累計買超 1,557.06 億元，成為盤面主要承接力道。<br>
+  <span style="color:#888;font-size:0.85em;">來源：臺灣證券交易所三大法人買賣金額統計表（經新聞媒體引述）</span></div>
+</div>
+<div class="news-item">
+  <div class="title">💱 新台幣收 32.508 元續貶，本月以來已貶值 6.66 角</div>
+  <div class="desc">央行公布的新台幣對美元銀行間收盤匯率顯示，10/22 收在 32.508 元，較 10/21 的 32.488 元貶值 2 分；相較 10 月 1 日的 31.842 元，本月以來已貶值 6.66 角。央行 10/19 發布新聞稿〈近期新台幣匯率貶值之說明〉，表示新台幣近期走貶主要反映國際股市動盪，以及外資賣超台股併同獲配股利匯出資金。<br>
+  <span style="color:#888;font-size:0.85em;">來源：中央銀行新聞稿、台北外匯經紀公司（經新聞媒體引述）</span></div>
+</div>
+<div class="news-item">
+  <div class="title">🧱 類股分歧：塑膠類重挫 5.39% 最弱，水泥類 +2.83%、金融保險 +0.62% 抗跌</div>
+  <div class="desc">依證交所類股指數，10/22 塑膠類指數重挫 5.39%、塑膠化工類 -4.08%，為跌幅最大類股；電子工業類 -2.11%，其中電子零組件類 -3.64%、半導體類 -1.91%、電腦及週邊設備類 -2.29%。相對抗跌者為水泥類 +2.83%、航運類 +0.65%、金融保險類 +0.62%、資訊服務類 +1.49%。上市股票下跌 756 家、上漲 247 家、持平 74 家。<br>
+  <span style="color:#888;font-size:0.85em;">來源：臺灣證券交易所 OpenAPI（MI_INDEX 類股指數）</span></div>
+</div>
+<div class="news-item">
+  <div class="title">📦 記憶體與被動元件遭獲利了結：南亞科跌 5.15%、國巨重挫 6.46%</div>
+  <div class="desc">10/22 南亞科（2408）收 414 元、下跌 5.15%；南亞（1303）大跌 6.08% 收 301 元；國巨（2327）重挫 6.46% 收 507 元。FTNN 報導，被動元件族群當日共有 7 檔跌幅超過 7%，其中千如（3236）、光頡（3624）、天二科技（6834）跌停；鈺邦（6449）跌 9.39% 收 222 元。自由財經引述台新投信經理人黃鈺民觀點，認為半導體股承壓主要來自 Lam Research 財測未能滿足市場對產業高速成長的期待。<br>
+  <span style="color:#888;font-size:0.85em;">來源：FTNN 新聞網、自由財經（yahoo!股市資料）、臺灣證券交易所 OpenAPI</span></div>
+</div>
+<div class="news-item">
+  <div class="title">⚠️ 尚未起漲潛力股：資料不足，暫不列出</div>
+  <div class="desc">本次查證僅涵蓋 TWSE／TPEx 官方收盤行情與公開新聞，未取得具備完整財報、估值、籌碼與產業動能交叉驗證的個股清單。在缺乏可溯來源的情況下，為避免誤導讀者，本期不列出「尚未起漲潛力股」名單。若您希望納入此區塊，建議先指定篩選條件（例如：近三月營收年增率、外資持股變化、KDJ／MACD 技術條件、成交量放大倍數），並授權我以 TWSE 三大法人、公開資訊觀測站與主流行情 API 逐項查證後再產出。<br>
+  <span style="color:#888;font-size:0.85em;">說明：依「禁止捏造資訊」原則，無完整查證即不列出</span></div>
+</div>
+<div class="news-item">
+  <div class="title">📌 分析師觀點（僅陳述有來源之事件）</div>
+  <div class="desc">台新投信經理人黃鈺民（自由財經引述）：美國期中選舉前台股行情轉趨震盪，大盤加速趕底過程中，績效與規模同步成長的 ETF 代表投資人青睞；並指出台積電 10 月法說已再次確認全球半導體晶片需求強勁，AI 需求將持續為半導體供應鏈帶來新訂單。<br>
+  <span style="color:#888;font-size:0.85em;">來源：自由財經（2026/10/22）</span></div>
+</div>
+<div class="news-item">
+  <div class="title">📅 休市提醒：光復節連假補假，10/26（一）休市</div>
+  <div class="desc">依證交所公告，10 月 25 日適逢「臺灣光復暨金門古寧頭大捷紀念日」週日，10 月 26 日（週一）補假休市，10 月 23 日（五）為連假前最後一個交易日。另有媒體指出，颱風「薔琵」動向增添 10/23 可能停班停課的不確定性。<br>
+  <span style="color:#888;font-size:0.85em;">來源：臺灣證券交易所公告（經新聞媒體引述）</span></div>
+</div>
+
+        </div>
+
+        <div class="section">
+            <h2><span class="icon">⚠️</span> 重要提醒</h2>
+            <div class="note">
+                <strong>資料來源：</strong>本報所有數據來自公開資訊（TWSE、TPEx、yfinance），僅供參考不構成投資建議。投資前請自行評估風險。
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>財經蛛 Evening Report • 每日 21:00 自動產出</p>
+        </div>
+    </div>
+</body>
+</html>
