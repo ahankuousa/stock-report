@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>晚間財經快報</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); min-height: 100vh; padding: 20px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        .header { text-align: center; padding: 30px 20px; background: linear-gradient(135deg, #c0392b 0%, #e74c3c 100%); border-radius: 20px; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(192, 57, 43, 0.3); }
+        .header h1 { color: white; font-size: 2.5em; font-weight: 800; margin-bottom: 10px; letter-spacing: 2px; }
+        .header .slogan { color: rgba(255,255,255,0.9); font-size: 1.2em; font-weight: 500; letter-spacing: 4px; text-transform: uppercase; }
+        .date { color: rgba(255,255,255,0.8); margin-top: 15px; font-size: 1em; }
+        .section { background: white; border-radius: 15px; padding: 25px; margin-bottom: 20px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); }
+        .section h2 { color: #c0392b; font-size: 1.4em; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 3px solid #e74c3c; display: flex; align-items: center; gap: 10px; }
+        .section h2 .icon { font-size: 1.5em; }
+        .market-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; }
+        .market-card { background: #f8f9fa; border-radius: 12px; padding: 15px; text-align: center; border-left: 4px solid #c0392b; }
+        .market-card .name { font-weight: 600; color: #2c3e50; font-size: 0.95em; }
+        .market-card .price { font-size: 1.4em; font-weight: 700; color: #1a1a2e; margin: 8px 0; }
+        .market-card .change { font-size: 0.9em; font-weight: 600; padding: 4px 10px; border-radius: 20px; display: inline-block; }
+        .positive { background: #d4edda; color: #155724; }
+        .negative { background: #f8d7da; color: #721c24; }
+        .neutral { background: #e2e3e5; color: #383d41; }
+        .stock-table { width: 100%; border-collapse: collapse; }
+        .stock-table th, .stock-table td { padding: 12px; text-align: left; border-bottom: 1px solid #eee; }
+        .stock-table th { background: #f8f9fa; color: #c0392b; font-weight: 600; }
+        .stock-table .code { font-weight: 600; color: #1a1a2e; }
+        .stock-table .name { color: #666; }
+        .news-item { padding: 15px; background: #f8f9fa; border-radius: 10px; margin-bottom: 12px; border-left: 4px solid #c0392b; }
+        .news-item .title { font-weight: 600; color: #1a1a2e; margin-bottom: 8px; }
+        .news-item .desc { color: #666; font-size: 0.9em; line-height: 1.5; }
+        .footer { text-align: center; padding: 20px; color: rgba(255,255,255,0.7); font-size: 0.85em; }
+        .note { background: #fff3cd; border-radius: 10px; padding: 15px; margin-top: 15px; color: #856404; font-size: 0.9em; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📰 晚間財經快報</h1>
+            <div class="slogan">Evening Watch</div>
+            <div class="date">2026 年 11 月 22 日（週日）｜ 最新交易日：2026/11/20（週五）美股與台股收盤</div>
+        </div>
+
+        <div class="section">
+            <h2><span class="icon">🇺🇸</span> 美股動向</h2>
+            <div class="market-grid">
+                <div class="market-card"><div class="name">SPY 標普500 ETF</div><div class="price">689.81</div><div class="change negative">-3.64%</div></div>
+<div class="market-card"><div class="name">QQQ 納斯達克100 ETF</div><div class="price">608.45</div><div class="change negative">-5.67%</div></div>
+<div class="market-card"><div class="name">NVDA 輝達</div><div class="price">125.53</div><div class="change negative">-14.01%</div></div>
+<div class="market-card"><div class="name">TSM 台積電 ADR</div><div class="price">318.71</div><div class="change negative">-9.48%</div></div>
+<div class="market-card"><div class="name">MU 美光科技</div><div class="price">594.51</div><div class="change negative">-13.89%</div></div>
+<div class="market-card"><div class="name">AAPL 蘋果</div><div class="price">342.56</div><div class="change negative">-1.90%</div></div>
+<div class="market-card"><div class="name">XOM 艾克森美孚</div><div class="price">159.99</div><div class="change positive">+0.67%</div></div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2><span class="icon">🇹🇼</span> 台股加權指數</h2>
+            <div class="market-card" style="max-width: 300px; margin: 0 auto;">
+                <div class="name">發行量加權股價指數</div>
+                <div class="price">36,033.29</div>
+                <div class="change negative">-2,393.60（-6.23%）</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2><span class="icon">🏢</span> 上市個股</h2>
+            <table class="stock-table">
+                <thead>
+                    <tr>
+                        <th>代號</th>
+                        <th>名稱</th>
+                        <th>收盤價</th>
+                        <th>漲跌幅</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td class="code">2330</td><td class="name">台積電</td><td>2,000.00</td><td class="change negative">-4.76%</td></tr>
+<tr><td class="code">6505</td><td class="name">台塑化</td><td>80.60</td><td class="change negative">-4.39%</td></tr>
+<tr><td class="code">1301</td><td class="name">台塑</td><td>56.10</td><td class="change negative">-7.12%</td></tr>
+<tr><td class="code">2603</td><td class="name">長榮</td><td>233.00</td><td class="change negative">-5.67%</td></tr>
+<tr><td class="code">3711</td><td class="name">日月光投控</td><td>457.00</td><td class="change negative">-9.33%</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2><span class="icon">📈</span> 上櫃個股</h2>
+            <table class="stock-table">
+                <thead>
+                    <tr>
+                        <th>代號</th>
+                        <th>名稱</th>
+                        <th>收盤價</th>
+                        <th>漲跌幅</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td class="code">3491</td><td class="name">昇達科</td><td>1,225.00</td><td class="change negative">-9.93%</td></tr>
+<tr><td class="code">8299</td><td class="name">群聯</td><td>1,320.00</td><td class="change negative">-9.28%</td></tr>
+<tr><td class="code">4971</td><td class="name">IET-KY</td><td>286.50</td><td class="change negative">-9.91%</td></tr>
+<tr><td class="code">3105</td><td class="name">穩懋</td><td>381.00</td><td class="change negative">-9.93%</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2><span class="icon">🌐</span> 國際財經焦點</h2>
+            <div class="news-item"><div class="title">輝達單日重挫 14.01%，傳 SEC 調查會計作業</div><div class="desc">路透社報導 SEC 正檢視輝達潛在會計問題，市場重新審視其新加坡營收揭露與「AI 循環融資」風險。輝達 11/20 收 125.53 美元、單日 -14.01%，連續第 7 週收黑，為 2008 年金融海嘯以來最長連跌紀錄。報導未認定任何違法情事。（來源：Reuters、CNBC、Yahoo Finance）</div></div>
+<div class="news-item"><div class="title">那斯達克單日 -5.28%，2020 年 3 月以來最大單週跌幅</div><div class="desc">那斯達克指數 11/20 下跌 1,261.47 點、收 22,617.73 點（-5.28%），單週重挫約 10%、回吐 2026 年全年漲幅，費城半導體指數大跌 1,011.13 點或 10.73%。道瓊收 48,147.33 點（-1.93%）、標普 500 收 6,910.39 點（-3.70%）。（來源：CNBC、Reuters、Yahoo Finance）</div></div>
+<div class="news-item"><div class="title">Anthropic 上市第二日重挫逾 8%</div><div class="desc">史上最大 IPO Anthropic 11/19 首日上市漲逾 17%，11/20 開盤即遭獲利了結，股價一度急殺逼近 83 美元發行價，終場重挫逾 8%，拖累 AI 類股信心。（來源：CNBC、Yahoo Finance）</div></div>
+<div class="news-item"><div class="title">台積電 ADR -9.48%、美光 -13.89%、博通約 -12.26%</div><div class="desc">市場傳出 Google 將轉向直接採購 TPU 所需高頻寬記憶體（HBM）以降低成本，加上情緒性拋售，半導體供應鏈全面下挫；TSM ADR 收 318.71 美元、MU 收 594.51 美元。（來源：Yahoo Finance、CMoney）</div></div>
+<div class="news-item"><div class="title">Fed：AI 資料中心建設推升通膨，12 月升息一碼機率近定案</div><div class="desc">芝加哥聯儲總裁 Goolsbee 11/19 表示，AI 資料中心大規模建設帶動電力、土地、電工與設備需求，正推升「接近令人不安的高通膨」，且通膨已擴散至服務與醫療；10 月 FOMC 紀錄顯示幾乎所有官員預期 12/8-9 升息一碼，兩位官員主張升息兩碼。（來源：Yahoo Finance、CNBC）</div></div>
+        </div>
+
+        <div class="section">
+            <h2><span class="icon">📰</span> 台股新聞</h2>
+            <div class="news-item"><div class="title">台股 11/20 收 36,033.29 點，史上第三大收盤跌點</div><div class="desc">加權指數單日重挫 2,393.60 點（-6.23%），開 37,646.13 點跳空，盤中最低 35,738.68 點（盤中第四大跌點），總成交值 8,773.5 億元；全台約 180 檔跌停。（來源：TWSE OpenAPI、LIEN TODAY／太報）</div></div>
+<div class="news-item"><div class="title">單週狂跌 7,641.83 點（-17.50%），1990 年以來最慘單週</div><div class="desc">加權指數跌破年線與國安基金護盤低點 37,837 點，櫃買指數單週重挫約 23%、週五成交額縮至 954 億元，許多個股跌停鎖死。（來源：Yahoo 股市、FTNN）</div></div>
+<div class="news-item"><div class="title">金管會 11/23 起全面禁止平盤以下放空</div><div class="desc">金管會 11/21 公告 5 項措施：上市櫃股票及 TDR 之融券、借券賣出價格不得低於前一營業日收盤價；最低融券保證金成數由 130% 提高至 150%；暫停受理券商申請發行認售權證上市櫃；鼓勵公司實施庫藏股；鼓勵借券人暫停借出。為 2015 年以來首度全面平盤下禁空。（來源：中央社、經濟日報）</div></div>
+<div class="news-item"><div class="title">國安基金證實已進場護盤</div><div class="desc">國安基金 11/21 發布新聞稿表示，自 11/6 臨時委員會議授權後已進場護盤，外資賣超幅度漸趨收斂，後續將視市況適時採取必要措施。（來源：經濟日報）</div></div>
+<div class="news-item"><div class="title">台積電險守 2,000 元，聯發科、台達電跌停</div><div class="desc">台積電（2330）盤中一度失守 2,000 元至 1,970 元，終場收 2,000 元（-4.76%）；聯發科（2454）收 3,350 元、台達電（2308）收 900 元皆以跌停作收。（來源：太報）</div></div>
+<div class="news-item"><div class="title">台指期夜盤 -1,881 點，下週一補跌壓力沉重</div><div class="desc">受美股重挫拖累，台指期夜盤大跌 1,881 點、收在 33,919 點，台積電期貨盤後重挫 116 元至 1,880 元。（來源：CMoney 股市爆料同學會、Yahoo 股市）</div></div>
+<div class="news-item"><div class="title">美股拋售擴散至非科技股，亞洲跟跌</div><div class="desc">美股四大指數全數收黑且跌勢自科技股擴散至整體市場，19 日道瓊大跌 1,101.11 點（-2.19%）、那斯達克 -2.25%、費半 -2.41%；韓國 KOSPI 單日 -5.21%、KOSDAQ -5.71%。（來源：CNBC、Yahoo 股市）</div></div>
+        </div>
+
+        <div class="section">
+            <h2><span class="icon">⚠️</span> 重要提醒</h2>
+            <div class="note">
+                <div class="note"><strong>補充說明：</strong>① 本報美股為 2026/11/20（週五）美東收盤價；台股為 2026/11/20（週五）官方收盤資料（TWSE／TPEx OpenAPI，日期代碼 1151120）。② 代號 3711 日月光投控屬<strong>上市</strong>（TWSE），已列入上市個股表；非上櫃。③ 代號 1301 官方名稱為<strong>台塑</strong>（南亞為 1303），本表一律採用 TWSE 官方回傳名稱。④ 法人買賣超與「尚未起漲潛力股」區塊因本次未取得 TWSE／TPEx 官方可驗證資料，<strong>予以省略</strong>，不作任何推測。⑤ 所有新聞敘述均標註來源，未經查證之評等、目標價與法人數字一律不列。</div><br><br><strong>資料來源：</strong>本報所有數據來自公開資訊（TWSE、TPEx、yfinance），僅供參考不構成投資建議。投資前請自行評估風險。
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>財經蛛 Evening Watch • 每日 21:00 自動產出</p>
+        </div>
+    </div>
+</body>
+</html>
