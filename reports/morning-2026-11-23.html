@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>晨間財經快報</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); min-height: 100vh; padding: 20px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        .header { text-align: center; padding: 30px 20px; background: linear-gradient(135deg, #c0392b 0%, #e74c3c 100%); border-radius: 20px; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(192, 57, 43, 0.3); }
+        .header h1 { color: white; font-size: 2.5em; font-weight: 800; margin-bottom: 10px; letter-spacing: 2px; }
+        .header .slogan { color: rgba(255,255,255,0.9); font-size: 1.2em; font-weight: 500; letter-spacing: 4px; text-transform: uppercase; }
+        .date { color: rgba(255,255,255,0.8); margin-top: 15px; font-size: 1em; }
+        .section { background: white; border-radius: 15px; padding: 25px; margin-bottom: 20px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); }
+        .section h2 { color: #c0392b; font-size: 1.4em; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 3px solid #e74c3c; display: flex; align-items: center; gap: 10px; }
+        .section h2 .icon { font-size: 1.5em; }
+        .market-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; }
+        .market-card { background: #f8f9fa; border-radius: 12px; padding: 15px; text-align: center; border-left: 4px solid #c0392b; }
+        .market-card .name { font-weight: 600; color: #2c3e50; font-size: 0.95em; }
+        .market-card .price { font-size: 1.4em; font-weight: 700; color: #1a1a2e; margin: 8px 0; }
+        .market-card .change { font-size: 0.9em; font-weight: 600; padding: 4px 10px; border-radius: 20px; display: inline-block; }
+        .positive { background: #d4edda; color: #155724; }
+        .negative { background: #f8d7da; color: #721c24; }
+        .neutral { background: #e2e3e5; color: #383d41; }
+        .stock-table { width: 100%; border-collapse: collapse; }
+        .stock-table th, .stock-table td { padding: 12px; text-align: left; border-bottom: 1px solid #eee; }
+        .stock-table th { background: #f8f9fa; color: #c0392b; font-weight: 600; }
+        .stock-table .code { font-weight: 600; color: #1a1a2e; }
+        .stock-table .name { color: #666; }
+        .news-item { padding: 15px; background: #f8f9fa; border-radius: 10px; margin-bottom: 12px; border-left: 4px solid #c0392b; }
+        .news-item .title { font-weight: 600; color: #1a1a2e; margin-bottom: 8px; }
+        .news-item .desc { color: #666; font-size: 0.9em; line-height: 1.5; }
+        .footer { text-align: center; padding: 20px; color: rgba(255,255,255,0.7); font-size: 0.85em; }
+        .note { background: #fff3cd; border-radius: 10px; padding: 15px; margin-top: 15px; color: #856404; font-size: 0.9em; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📰 晨間財經快報</h1>
+            <div class="slogan">Morning Watch</div>
+            <div class="date">2026 年 11 月 23 日（星期一）｜資料截止 11/20 收盤</div>
+        </div>
+
+        <div class="section">
+            <h2><span class="icon">🇺🇸</span> 美股動向</h2>
+            <div class="market-grid">
+                                <div class="market-card">
+                    <div class="name">SPY SPDR S&P 500 ETF</div>
+                    <div class="price">689.81</div>
+                    <div class="change negative">-3.64%</div>
+                </div>
+                <div class="market-card">
+                    <div class="name">QQQ Invesco QQQ (Nasdaq 100)</div>
+                    <div class="price">608.45</div>
+                    <div class="change negative">-5.67%</div>
+                </div>
+                <div class="market-card">
+                    <div class="name">NVDA NVIDIA Corp</div>
+                    <div class="price">125.53</div>
+                    <div class="change negative">-14.01%</div>
+                </div>
+                <div class="market-card">
+                    <div class="name">MU Micron Technology</div>
+                    <div class="price">594.51</div>
+                    <div class="change negative">-13.89%</div>
+                </div>
+                <div class="market-card">
+                    <div class="name">TSM Taiwan Semiconductor ADR</div>
+                    <div class="price">318.71</div>
+                    <div class="change negative">-9.48%</div>
+                </div>
+                <div class="market-card">
+                    <div class="name">AAPL Apple Inc</div>
+                    <div class="price">342.56</div>
+                    <div class="change negative">-1.90%</div>
+                </div>
+                <div class="market-card">
+                    <div class="name">XOM Exxon Mobil</div>
+                    <div class="price">159.99</div>
+                    <div class="change positive">+0.67%</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2><span class="icon">🇹🇼</span> 台股加權指數</h2>
+            <div class="market-card" style="max-width: 300px; margin: 0 auto;">
+                <div class="name">發行量加權股價指數</div>
+                <div class="price">36,033.29</div>
+                <div class="change negative">-2,393.60（-6.23%）</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2><span class="icon">🏢</span> 上市個股</h2>
+            <table class="stock-table">
+                <thead>
+                    <tr>
+                        <th>代號</th>
+                        <th>名稱</th>
+                        <th>收盤價</th>
+                        <th>漲跌幅</th>
+                    </tr>
+                </thead>
+                <tbody>
+                                        <tr>
+                        <td class="code">2330</td>
+                        <td class="name">台積電</td>
+                        <td>2,000.0</td>
+                        <td><span class="change negative">-4.76%</span></td>
+                    </tr>
+                    <tr>
+                        <td class="code">6505</td>
+                        <td class="name">台塑化</td>
+                        <td>80.6</td>
+                        <td><span class="change negative">-4.39%</span></td>
+                    </tr>
+                    <tr>
+                        <td class="code">1301</td>
+                        <td class="name">台塑</td>
+                        <td>56.1</td>
+                        <td><span class="change negative">-7.12%</span></td>
+                    </tr>
+                    <tr>
+                        <td class="code">2603</td>
+                        <td class="name">長榮</td>
+                        <td>233.0</td>
+                        <td><span class="change negative">-5.67%</span></td>
+                    </tr>
+                    <tr>
+                        <td class="code">3711</td>
+                        <td class="name">日月光投控</td>
+                        <td>457.0</td>
+                        <td><span class="change negative">-9.33%</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2><span class="icon">📈</span> 上櫃個股</h2>
+            <table class="stock-table">
+                <thead>
+                    <tr>
+                        <th>代號</th>
+                        <th>名稱</th>
+                        <th>收盤價</th>
+                        <th>漲跌幅</th>
+                    </tr>
+                </thead>
+                <tbody>
+                                        <tr>
+                        <td class="code">3491</td>
+                        <td class="name">昇達科</td>
+                        <td>1,225.0</td>
+                        <td><span class="change negative">-9.93%</span></td>
+                    </tr>
+                    <tr>
+                        <td class="code">8299</td>
+                        <td class="name">群聯</td>
+                        <td>1,320.0</td>
+                        <td><span class="change negative">-9.28%</span></td>
+                    </tr>
+                    <tr>
+                        <td class="code">4971</td>
+                        <td class="name">IET-KY</td>
+                        <td>286.5</td>
+                        <td><span class="change negative">-9.91%</span></td>
+                    </tr>
+                    <tr>
+                        <td class="code">3105</td>
+                        <td class="name">穩懋</td>
+                        <td>381.0</td>
+                        <td><span class="change negative">-9.93%</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2><span class="icon">🌐</span> 國際財經焦點</h2>
+                            <div class="news-item">
+                    <div class="title">美股三大指數同步進入修正期　S&amp;P 500 與道瓊自高點回落逾 10%</div>
+                    <div class="desc">11/20 收盤：標普 500 下跌 3.70% 收 6,910.39 點、道瓊下跌 949.73 點（-1.93%）收 48,147.33 點、那斯達克指數重挫 5.28% 收 22,617.73 點，單周分別下跌 8.6%、8% 與約 10%。S&amp;P 500 連續第七個交易日收黑，創 2020 年以來最長連跌紀錄。（來源：CNBC、WSJ、Reuters）</div>
+                </div>
+                <div class="news-item">
+                    <div class="title">輝達單日重挫 14%　本週累跌 23% 創金融海嘯以來最差單週</div>
+                    <div class="desc">NVDA 11/20 收 125.53 美元，單日 -14.01%、單週約 -23%。市場關注 Reuters 報導美國 SEC 正就輝達會計處理進行民事調查、輝達執行長黃仁勳本月辭職，以及美國將 AI 晶片出口管制擴大至東南亞。Yahoo Finance 報導輝達年內跌幅已逾 30%。（來源：Reuters、Yahoo Finance、WSJ）</div>
+                </div>
+                <div class="news-item">
+                    <div class="title">AMD 遭放空機構 Hunterbrook 報告狙擊　單日跌 13.25%</div>
+                    <div class="desc">AMD 11/20 收 424.39 美元、跌 13.25%。報告指其可能與遭美國列入出口管制黑名單的中國合資企業有業務往來，AMD 方面回應相關說法扭曲公司業務實務，強調遵守美國出口管制法規。（來源：Yahoo Finance、Reuters）</div>
+                </div>
+                <div class="news-item">
+                    <div class="title">Anthropic 掛牌首個完整交易日回吐漲幅　收 88.91 美元跌 8.50%</div>
+                    <div class="desc">AI 業者 Anthropic 於 11/19 以 83 美元發行價於那斯達克掛牌，19 日盤中漲幅一度逼近 39%、收斂至約 17%；11/20 盤中低點 83.05 美元，終場收 88.91 美元、跌 8.50%，IPO 熱度未能延續 AI 多頭動能。（來源：CNBC、WSJ、Yahoo Finance）</div>
+                </div>
+                <div class="news-item">
+                    <div class="title">費城半導體指數重挫　全球股市市值蒸發近 9 兆美元</div>
+                    <div class="desc">Reuters 指出全球股市自 8 月高點以來市值累計蒸發近 9 兆美元，本週跌幅達 17%。避險資金轉向美國公債，美國 10 年期公債殖利率下滑，VIX 恐慌指數升約 36、觸及 2026 年新高。市場同時關注 12 月 9 日聯準會會議與通膨仍高於目標。（來源：Reuters、CNBC）</div>
+                </div>
+        </div>
+
+        <div class="section">
+            <h2><span class="icon">📰</span> 台股新聞</h2>
+                            <div class="news-item">
+                    <div class="title">台股 11/20 重挫 2,393.60 點　寫下史上第三大收盤跌點</div>
+                    <div class="desc">加權指數收 36,033.29 點、下跌 6.23%，跌破 36,000 點，盤中最低 35,738.68 點（盤中第四大跌點），總成交值 8,773.5 億元。櫃買指數收 263.31 點、大跌 7.72%。上市櫃合計 369 檔跌停（上市 180 檔、上櫃 189 檔），台達電、聯發科等電子權值股跌停。（來源：TWSE、TPEx、經濟日報、聯合報）</div>
+                </div>
+                <div class="news-item">
+                    <div class="title">台積電險守 2,000 元關卡　盤中失守 1,970 元創 7 個月新低</div>
+                    <div class="desc">台積電 11/20 終場收 2,000 元、下跌 100 元（-4.76%），最深跌 130 元至 1,970 元，為今年 4 月以來新低；台積電 ADR 同期收 318.71 美元、跌 9.48%。（來源：TWSE、yfinance）</div>
+                </div>
+                <div class="news-item">
+                    <div class="title">金管會祭出第三波穩定股市措施　23 日起全面禁止平盤以下放空</div>
+                    <div class="desc">金管會 11/21 宣布 5 項措施：自 11/23 起投資人融券及借券賣出上市櫃股票與台灣存託憑證，價格不得低於前一營業日收盤價；最低融券保證金成數由 130% 提高至 150%；暫停受理認售權證上市櫃發行；鼓勵庫藏股並納入 ESG 評鑑；籲機構法人停止出借股票。國安基金 21 日表示已進場護盤。（來源：中央社、金管會）</div>
+                </div>
+                <div class="news-item">
+                    <div class="title">台股本週跌 7,641.83 點、跌幅 17.5%　市值單週蒸發 25 兆元</div>
+                    <div class="desc">自 10/6 高點 49,968.92 點至 11/20 盤中低點 35,738.68 點，累計重挫 14,230.24 點、跌幅約 28.5%。20 日上市公司總市值為 118.09 兆元，單週市值減幅 17.45%。（來源：中央社、報導統計）</div>
+                </div>
+                <div class="news-item">
+                    <div class="title">櫃買成交量萎縮至不到 900 億元　市場流動性風險升高</div>
+                    <div class="desc">市場人士指出櫃買指數已自高點回檔約 40%，11/20 預估成交值不到 900 億元，不到月初成交值的一半，部分跌停股成交量僅為前幾日五分之一以下，盤中呈現「量縮下跌、多殺多」。經濟部 11/21 表示股市波動對企業接單及營運尚未造成影響，並徵詢八大工商團體意見，半導體及電子業者對產業前景仍具信心。（來源：風傳媒、經濟部）</div>
+                </div>
+        </div>
+
+        <div class="section">
+            <h2><span class="icon">⚠️</span> 重要提醒</h2>
+            <div class="note">
+                <strong>資料來源：</strong>本報所有數據來自公開資訊（TWSE、TPEx、yfinance），僅供參考不構成投資建議。投資前請自行評估風險。
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>財經蛛 Morning Report • 每日 08:30 自動產出</p>
+        </div>
+    </div>
+</body>
+</html>
