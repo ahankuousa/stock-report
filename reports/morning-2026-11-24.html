@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>晨間財經快報</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); min-height: 100vh; padding: 20px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        .header { text-align: center; padding: 30px 20px; background: linear-gradient(135deg, #c0392b 0%, #e74c3c 100%); border-radius: 20px; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(192, 57, 43, 0.3); }
+        .header h1 { color: white; font-size: 2.5em; font-weight: 800; margin-bottom: 10px; letter-spacing: 2px; }
+        .header .slogan { color: rgba(255,255,255,0.9); font-size: 1.2em; font-weight: 500; letter-spacing: 4px; text-transform: uppercase; }
+        .date { color: rgba(255,255,255,0.8); margin-top: 15px; font-size: 1em; }
+        .section { background: white; border-radius: 15px; padding: 25px; margin-bottom: 20px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); }
+        .section h2 { color: #c0392b; font-size: 1.4em; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 3px solid #e74c3c; display: flex; align-items: center; gap: 10px; }
+        .section h2 .icon { font-size: 1.5em; }
+        .market-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; }
+        .market-card { background: #f8f9fa; border-radius: 12px; padding: 15px; text-align: center; border-left: 4px solid #c0392b; }
+        .market-card .name { font-weight: 600; color: #2c3e50; font-size: 0.95em; }
+        .market-card .price { font-size: 1.4em; font-weight: 700; color: #1a1a2e; margin: 8px 0; }
+        .market-card .change { font-size: 0.9em; font-weight: 600; padding: 4px 10px; border-radius: 20px; display: inline-block; }
+        .positive { background: #d4edda; color: #155724; }
+        .negative { background: #f8d7da; color: #721c24; }
+        .neutral { background: #e2e3e5; color: #383d41; }
+        .stock-table { width: 100%; border-collapse: collapse; }
+        .stock-table th, .stock-table td { padding: 12px; text-align: left; border-bottom: 1px solid #eee; }
+        .stock-table th { background: #f8f9fa; color: #c0392b; font-weight: 600; }
+        .stock-table .code { font-weight: 600; color: #1a1a2e; }
+        .stock-table .name { color: #666; }
+        .news-item { padding: 15px; background: #f8f9fa; border-radius: 10px; margin-bottom: 12px; border-left: 4px solid #c0392b; }
+        .news-item .title { font-weight: 600; color: #1a1a2e; margin-bottom: 8px; }
+        .news-item .desc { color: #666; font-size: 0.9em; line-height: 1.5; }
+        .footer { text-align: center; padding: 20px; color: rgba(255,255,255,0.7); font-size: 0.85em; }
+        .note { background: #fff3cd; border-radius: 10px; padding: 15px; margin-top: 15px; color: #856404; font-size: 0.9em; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📰 晨間財經快報</h1>
+            <div class="slogan">Morning Watch</div>
+            <div class="date">2026年11月24日（星期二）• 美股資料截至 2026-11-23 收盤 • 台股資料為 2026/11/23 收盤</div>
+        </div>
+
+        <div class="section">
+            <h2><span class="icon">🇺🇸</span> 美股動向</h2>
+            <div class="market-grid">
+                <div class="market-card"><div class="name">SPY 標普500 ETF</div><div class="price">722.29</div><div class="change positive">+4.71%</div></div>
+<div class="market-card"><div class="name">QQQ 那斯達克100 ETF</div><div class="price">651.03</div><div class="change positive">+7.00%</div></div>
+<div class="market-card"><div class="name">XOM 艾克森美孚</div><div class="price">156.90</div><div class="change negative">-1.93%</div></div>
+<div class="market-card"><div class="name">TSM 台積電ADR</div><div class="price">363.60</div><div class="change positive">+14.08%</div></div>
+<div class="market-card"><div class="name">MU 美光科技</div><div class="price">707.70</div><div class="change positive">+19.04%</div></div>
+<div class="market-card"><div class="name">AAPL 蘋果</div><div class="price">349.08</div><div class="change positive">+1.90%</div></div>
+<div class="market-card"><div class="name">NVDA 輝達</div><div class="price">165.05</div><div class="change positive">+31.48%</div></div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2><span class="icon">🇹🇼</span> 台股加權指數</h2>
+            <div class="market-card" style="max-width: 300px; margin: 0 auto;">
+                <div class="name">發行量加權股價指數</div>
+                <div class="price">36,811.89</div>
+                <div class="change positive">+778.60 點（2.16%）</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2><span class="icon">🏢</span> 上市個股</h2>
+            <table class="stock-table">
+                <thead>
+                    <tr>
+                        <th>代號</th>
+                        <th>名稱</th>
+                        <th>收盤價</th>
+                        <th>漲跌幅</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td class="code">2330</td><td class="name">台積電</td><td>2030.00</td><td><span class="change positive">+1.50%</span></td></tr>
+<tr><td class="code">6505</td><td class="name">台塑化</td><td>81.70</td><td><span class="change positive">+1.36%</span></td></tr>
+<tr><td class="code">1301</td><td class="name">台塑</td><td>56.80</td><td><span class="change positive">+1.25%</span></td></tr>
+<tr><td class="code">2603</td><td class="name">長榮</td><td>234.50</td><td><span class="change positive">+0.64%</span></td></tr>
+<tr><td class="code">3711</td><td class="name">日月光投控</td><td>482.00</td><td><span class="change positive">+5.47%</span></td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2><span class="icon">📈</span> 上櫃個股</h2>
+            <table class="stock-table">
+                <thead>
+                    <tr>
+                        <th>代號</th>
+                        <th>名稱</th>
+                        <th>收盤價</th>
+                        <th>漲跌幅</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td class="code">3491</td><td class="name">昇達科</td><td>1260.00</td><td><span class="change positive">+2.86%</span></td></tr>
+<tr><td class="code">8299</td><td class="name">群聯</td><td>1450.00</td><td><span class="change positive">+9.85%</span></td></tr>
+<tr><td class="code">4971</td><td class="name">IET-KY</td><td>273.50</td><td><span class="change negative">-4.54%</span></td></tr>
+<tr><td class="code">3105</td><td class="name">穩懋</td><td>408.50</td><td><span class="change positive">+7.22%</span></td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2><span class="icon">🌐</span> 國際財經焦點</h2>
+            <div class="news-item"><div class="title">輝達強勢回鍋，股價單日飆升 31.48%，市值增加約 9,500 億美元</div><div class="desc">WSJ／CNBC／Reuters 報導：輝達董事會於 11/23 宣布黃仁勳（Jensen Huang）回任 CEO 暨董事長，立即生效。黃仁勳是在被撤換 11 天後回任，是華人企業史上極罕见的「 boomerang 」（回任）案例。股價收 165.05 美元，單日大漲 31.48%，市值單日增加約 9,500 億美元，帶動 Nasdaq 大漲 6.5%、S&P 500 上漲 4.7%、道瓊上漲 3%（約 1,447 點，收 49,595.31 點），為 2025 年 4 月以來最佳單日表現。</div></div>
+<div class="news-item"><div class="title">費城半導體指數大漲近 14% 至 9,588 點，Nasdaq 收 24,089 點</div><div class="desc">市場解讀為對 AI 供應鏈信心的全面修復。美股 10 分鐘內市值增加逾 3 兆美元，Nasdaq 一度漲逾 7%。消費類股逆勢收低，顯示資金明顯往 AI 賽道集中；Anthropic 下跌 1.4% 為少數逆勢股。</div></div>
+<div class="news-item"><div class="title">美光（MU）反彈近 19%，市場重新評價記憶體景氣</div><div class="desc">MU 收 707.70 美元（+19.04%），前一交易日（11/20）曾重挫 13.89% 收 594.51 美元。Barron's 報導指出 MU 自 6 月高點 1,213.56 美元回落逾 50%，本次反彈屬跌深反彈而非趨勢反轉。已公布數據：FY2026 Q4 營收 542.3 億美元、毛利率 86.8%，並預估 FY2027 Q1 營收約 615 億美元（±15 億）；執行長 Sanjay Mehrotra 於 11/18 表示 2027 年記憶體供給約 75% 已售罄，客戶討論已延伸至 2028 年。</div></div>
+<div class="news-item"><div class="title">分析師觀點：單日急彈未消除結構性逆風（CNBC／Yahoo Finance 引述）</div><div class="desc">McElligott 指出，單日漲幅並未消除結構性壓力，包括通膨居高不下、借款成本上升，以及企業 AI 支出預期降溫；若這些壓力持續，投資人可能放棄「逢跌買入」策略，轉而把資金移向現金與債券。此為受訪分析師觀點引用，非本報預測。</div></div>
+<div class="news-item"><div class="title">台積電 ADR 大漲 14.08%，台股ADR 支撐外資信心</div><div class="desc">TSM 收 363.60 美元（+14.08%），連同台股現貨走強。法人觀察指出，單日強彈仍不等於空頭壓力解除，後續關鍵在輝達股價能否守穩、費半是否出現築底訊號，以及外資動向與成交量能變化。</div></div>
+        </div>
+
+        <div class="section">
+            <h2><span class="icon">📰</span> 台股新聞</h2>
+            <div class="news-item"><div class="title">台股全面反彈，加權指數大漲 778.60 點收 36,811.89 點</div><div class="desc">中央社／Yahoo 股市：台股 11/23 開低震盪走高，盤中最低 35,442.41 點、最高 37,108.20 點，高低震盪達 1,665.79 點，終場上漲 778.60 點、漲幅 2.16%，成交值新台幣 1 兆 791.65 億元。電子類股指數 +2.85%，金融類股指數 −2.65%，櫃買指數 +2.88% 收 270.9 點。上市上櫃合計漲 1,300 家、下跌 634 家，漲停 68 家、跌停 16 家。</div></div>
+<div class="news-item"><div class="title">金管會「限空令 3.0」上路，國安基金同步護盤</div><div class="desc">金管會自 11/23 起實施第三波穩市措施：全面禁止平盤以下放空、最低融券保證金成數由 130% 調升至 150%、暫停受理認售權證發行、鼓勵庫藏股並納入 ESG 評鑑、籲請機構法人停止出借股票。台積電、聯發科、台達電等權值股領頭反攻。</div></div>
+<div class="news-item"><div class="title">記憶體、PCB 族群強勢回補，多檔漲停</div><div class="desc">群聯執行長潘健成表示「明年記憶體仍吃緊」。力積電（6770）、創見（2451）、群聯（8299）、宜鼎（5289）、廣穎（4973）收漲停；晶豪科 +9.43% 收 191.5 元、鈺創 +9.08% 收 78.1 元、十銓 +7.62% 收 233 元。CCL 族群台光電（2383）、聯茂（6274）、台燿漲停；ABF 族群臻鼎-KY、南電 +6%。</div></div>
+<div class="news-item"><div class="title">金融股續弱，「國安基金護盤概念股」成資金主軸</div><div class="desc">中信金重摔 6%，富邦金、華南金、兆豐金下跌 3~4%，國泰金、玉山金、元大金下跌 1~2%。聯發科、台達電、南亞被列入「國安基金護盤概念股」；30 檔千金股多數收紅，聯發科、世芯-KY、台光電、群聯、貿聯-KY、智邦 6 檔漲停，股王信驊 +5.73% 收 8,310 元。</div></div>
+<div class="news-item"><div class="title">期貨夜盤報復性反彈，台指期站回 4 萬點</div><div class="desc">受輝達與黃仁勳回鍋消息帶動，台指期夜盤一度上漲逾 3,000 點並觸及漲停，收盤站回 40,000 點關卡。</div></div>
+<div class="news-item"><div class="title">風險提示：追繳與斷頭壓力未解</div><div class="desc">市場關注上週（11/16~11/20）台股單週重挫 7,641.83 點、跌幅 17.50% 所留下的籌碼問題；報導指出 6,462 戶遭追繳 64 億元創新高，並示警本週恐爆斷頭潮。此為媒體引述之觀察，非本報斷言。</div></div>
+        </div>
+
+
+        <div class="section">
+            <h2><span class="icon">🏦</span> 法人動向（TWSE 官方 T86／BFI82U，2026/11/23）</h2>
+            <table class="stock-table">
+                <thead>
+                    <tr><th>代號</th><th>名稱</th><th>外陸資買賣超</th><th>投信買賣超</th><th>自營商買賣超</th><th>三大法人合計</th></tr>
+                </thead>
+                <tbody>
+<tr><td class="code">2330</td><td class="name">台積電</td><td>-1104 萬股</td><td>+129 萬股</td><td>+267 萬股</td><td>-708 萬股</td></tr>
+<tr><td class="code">2317</td><td class="name">鴻海</td><td>-1489 萬股</td><td>+25 萬股</td><td>+185 萬股</td><td>-1279 萬股</td></tr>
+<tr><td class="code">2308</td><td class="name">台達電</td><td>+104 萬股</td><td>+17 萬股</td><td>-74 萬股</td><td>+48 萬股</td></tr>
+<tr><td class="code">2454</td><td class="name">聯發科</td><td>-93 萬股</td><td>+53 萬股</td><td>+39 萬股</td><td>-0 萬股</td></tr>
+<tr><td class="code">2408</td><td class="name">南亞科</td><td>-66 萬股</td><td>-10 萬股</td><td>+25 萬股</td><td>-51 萬股</td></tr>
+<tr><td class="code">1303</td><td class="name">南亞</td><td>-63 萬股</td><td>-54 萬股</td><td>-44 萬股</td><td>-160 萬股</td></tr>
+<tr><td class="code">—</td><td class="name"><strong>上市市場合計</strong></td><td>買超 5,704 億股</td><td>買超 6,225 億股</td><td>賣超 521 億股</td><td><strong>賣超 521 億股</strong></td></tr>
+                </tbody>
+            </table>
+            <div class="note">
+                資料來源：臺灣證券交易所 <code>/rwd/zh/fund/T86</code>、<code>/rwd/zh/fund/BFI82U</code>（2026/11/23 收盤）。單位：股。上櫃（TPEx）三大法人資料本次未能取得可驗證來源，故不列入。
+            </div>
+        </div>
+
+        <div class="section">
+            <h2><span class="icon">⚠️</span> 重要提醒</h2>
+            <div class="note">
+                <strong>資料來源：</strong>本報所有數據來自公開資訊（TWSE OpenAPI：MI_INDEX、STOCK_DAY_ALL、T86、BFI82U；TPEx OpenAPI：tpex_mainboard_daily_close_quotes；yfinance：美股收盤價），僅供參考不構成投資建議。投資前請自行評估風險。<br><br><strong>「尚未起漲潛力股」說明：</strong>本次<b>資料不足，暫不列出</b>。原因：判斷「尚未起漲」需要具體的技術面（均線乖離、量能、突破位置）與基本面（營收／獲利趨勢）交叉驗證資料，目前工作階段僅取得 TWSE／TPEx 官方收盤行情與已公告新聞，未取得可對應的技術指標與財報數據；為避免誤導讀者，不予臆測任何個股。<br><br><strong>公司代號對照提醒：</strong>3711 日月光投控為<b>上市（TWSE）</b>股票，非上櫃；4971 為上櫃 IET-KY；1301 為台塑（非南亞，南亞代號為 1303）。以上配對均已對照 TWSE／TPEx 官方資料核實。
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>財經蛛 Morning Report • 每日 08:30 自動產出</p>
+        </div>
+    </div>
+</body>
+</html>
